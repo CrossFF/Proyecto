@@ -2,61 +2,56 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum typeResource
+{
+    basicOre1,
+    basicOre2,
+    basicOre3,
+    mediumOre1,
+    mediumOre2,
+    mediumOre3,
+    advancedOre1,
+    advancedOre2,
+    advancedOre3
+}
 public class Resource
 {
-    public string name { set; get; }
+    public typeResource type { set; get; }
     public int amount { set; get; }
     public int totalAmount { set; get; }
     public Machine machine { set; get; }
 
     //Constructores
-    public Resource(string name, int amount)
+    public Resource(typeResource type, int amount)
     {
-        switch (name)
-        {
-            case "Basic Ore":
-                this.name = "Basic Ore";
-                this.amount = amount;
-                this.totalAmount = this.amount;
-                break;
-            case "Medium Ore":
-                this.name = "Medium Ore";
-                this.amount = amount;
-                this.totalAmount = this.amount;
-                break;
-            case "Advanced Ore":
-                this.name = "Advanced Ore";
-                this.amount = amount;
-                this.totalAmount = this.amount;
-                break;
-            default:
-                Debug.Log("No existe este recurso");
-                break;
-        }
+        this.type = type;
+        this.amount = amount;
+        this.totalAmount = this.amount;
     }
-    public Resource(string name)
+    public Resource(typeResource type)
     {
-        switch (name)
+        this.type = type;
+        this.amount = 1000;
+        this.totalAmount = this.amount;
+        /*
+        switch (type)
         {
-            case "Basic":
-                this.name = "Basic Ore";
+            case typeResource.basicOre1:
                 this.amount = 1000;
                 this.totalAmount = this.amount;
                 break;
-            case "Medium":
-                this.name = "Medium Ore";
+            case typeResource.mediumOre1:
                 this.amount = 1000;
                 this.totalAmount = this.amount;
                 break;
-            case "Advanced":
-                this.name = "Advanced Ore";
+            case typeResource.advancedOre1:
                 this.amount = 1000;
                 this.totalAmount = this.amount;
                 break;
             default:
                 Debug.Log("No existe este recurso");
                 break;
-        }
+        }*/
     }
 
     // metodos propios
@@ -102,7 +97,7 @@ public class Resource
             {
                 foreach (var item2 in sorted)
                 {
-                    if (item.name == item2.name)
+                    if (item.type == item2.type)
                     {
                         item2.amount += item.amount;
                         item2.totalAmount += item.amount;
@@ -110,7 +105,7 @@ public class Resource
                     }
                     else
                     {
-                        if(item2 == sorted[sorted.Count-1])
+                        if (item2 == sorted[sorted.Count - 1])
                         {
                             sorted.Add(item);
                         }
@@ -131,14 +126,14 @@ public class Resource
         {
             foreach (var item2 in resourcesToSort)
             {
-                if(item.name == item2.name)
+                if (item.type == item2.type)
                 {
                     item.amount += item2.amount;
                     item.totalAmount += item2.amount;
                 }
                 else
                 {
-                    if(item == actualResource[actualResource.Count-1])
+                    if (item == actualResource[actualResource.Count - 1])
                     {
                         actualResource.Add(item2);
                     }

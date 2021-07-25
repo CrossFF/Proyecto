@@ -2,6 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum typeOfNode
+{
+    basic,
+    medium,
+    advanced
+}
 public class Node
 {
     public string name { set; get; }
@@ -12,41 +18,35 @@ public class Node
     public bool blocked { set; get; }
 
     // Constructores
-    public Node(string type)
+    public Node(typeOfNode type)
     {
         this.active = false;
         this.blocked = false;
 
         switch (type)
         {
-            case "Basic":
+            case typeOfNode.basic:
                 List<Resource> temp1 = new List<Resource>();
-                Resource rB1 = new Resource("Basic");
-                Resource rB2 = new Resource("Basic");
-                Resource rB3 = new Resource("Basic");
-                temp1.Add(rB1);
-                temp1.Add(rB2);
-                temp1.Add(rB3);
+                for (int i = 0; i < 3; i++)
+                {
+                    temp1.Add(new Resource(typeResource.basicOre1));
+                }
                 this.resources = temp1;
                 break;
-            case "Medium":
+            case typeOfNode.medium:
                 List<Resource> temp2 = new List<Resource>();
-                Resource rM1 = new Resource("Medium");
-                Resource rM2 = new Resource("Medium");
-                Resource rM3 = new Resource("Medium");
-                temp2.Add(rM1);
-                temp2.Add(rM2);
-                temp2.Add(rM3);
+                for (int i = 0; i < 3; i++)
+                {
+                    temp2.Add(new Resource(typeResource.mediumOre1));
+                }
                 this.resources = temp2;
                 break;
-            case "Advanced":
+            case typeOfNode.advanced:
                 List<Resource> temp3 = new List<Resource>();
-                Resource rA1 = new Resource("Advanced");
-                Resource rA2 = new Resource("Advanced");
-                Resource rA3 = new Resource("Advanced");
-                temp3.Add(rA1);
-                temp3.Add(rA2);
-                temp3.Add(rA3);
+                for (int i = 0; i < 3; i++)
+                {
+                    temp3.Add(new Resource(typeResource.advancedOre1));
+                }
                 this.resources = temp3;
                 break;
             default:

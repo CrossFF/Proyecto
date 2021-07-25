@@ -21,9 +21,9 @@ public class ResourceInfo : MonoBehaviour
     {
         ui = theUI;
         resource = theResource;
-        var sprite = Resources.Load<Sprite>("Prototype/" + resource.name);
+        var sprite = Resources.Load<Sprite>("Prototype/" + resource.type);
         resourceImage.sprite = sprite;
-        resourceName.text = resource.name;
+        resourceName.text = resource.type.ToString();
         RefreshInfo();
     }
 

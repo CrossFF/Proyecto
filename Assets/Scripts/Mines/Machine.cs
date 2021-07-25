@@ -2,6 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum name
+{
+
+}
+
 public class Machine
 {
     public string name { set; get; }
@@ -22,14 +27,14 @@ public class Machine
         Resource extractedResource;
         if (resource.amount >= this.amountPerCycle)
         {
-            extractedResource = new Resource(resource.name, this.amountPerCycle);
+            extractedResource = new Resource(resource.type, this.amountPerCycle);
             resource.amount -= this.amountPerCycle;
         }
         else
         {
             if (resource.amount > 0f)
             {
-                extractedResource = new Resource(resource.name, resource.amount);
+                extractedResource = new Resource(resource.type, resource.amount);
                 resource.amount -= resource.amount;
             }
             else

@@ -25,7 +25,7 @@ public class Inventory : MonoBehaviour
 
         foreach (var item in resourcesList)
         {
-            Debug.Log(item.name + "/" + item.amount);
+            Debug.Log(item.type + "/" + item.amount);
         }
     }
 }

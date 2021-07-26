@@ -9,9 +9,10 @@ public class PlayerController : MonoBehaviour
     public CharacterController characterController;
     private bool interactuar = false;
     private GameObject interactuable;
-    public CinemachineVirtualCamera playerCam, mineCam, mechaCam;
+    public CinemachineVirtualCamera playerCam, mineCam, mechaCam, craftingCam;
     public MineManager mineManager;
     public MechaUI mechaManager;
+    public CraftingManager craftManager;
 
     void Start()
     {
@@ -46,9 +47,13 @@ public class PlayerController : MonoBehaviour
                         SetPrority("mecha");
                         mechaManager.ShowMenu();
                         break;
-                    case "Consola de de Minas":
+                    case "Consola de Minas":
                         SetPrority("mine");
                         mineManager.ActivateMineUI();
+                        break;
+                    case "Consola de Crafting":
+                        SetPrority("craft");
+                        craftManager.ShowMenu();
                         break;
                     default:
                         break;
@@ -60,6 +65,7 @@ public class PlayerController : MonoBehaviour
             SetPrority("player");
             mineManager.HideMineUI();
             mechaManager.HideMenu();
+            craftManager.HideMenu();
         }
     }
 
@@ -71,16 +77,25 @@ public class PlayerController : MonoBehaviour
                 playerCam.Priority = 10;
                 mineCam.Priority = 0;
                 mechaCam.Priority = 0;
+                craftingCam.Priority = 0;
                 break;
             case "mine":
                 playerCam.Priority = 0;
                 mineCam.Priority = 10;
                 mechaCam.Priority = 0;
+                craftingCam.Priority = 0;
                 break;
             case "mecha":
                 playerCam.Priority = 0;
                 mineCam.Priority = 0;
                 mechaCam.Priority = 10;
+                craftingCam.Priority = 0;
+                break;
+            case "craft":
+                playerCam.Priority = 0;
+                mineCam.Priority = 0;
+                mechaCam.Priority = 0;
+                craftingCam.Priority = 10;
                 break;
             default:
                 break;
@@ -94,7 +109,12 @@ public class PlayerController : MonoBehaviour
             interactuar = true;
             interactuable = other.gameObject;
         }
-        if (other.name == "Consola de de Minas")
+        if (other.name == "Consola de Minas")
+        {
+            interactuar = true;
+            interactuable = other.gameObject;
+        }
+        if (other.name == "Consola de Crafting")
         {
             interactuar = true;
             interactuable = other.gameObject;
@@ -108,10 +128,15 @@ public class PlayerController : MonoBehaviour
             interactuar = false;
             interactuable = null;
         }
-        if (other.name == "Consola de de Minas")
+        if (other.name == "Consola de Minas")
         {
             interactuar = false;
             interactuable = null;
+        }
+        if (other.name == "Consola de Crafting")
+        {
+            interactuar = true;
+            interactuable = other.gameObject;
         }
     }
 }

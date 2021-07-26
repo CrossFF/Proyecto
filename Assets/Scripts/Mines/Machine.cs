@@ -11,14 +11,14 @@ public enum Name
 
 public class Machine
 {
-    public string name;
+    public Name name;
     public string function;
     public int amountPerCycle;
 
     //Constructores
     public Machine()
     {
-        this.name = "Excavadora";
+        this.name = Name.Excavadora;
         this.function = "Extrae 10 de mineral";
         this.amountPerCycle = 10;
     }

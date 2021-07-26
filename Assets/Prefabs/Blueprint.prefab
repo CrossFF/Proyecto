@@ -35,8 +35,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 204.5, y: 17.581001}
-  m_SizeDelta: {x: -455, y: -164.84}
+  m_AnchoredPosition: {x: 196, y: 9.7}
+  m_SizeDelta: {x: -392, y: -164.84}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &446141215662322084
 CanvasRenderer:
@@ -89,15 +89,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 12
+    m_Left: 0
     m_Right: 0
     m_Top: 2
     m_Bottom: 0
   m_ChildAlignment: 0
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 140, y: 100}
-  m_Spacing: {x: 40, y: 30}
+  m_CellSize: {x: 200, y: 100}
+  m_Spacing: {x: 0, y: 30}
   m_Constraint: 0
   m_ConstraintCount: 2
 --- !u!1 &3745598083506678022
@@ -347,11 +347,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2855ac577484c334d891277ff34b6a66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  blueprintName: 0
+  blueprintType: 0
+  blueprintIngredients: 00000000000000000000000000000000
+  ingredientsAmount: 0a0000000a0000000a0000000a000000
   manager: {fileID: 0}
   prefabIngredientCraft: {fileID: 7906691944865965319, guid: a40a133c38e47f344b0db83f8a78fc24, type: 3}
   nameText: {fileID: 3745598083823737913}
   amountText: {fileID: 3745598084030540915}
   craftImage: {fileID: 3745598083506678264}
+  fabricateButton: {fileID: 1158979980112981412}
   ingredientsParent: {fileID: 4642902145869133235}
 --- !u!1 &3745598084030540913
 GameObject:

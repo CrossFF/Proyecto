@@ -2,16 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum name
+public enum Name
 {
-
+    Excavadora,
+    Dron,
+    Tuneladora
 }
 
 public class Machine
 {
-    public string name { set; get; }
-    public string function { set; get; }
-    public int amountPerCycle { set; get; }
+    public string name;
+    public string function;
+    public int amountPerCycle;
 
     //Constructores
     public Machine()

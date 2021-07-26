@@ -16,10 +16,10 @@ public enum typeResource
 }
 public class Resource
 {
-    public typeResource type { set; get; }
-    public int amount { set; get; }
-    public int totalAmount { set; get; }
-    public Machine machine { set; get; }
+    public typeResource type;
+    public int amount;
+    public int totalAmount;
+    public Machine machine;
 
     //Constructores
     public Resource(typeResource type, int amount)

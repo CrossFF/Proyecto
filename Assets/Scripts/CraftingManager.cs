@@ -6,13 +6,12 @@ using UnityEngine.UI;
 public class CraftingManager : MonoBehaviour
 {
     public Inventory inventory;
-    //public GameObject prefabBlueprint;
+    public GameObject prefabBlueprint;
     public CanvasGroup allMenu, machineMenu, mechaMenu, systemsMenu;
 
-    void Start()
+    void Awake()
     {
         HideMenu();
-        ShowMenu();
     }
 
     private void HideMenu()
@@ -40,7 +39,7 @@ public class CraftingManager : MonoBehaviour
         systemsMenu.alpha = 0;
         machineMenu.interactable = true;
         mechaMenu.interactable = false;
-        systemsMenu.interactable = false;
+        systemsMenu.interactable = false;    
     }
 
     public void ShowMechaMenu()
@@ -50,7 +49,7 @@ public class CraftingManager : MonoBehaviour
         systemsMenu.alpha = 0;
         machineMenu.interactable = false;
         mechaMenu.interactable = true;
-        systemsMenu.interactable = false;
+        systemsMenu.interactable = false;       
     }
 
     public void ShowSystemsMenu()
@@ -60,6 +59,6 @@ public class CraftingManager : MonoBehaviour
         systemsMenu.alpha = 1;
         machineMenu.interactable = false;
         mechaMenu.interactable = false;
-        systemsMenu.interactable = true;
+        systemsMenu.interactable = true;      
     }
 }

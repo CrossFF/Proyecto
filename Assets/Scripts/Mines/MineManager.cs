@@ -25,9 +25,9 @@ public class MineManager : MonoBehaviour
         int medumMines = (30 * amountOfMines) / 100;
         int advancedMines = (20 * amountOfMines) / 100;
 
-        InstantiateMine(basicMines, typeOfNode.basic);
-        InstantiateMine(medumMines, typeOfNode.medium);
-        InstantiateMine(advancedMines, typeOfNode.advanced);
+        InstantiateMine(basicMines, typeOfNode.Basic);
+        InstantiateMine(medumMines, typeOfNode.Medium);
+        InstantiateMine(advancedMines, typeOfNode.Advanced);
 
         _mines[0].node.active = true;
 
@@ -50,13 +50,13 @@ public class MineManager : MonoBehaviour
             tempMine.node = new Node(type);
             switch (type)
             {
-                case typeOfNode.basic:
+                case typeOfNode.Basic:
                     tempMine.node.name = "BM_" + i;
                     break;
-                case typeOfNode.medium:
+                case typeOfNode.Medium:
                     tempMine.node.name = "MM_" + i;
                     break;
-                case typeOfNode.advanced:
+                case typeOfNode.Advanced:
                     tempMine.node.name = "AM_" + i;
                     break;
             }

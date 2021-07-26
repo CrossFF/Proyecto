@@ -4,18 +4,17 @@ using UnityEngine;
 
 public enum typeOfNode
 {
-    basic,
-    medium,
-    advanced
+    Basic,
+    Medium,
+    Advanced
 }
 public class Node
 {
-    public string name { set; get; }
-    public List<Resource> resources { set; get; }
-    public float _totalResources { get; set; }
-    public List<Mine> trails { set; get; }
-    public bool active { set; get; }
-    public bool blocked { set; get; }
+    public string name;
+    public List<Resource> resources;
+    public List<Mine> trails;
+    public bool active;
+    public bool blocked;
 
     // Constructores
     public Node(typeOfNode type)
@@ -25,7 +24,7 @@ public class Node
 
         switch (type)
         {
-            case typeOfNode.basic:
+            case typeOfNode.Basic:
                 List<Resource> temp1 = new List<Resource>();
                 for (int i = 0; i < 3; i++)
                 {
@@ -33,7 +32,7 @@ public class Node
                 }
                 this.resources = temp1;
                 break;
-            case typeOfNode.medium:
+            case typeOfNode.Medium:
                 List<Resource> temp2 = new List<Resource>();
                 for (int i = 0; i < 3; i++)
                 {
@@ -41,7 +40,7 @@ public class Node
                 }
                 this.resources = temp2;
                 break;
-            case typeOfNode.advanced:
+            case typeOfNode.Advanced:
                 List<Resource> temp3 = new List<Resource>();
                 for (int i = 0; i < 3; i++)
                 {
@@ -52,11 +51,6 @@ public class Node
             default:
                 Debug.Log("No eciste este nodo");
                 break;
-        }
-
-        foreach (var item in this.resources)
-        {
-            this._totalResources += item.amount;
         }
     }
 

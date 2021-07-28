@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum typeOfNode
+public enum TypeOfNode
 {
     Basic,
     Medium,
@@ -10,6 +10,7 @@ public enum typeOfNode
 }
 public class Node
 {
+    public TypeOfNode type;
     public string name;
     public List<Resource> resources;
     public List<Mine> trails;
@@ -17,14 +18,16 @@ public class Node
     public bool blocked;
 
     // Constructores
-    public Node(typeOfNode type)
+    public Node(TypeOfNode type, string name)
     {
+        this.type = type;
+        this.name = name;
         this.active = false;
         this.blocked = false;
 
         switch (type)
         {
-            case typeOfNode.Basic:
+            case TypeOfNode.Basic:
                 List<Resource> temp1 = new List<Resource>();
                 for (int i = 0; i < 3; i++)
                 {
@@ -32,7 +35,7 @@ public class Node
                 }
                 this.resources = temp1;
                 break;
-            case typeOfNode.Medium:
+            case TypeOfNode.Medium:
                 List<Resource> temp2 = new List<Resource>();
                 for (int i = 0; i < 3; i++)
                 {
@@ -40,16 +43,13 @@ public class Node
                 }
                 this.resources = temp2;
                 break;
-            case typeOfNode.Advanced:
+            case TypeOfNode.Advanced:
                 List<Resource> temp3 = new List<Resource>();
                 for (int i = 0; i < 3; i++)
                 {
                     temp3.Add(new Resource(typeResource.advancedOre1));
                 }
                 this.resources = temp3;
-                break;
-            default:
-                Debug.Log("No eciste este nodo");
                 break;
         }
     }
@@ -61,7 +61,7 @@ public class Node
         foreach (var item in this.resources)
         {
             Resource temp = item.GetResource();
-            if(temp != null)
+            if (temp != null)
             {
                 extractedResources.Add(temp);
             }

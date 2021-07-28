@@ -44,7 +44,7 @@ public class BlueprintGameObject : MonoBehaviour
         //nombre
         nameText.text = blueprintName.ToString();
         //existencias
-        int actualAmount = manager.inventory.GetAmount(blueprintName.ToString());
+        float actualAmount = manager.inventory.GetAmount(blueprintName.ToString());
         amountText.text = "Tienes: " + actualAmount;
         //imagen
         var sprite = Resources.Load<Sprite>("");
@@ -56,8 +56,8 @@ public class BlueprintGameObject : MonoBehaviour
             var spriteTemp = Resources.Load<Sprite>("Prototype/" + blueprintIngredients[i]);
             _ingredients[i].resourceImage.sprite = spriteTemp;
             //cantidad necesaria y en el inventario
-            int necesario = ingredientsAmount[i];
-            int actual = manager.inventory.GetAmount(blueprintIngredients[i].ToString());
+            float necesario = ingredientsAmount[i];
+            float actual = manager.inventory.GetAmount(blueprintIngredients[i].ToString());
             _ingredients[i].amountText.text = actual + "/" + necesario;
         }
     }

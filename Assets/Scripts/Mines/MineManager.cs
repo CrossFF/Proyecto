@@ -25,9 +25,9 @@ public class MineManager : MonoBehaviour
         int medumMines = (30 * amountOfMines) / 100;
         int advancedMines = (20 * amountOfMines) / 100;
 
-        InstantiateMine(basicMines, typeOfNode.Basic);
-        InstantiateMine(medumMines, typeOfNode.Medium);
-        InstantiateMine(advancedMines, typeOfNode.Advanced);
+        InstantiateMine(basicMines, TypeOfNode.Basic);
+        InstantiateMine(medumMines, TypeOfNode.Medium);
+        InstantiateMine(advancedMines, TypeOfNode.Advanced);
 
         _mines[0].node.active = true;
 
@@ -40,27 +40,15 @@ public class MineManager : MonoBehaviour
         ResourceControl();
     }
 
-    private void InstantiateMine(int amount, typeOfNode type)
+    private void InstantiateMine(int amount, TypeOfNode type)
     {
         for (int i = 0; i < amount; i++)
         {
             Vector3 pos = new Vector3(Random.Range(0f, 10f), 0f, Random.Range(0f, 10f));
-            GameObject temp = Instantiate(prefabMine, pos, Quaternion.identity);
+            GameObject temp  = Instantiate(prefabMine, pos, Quaternion.identity);
             Mine tempMine = temp.GetComponent<Mine>();
-            tempMine.node = new Node(type);
-            switch (type)
-            {
-                case typeOfNode.Basic:
-                    tempMine.node.name = "BM_" + i;
-                    break;
-                case typeOfNode.Medium:
-                    tempMine.node.name = "MM_" + i;
-                    break;
-                case typeOfNode.Advanced:
-                    tempMine.node.name = "AM_" + i;
-                    break;
-            }
-            tempMine.gameObject.name = tempMine.node.name;
+            string name = type + "_" + i;
+            tempMine.node = new Node(type,name);   
             _mines.Add(tempMine);
         }
     }

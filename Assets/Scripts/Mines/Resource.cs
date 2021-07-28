@@ -17,12 +17,12 @@ public enum typeResource
 public class Resource
 {
     public typeResource type;
-    public int amount;
-    public int totalAmount;
+    public float amount;
+    public float totalAmount;
     public Machine machine;
 
     //Constructores
-    public Resource(typeResource type, int amount)
+    public Resource(typeResource type, float amount)
     {
         this.type = type;
         this.amount = amount;
@@ -31,9 +31,9 @@ public class Resource
     public Resource(typeResource type)
     {
         this.type = type;
-        this.amount = 1000;
-        this.totalAmount = this.amount;
-        /*
+        //this.amount = 1000;
+        //this.totalAmount = this.amount;
+        
         switch (type)
         {
             case typeResource.basicOre1:
@@ -51,7 +51,7 @@ public class Resource
             default:
                 Debug.Log("No existe este recurso");
                 break;
-        }*/
+        }
     }
 
     // metodos propios
@@ -69,7 +69,7 @@ public class Resource
     }
 
     //metodos estaticos
-    public static float CalculateAmountOfResource(Resource resource)
+    /*public static float CalculateAmountOfResource(Resource resource)
     {
         float result = resource.amount / resource.totalAmount;
         return result;
@@ -86,35 +86,34 @@ public class Resource
         }
         result = result / totalResources;
         return result;
-    }
+    }*/
 
     public static List<Resource> SortList(List<Resource> resourcesToSort)
     {
         List<Resource> sorted = new List<Resource>();
-        foreach (var item in resourcesToSort)
+        foreach (var itemToSort in resourcesToSort.ToArray())
         {
             if (sorted.Count > 0)
             {
-                foreach (var item2 in sorted)
+                foreach (var sortedItem in sorted.ToArray())
                 {
-                    if (item.type == item2.type)
+                    if (itemToSort.type == sortedItem.type)
                     {
-                        item2.amount += item.amount;
-                        item2.totalAmount += item.amount;
-                        break;
+                        sortedItem.amount += itemToSort.amount;
+                        sortedItem.totalAmount += itemToSort.amount;
                     }
                     else
                     {
-                        if (item2 == sorted[sorted.Count - 1])
+                        if (sortedItem == sorted[sorted.Count - 1])
                         {
-                            sorted.Add(item);
+                            sorted.Add(itemToSort);
                         }
                     }
                 }
             }
             else
             {
-                sorted.Add(item);
+                sorted.Add(itemToSort);
             }
         }
         return sorted;
@@ -122,9 +121,9 @@ public class Resource
 
     public static List<Resource> SortList(List<Resource> actualResource, List<Resource> resourcesToSort)
     {
-        foreach (var item in actualResource)
+        foreach (var item in actualResource.ToArray())
         {
-            foreach (var item2 in resourcesToSort)
+            foreach (var item2 in resourcesToSort.ToArray())
             {
                 if (item.type == item2.type)
                 {

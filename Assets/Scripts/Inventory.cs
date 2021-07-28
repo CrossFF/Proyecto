@@ -19,7 +19,7 @@ public class Inventory : MonoBehaviour
 
     public void StoreResources(List<Resource> theList)
     {
-        if (resourcesList.Count <= 0)
+        if (resourcesList.Count == 0)
         {
             resourcesList = Resource.SortList(theList);
         }
@@ -34,9 +34,9 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    public int GetAmount(string thing)
+    public float GetAmount(string thing)
     {
-        int amount = 0;
+        float amount = 0;
         foreach (var item in machineList)
         {
             if (item.name.ToString() == thing) amount++;

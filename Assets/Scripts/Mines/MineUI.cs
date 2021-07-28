@@ -11,7 +11,7 @@ public class MineUI : MonoBehaviour
     private List<GameObject> _inactiveMines;
     public GameObject prefabInfoNode, prefabInfoResource;
     public CanvasGroup allUI, activeNodePanel, resourcePanel, conectedNodePanel, inactiveNodePanel;
-    public Transform active,resource,conected,inactive;
+    public Transform active, resource, conected, inactive;
     public MineManager manager;
     public Mine mineSelected;
 
@@ -26,7 +26,7 @@ public class MineUI : MonoBehaviour
 
     void Update()
     {
-
+        
     }
 
     public void ShowMenu(List<Mine> activeMines)

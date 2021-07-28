@@ -44,7 +44,6 @@ public class Machine
                 return null;
             }
         }
-        Debug.Log(resource.amount);
         return extractedResource;
     }
 }

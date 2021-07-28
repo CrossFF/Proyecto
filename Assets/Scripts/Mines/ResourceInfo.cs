@@ -10,7 +10,6 @@ public class ResourceInfo : MonoBehaviour
     public Text resourceName;
     public Image resourceImage;
     public Image machineImage;
-    public Image disponibilidad;
 
     void Update()
     {
@@ -29,8 +28,6 @@ public class ResourceInfo : MonoBehaviour
 
     public void RefreshInfo()
     {
-        disponibilidad.fillAmount = Resource.CalculateAmountOfResource(resource);
-        //disponibilidad.fillAmount = resource.amount / resource.totalAmount;
         if (resource.machine != null)
         {
             var sprite = Resources.Load<Sprite>("Prototype/" + resource.machine.name);

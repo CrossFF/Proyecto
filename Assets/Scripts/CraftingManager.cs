@@ -14,6 +14,7 @@ public class CraftingManager : MonoBehaviour
 
     void Awake()
     {
+        _temps = new List<GameObject>();
         HideMenu();
     }
 
@@ -81,7 +82,6 @@ public class CraftingManager : MonoBehaviour
 
     private void InstantiateBlueprints()
     {
-        _temps = new List<GameObject>();
         List<GameObject> machines = new List<GameObject>();
         List<GameObject> parts = new List<GameObject>();
         List<GameObject> systems = new List<GameObject>();
@@ -117,10 +117,13 @@ public class CraftingManager : MonoBehaviour
 
     private void ClearList()
     {
-        foreach (var item in _temps)
+        if (_temps.Count > 0)
         {
-            Destroy(item);
+            foreach (var item in _temps)
+            {
+                Destroy(item);
+            }
+            _temps.Clear();
         }
-        _temps.Clear();
     }
 }

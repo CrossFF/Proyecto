@@ -122,4 +122,10 @@ public class MineManager : MonoBehaviour
         List<Mine> activeMines = Node.GetActiveNodes(_mines);
         return activeMines;
     }
+
+    public void NewPos(Mine mine)
+    {
+        Vector3 pos = new Vector3(Random.Range(0f, 10f), 0f, Random.Range(0f, 10f));
+        mine.transform.position = pos;
+    }
 }

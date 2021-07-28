@@ -143,7 +143,6 @@ public class BasicMineInfo : MonoBehaviour, IPointerDownHandler, IPointerEnterHa
         for (int i = 0; i < dispo.Count; i++)
         {
             float num = mine.node.resources[i].amount / mine.node.resources[i].totalAmount;
-            Debug.Log(mine.node.resources[i].amount + "/" + mine.node.resources[i].totalAmount + "/" + mine.node.resources[i].amount / mine.node.resources[i].totalAmount);
             dispo[i].fillImage.fillAmount = num;
         }
     }

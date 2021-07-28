@@ -54,4 +54,9 @@ public class Mine : MonoBehaviour
         List<Resource> extractedResources = node.GetResources();
         return extractedResources;
     }
+
+    private void OnCollisionStay(Collision other) 
+    {
+        GameObject.Find("Mine Manager").GetComponent<MineManager>().NewPos(this);
+    }
 }

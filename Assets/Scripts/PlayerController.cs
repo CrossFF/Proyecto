@@ -62,10 +62,7 @@ public class PlayerController : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            SetPrority("player");
-            mineManager.HideMineUI();
-            mechaManager.HideMenu();
-            craftManager.HideMenu();
+            CloseMenus();
         }
     }
 
@@ -138,5 +135,13 @@ public class PlayerController : MonoBehaviour
             interactuar = true;
             interactuable = other.gameObject;
         }
+    }
+
+    public void CloseMenus()
+    {
+        SetPrority("player");
+        mineManager.HideMineUI();
+        mechaManager.HideMenu();
+        craftManager.HideMenu();
     }
 }

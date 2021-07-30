@@ -2861,7 +2861,7 @@ MonoBehaviour:
   amountOfMines: 8
   prefabMine: {fileID: 879703985583986143, guid: b6e6e470aded79c4b89bd7441ea4e465, type: 3}
   ui: {fileID: 858259919}
-  time: 5
+  time: 0.1
   pj: {fileID: 920552269}
   prefabTrail: {fileID: 3454958423632539765, guid: 436698c9fdde74c41b4fc322a441c78a, type: 3}
 --- !u!1 &278437176

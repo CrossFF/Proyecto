@@ -52,6 +52,9 @@ public class CraftingManager : MonoBehaviour
         machineButton.interactable = false;
         mechaButton.interactable = true;
         systemButton.interactable = true;
+        machineMenu.blocksRaycasts = true;
+        mechaMenu.blocksRaycasts = false;
+        systemsMenu.blocksRaycasts = false;
     }
 
     public void ShowMechaMenu()
@@ -65,6 +68,9 @@ public class CraftingManager : MonoBehaviour
         machineButton.interactable = true;
         mechaButton.interactable = false;
         systemButton.interactable = true;
+        machineMenu.blocksRaycasts = false;
+        mechaMenu.blocksRaycasts = true;
+        systemsMenu.blocksRaycasts = false;
     }
 
     public void ShowSystemsMenu()
@@ -78,6 +84,9 @@ public class CraftingManager : MonoBehaviour
         machineButton.interactable = true;
         mechaButton.interactable = true;
         systemButton.interactable = false;
+        machineMenu.blocksRaycasts = false;
+        mechaMenu.blocksRaycasts = false;
+        systemsMenu.blocksRaycasts = true;
     }
 
     private void InstantiateBlueprints()
@@ -138,7 +147,7 @@ public class CraftingManager : MonoBehaviour
         switch (blueprint.blueprintType)
         {
             case BlueprintType.Machine:
-                MachineName name = Machine.GetName(blueprint.blueprintType.ToString());
+                MachineName name = Machine.GetName(blueprint.blueprintName);
                 Machine machine = new Machine(name);
                 inventory.Store(machine);
                 break;

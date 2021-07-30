@@ -28,16 +28,12 @@ public class Inventory : MonoBehaviour
         {
             resourcesList = Resource.SortList(resourcesList, theList);
         }
-        // muestro
-        foreach (var item in resourcesList)
-        {
-            Debug.Log(item.type + "/" + item.amount);
-        }
     }
 
     // guardar maquina
     public void Store(Machine machine)
     {
+        Debug.Log("Maquina :" + machine.name);
         machineList.Add(machine);
         // muestro
         foreach (var item in machineList)
@@ -72,6 +68,7 @@ public class Inventory : MonoBehaviour
 
     public void UseResource(string thing, float amount)
     {
+        Debug.Log("Recurso: " + amount);
         foreach (var item in resourcesList.ToArray())
         {
             if (item.type.ToString() == thing)

@@ -82,12 +82,30 @@ public class Machine
     }
 
     // metodos estaticos
-    public static MachineName GetName(string text)
+    public static MachineName GetName(BlueprintName text)
     {
-        MachineName name = MachineName.Dron_Excavador;
-        if (MachineName.Dron_Excavador.ToString() == text) name = MachineName.Dron_Excavador;
-        if (MachineName.Excavadora.ToString() == text) name = MachineName.Excavadora;
-        if (MachineName.Tuneladora.ToString() == text) name = MachineName.Tuneladora;
+        MachineName name;
+        switch (text)
+        {
+            case BlueprintName.Dron_Excavador:
+                name = MachineName.Dron_Excavador;
+                break;
+            case BlueprintName.Excavadora:
+                name = MachineName.Excavadora;
+                break;
+            case BlueprintName.Excavadora_Avanzada:
+                name = MachineName.Excavadora_Avanzada;
+                break;
+            case BlueprintName.Tuneladora:
+                name = MachineName.Tuneladora;
+                break;
+            case BlueprintName.Dron_Limpiador:
+                name = MachineName.Dron_Limpiador;
+                break;
+            default:
+                name = MachineName.Dron_Excavador;
+                break;
+        }
         return name;
     }
 }

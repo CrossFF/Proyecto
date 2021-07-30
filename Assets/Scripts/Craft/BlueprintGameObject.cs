@@ -10,6 +10,7 @@ public class BlueprintGameObject : MonoBehaviour
     public BlueprintType blueprintType;
     public List<BlueprintIngredients> blueprintIngredients;
     public List<int> ingredientsAmount;
+    private bool _crafteable;
 
     [Header("Referencias")]
     public CraftingManager manager;
@@ -28,18 +29,35 @@ public class BlueprintGameObject : MonoBehaviour
 
     void Update()
     {
-        
+        CraftControl();
+        SetInfo();
+    }
+
+    private void CraftControl()
+    {
+        // verifico si hay suficiente de ese ingrediente en el inventario
+        int num = 0;
+        for (int i = 0; i < blueprintIngredients.Count; i++)
+        {
+            float actual = manager.inventory.GetAmount(blueprintIngredients[i].ToString());
+            if (ingredientsAmount[i] <= actual) num++;
+        }
+        _crafteable = num == blueprintIngredients.Count ? true : false;
+        //activo y descativo boton
+        fabricateButton.interactable = _crafteable ? true : false;
     }
 
     private void SetInfo()
     {
         //instanciar ingredientes
-        foreach (var item in blueprintIngredients)
+        if (_ingredients.Count == 0)
         {
-            GameObject temp = Instantiate(prefabIngredientCraft, ingredientsParent);
-            _ingredients.Add(temp.GetComponent<IngredientGameObject>());
+            foreach (var item in blueprintIngredients)
+            {
+                GameObject temp = Instantiate(prefabIngredientCraft, ingredientsParent);
+                _ingredients.Add(temp.GetComponent<IngredientGameObject>());
+            }
         }
-
         // seteo la info basica del craft
         //nombre
         nameText.text = blueprintName.ToString();
@@ -64,6 +82,7 @@ public class BlueprintGameObject : MonoBehaviour
 
     public void Craft()
     {
-
+        //
+        manager.Craft(this);
     }
 }

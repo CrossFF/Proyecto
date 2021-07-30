@@ -84,7 +84,7 @@ public class MineManager : MonoBehaviour
 
     private void StoreResources(List<Resource> resources)
     {
-        pj.StoreResources(resources);
+        pj.Store(resources);
     }
 
     public void ConectMines(Mine startMine, Mine endMine)

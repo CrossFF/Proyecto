@@ -126,4 +126,28 @@ public class CraftingManager : MonoBehaviour
             _temps.Clear();
         }
     }
+
+    public void Craft(BlueprintGameObject blueprint)
+    {
+        //gasto los recursos necesarios para el crafteo
+        for (int i = 0; i < blueprint.blueprintIngredients.Count; i++)
+        {
+            inventory.UseResource(blueprint.blueprintIngredients[i].ToString(), blueprint.ingredientsAmount[i]);
+        }
+        // creo el objeto necesario y lo guardo en el inventario
+        switch (blueprint.blueprintType)
+        {
+            case BlueprintType.Machine:
+                MachineName name = Machine.GetName(blueprint.blueprintType.ToString());
+                Machine machine = new Machine(name);
+                inventory.Store(machine);
+                break;
+            case BlueprintType.Part:
+
+                break;
+            case BlueprintType.System:
+
+                break;
+        }
+    }
 }

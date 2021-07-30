@@ -17,7 +17,8 @@ public class Inventory : MonoBehaviour
         systemList = new List<SystemMecha>();
     }
 
-    public void StoreResources(List<Resource> theList)
+    // Guardar recursos
+    public void Store(List<Resource> theList)
     {
         if (resourcesList.Count == 0)
         {
@@ -27,10 +28,21 @@ public class Inventory : MonoBehaviour
         {
             resourcesList = Resource.SortList(resourcesList, theList);
         }
-
+        // muestro
         foreach (var item in resourcesList)
         {
             Debug.Log(item.type + "/" + item.amount);
+        }
+    }
+
+    // guardar maquina
+    public void Store(Machine machine)
+    {
+        machineList.Add(machine);
+        // muestro
+        foreach (var item in machineList)
+        {
+            Debug.Log(item.name.ToString());
         }
     }
 
@@ -57,4 +69,16 @@ public class Inventory : MonoBehaviour
         */
         return amount;
     }
+
+    public void UseResource(string thing, float amount)
+    {
+        foreach (var item in resourcesList.ToArray())
+        {
+            if (item.type.ToString() == thing)
+            {
+                item.amount -= amount;
+            }
+        }
+    }
+
 }

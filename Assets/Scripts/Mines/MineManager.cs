@@ -128,4 +128,9 @@ public class MineManager : MonoBehaviour
         Vector3 pos = new Vector3(Random.Range(0f, 10f), 0f, Random.Range(0f, 10f));
         mine.transform.position = pos;
     }
+
+    public void ShowMine(Mine mine)
+    {
+        ui.ShowMine(mine);
+    }
 }

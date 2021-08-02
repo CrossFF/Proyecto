@@ -80,6 +80,13 @@ public class MineUI : MonoBehaviour
         ShowMenu();
     }
 
+    public void ShowMine(Mine mine)
+    {
+        mineSelected = mine;
+        ShowActivesMines(manager.GetActiveMines());
+        SeeMine(mine);
+    }
+
     private void ClearLists(string type)
     {
         switch (type)

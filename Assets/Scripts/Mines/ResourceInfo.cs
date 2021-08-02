@@ -37,11 +37,12 @@ public class ResourceInfo : MonoBehaviour
 
     public void SetMachine()
     {
+        /*
         Machine machine = new Machine();
         if (resource.machine == null)
         {
             resource.machine = machine;
         }
-        RefreshInfo();
+        RefreshInfo();*/
     }
 }

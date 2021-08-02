@@ -69,25 +69,6 @@ public class Resource
     }
 
     //metodos estaticos
-    /*public static float CalculateAmountOfResource(Resource resource)
-    {
-        float result = resource.amount / resource.totalAmount;
-        return result;
-    }
-
-    public static float CalculateAmoutOfResource(Mine mine)
-    {
-        float result = 0f;
-        int totalResources = 0;
-        foreach (var item in mine.node.resources)
-        {
-            result += item.amount;
-            totalResources += item.totalAmount;
-        }
-        result = result / totalResources;
-        return result;
-    }*/
-
     public static List<Resource> SortList(List<Resource> resourcesToSort)
     {
         List<Resource> sorted = new List<Resource>();

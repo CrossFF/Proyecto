@@ -59,4 +59,20 @@ public class Mine : MonoBehaviour
     {
         GameObject.Find("Mine Manager").GetComponent<MineManager>().NewPos(this);
     }
+
+    void OnMouseEnter()
+    {
+        // resalto la mina
+        outline.enabled = true;
+    }
+    void OnMouseExit()
+    {
+        // dejo de resaltar la mina
+        outline.enabled = false;
+    }
+    void OnMouseDown()
+    { 
+        // le pido al managger que muestre la info de la mina
+        GameObject.Find("Mine Manager").GetComponent<MineManager>().ShowMine(this);
+    }
 }

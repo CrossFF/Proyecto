@@ -26,7 +26,7 @@ public class MineUI : MonoBehaviour
 
     void Update()
     {
-        
+
     }
 
     public void ShowMenu(List<Mine> activeMines)

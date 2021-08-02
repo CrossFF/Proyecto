@@ -34,7 +34,11 @@ public class Mine : MonoBehaviour
 
     void Update()
     {
-        /*
+        ActivityControl();
+    }
+
+    private void ActivityControl()
+    {
         if (node.active && !node.blocked)
         {
 
@@ -46,7 +50,7 @@ public class Mine : MonoBehaviour
         if (!node.active)
         {
 
-        }*/
+        }
     }
 
     public List<Resource> GetResources()
@@ -55,7 +59,7 @@ public class Mine : MonoBehaviour
         return extractedResources;
     }
 
-    private void OnCollisionStay(Collision other) 
+    private void OnCollisionStay(Collision other)
     {
         GameObject.Find("Mine Manager").GetComponent<MineManager>().NewPos(this);
     }
@@ -71,7 +75,7 @@ public class Mine : MonoBehaviour
         outline.enabled = false;
     }
     void OnMouseDown()
-    { 
+    {
         // le pido al managger que muestre la info de la mina
         GameObject.Find("Mine Manager").GetComponent<MineManager>().ShowMine(this);
     }

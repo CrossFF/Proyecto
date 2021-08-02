@@ -4,35 +4,36 @@ using UnityEngine;
 
 public class MineManager : MonoBehaviour
 {
-    private List<Mine> _mines;
-    public int amountOfMines;
-    public GameObject prefabMine;
-    public MineUI ui;
+    [Header("Parametros")]
+    public int amountOfMines;// cantidad de minas a instanciar
+    public float timeCycle;// tiempo entre ciclo de recoleccion
 
-    //recoleccion de recursos
-    public float time;
-    private float cronometro;
-    public Inventory pj;
+    [Header("Referencias")]
+    public GameObject prefabMine;// prefab de la mina
+    //public MineUI ui;// referencia a la UI de las minas
+    public NewMineUI ui;// referencia a la UI de las minas
+    public Inventory pj;// referencia al inventario del jugador
+    public GameObject prefabTrail;// prefab del Line Renderer que hace de camino entre mina y mina
 
-    //caminos entre nodos
-    public GameObject prefabTrail;
+    // variables privadas
+    private List<Mine> _mines;// refrencia a las minas instanciadas   
+    private float _cronometro;// coronometro para control de ciclo   
 
     void Start()
     {
         _mines = new List<Mine>();
-
+        //calculo la cantidad de cada tipo de mina que va a existir
         int basicMines = (50 * amountOfMines) / 100;
         int medumMines = (30 * amountOfMines) / 100;
         int advancedMines = (20 * amountOfMines) / 100;
-
+        // instancio las minas segun su tipo
         InstantiateMine(basicMines, TypeOfNode.Basic);
         InstantiateMine(medumMines, TypeOfNode.Medium);
         InstantiateMine(advancedMines, TypeOfNode.Advanced);
-
+        // activo la primera mina
         _mines[0].node.active = true;
-
-        // cronometro
-        cronometro = time;
+        // seteo el cronometro
+        _cronometro = timeCycle;
     }
 
     void Update()
@@ -42,25 +43,27 @@ public class MineManager : MonoBehaviour
 
     private void InstantiateMine(int amount, TypeOfNode type)
     {
+        // por cada objeto a instanciar:
         for (int i = 0; i < amount; i++)
         {
             Vector3 pos = new Vector3(Random.Range(0f, 10f), 0f, Random.Range(0f, 10f));
-            GameObject temp  = Instantiate(prefabMine, pos, Quaternion.identity);
+            GameObject temp = Instantiate(prefabMine, pos, Quaternion.identity);
             Mine tempMine = temp.GetComponent<Mine>();
             string name = type + "_" + i;
-            tempMine.node = new Node(type,name);   
+            tempMine.node = new Node(type, name);
             _mines.Add(tempMine);
         }
     }
 
     private void ResourceControl()
     {
-        cronometro -= Time.deltaTime;
-        if (cronometro <= 0f)
+        _cronometro -= Time.deltaTime;
+        if (_cronometro <= 0f)
         {
             //extraigo recursos de la minas activas
             List<Mine> activeMines = Node.GetActiveNodes(_mines);
             List<Resource> extractedResources = new List<Resource>();
+            // si la cantidad de minas activas es distinta de 0
             if (activeMines.Count != 0)
             {
                 foreach (var item in activeMines)
@@ -78,7 +81,7 @@ public class MineManager : MonoBehaviour
             //guardo los recursos el inventario
             StoreResources(extractedResources);
             // reseteo cronometro
-            cronometro = time;
+            _cronometro = timeCycle;
         }
     }
 
@@ -102,8 +105,9 @@ public class MineManager : MonoBehaviour
 
     public void ActivateMineUI()
     {
-        List<Mine> activeMines = Node.GetActiveNodes(_mines);
-        ui.ShowMenu(activeMines);
+        //List<Mine> activeMines = Node.GetActiveNodes(_mines);
+        //ui.ShowMenu(activeMines);
+        ui.ShowMenu();
     }
 
     public void HideMineUI()

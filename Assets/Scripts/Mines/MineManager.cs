@@ -31,7 +31,7 @@ public class MineManager : MonoBehaviour
         InstantiateMine(medumMines, TypeOfNode.Medium);
         InstantiateMine(advancedMines, TypeOfNode.Advanced);
         // activo la primera mina
-        _mines[0].node.active = true;
+        _mines[0].node.status = StatusNode.Active;
         // seteo el cronometro
         _cronometro = timeCycle;
     }
@@ -95,7 +95,7 @@ public class MineManager : MonoBehaviour
         //agrego la mina al camino de la primera
         startMine.node.trails.Add(endMine);
         //activo la mina a conectar
-        endMine.node.active = true;
+        endMine.node.status = StatusNode.Active;
         //instancio una linea
         GameObject temp = Instantiate(prefabTrail, Vector3.zero, Quaternion.identity);
         LineRenderer line = temp.GetComponent<LineRenderer>();

@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 2799369661294387601}
   - component: {fileID: 2249642819157124340}
   m_Layer: 5
-  m_Name: Disponibilidad Recurso
+  m_Name: Prefab Recurso
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -116,7 +116,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 90.0301, y: -2.7003}
+  m_AnchoredPosition: {x: 90.03009, y: -2.7003174}
   m_SizeDelta: {x: 317.2772, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1410836181487412579
@@ -169,7 +169,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 381f35ae9dbd2494f886e9ab0bb60461, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fillImage: {fileID: 0}
+  fillImage: {fileID: 3252887915462788894}
+  nombreRecurso: {fileID: 6044702555821437284}
+  nombreMaquina: {fileID: 2825486133993281280}
+  imageRecurso: {fileID: 136292542504266704}
+  imageMachine: {fileID: 4230523252014583233}
 --- !u!1 &414963453616327529
 GameObject:
   m_ObjectHideFlags: 0

@@ -67,7 +67,7 @@ public class BasicMineInfo : MonoBehaviour, IPointerDownHandler, IPointerEnterHa
         mine = theMine;
         ui = theUI;
         nameMine.text = mine.node.name;
-        if (mine.node.active && !mine.node.blocked)
+        /*if (mine.node.active && !mine.node.blocked)
         {
             var sprite = Resources.Load<Sprite>("Prototype/Active");
             estadoMina.sprite = sprite;
@@ -81,7 +81,7 @@ public class BasicMineInfo : MonoBehaviour, IPointerDownHandler, IPointerEnterHa
         {
             var sprite = Resources.Load<Sprite>("Prototype/Blocked");
             estadoMina.sprite = sprite;
-        }
+        }*/
 
         SetDispo();
     }
@@ -106,7 +106,7 @@ public class BasicMineInfo : MonoBehaviour, IPointerDownHandler, IPointerEnterHa
             fondo.color = colorNoSelected;
         }
 
-        if (mine.node.active && !mine.node.blocked)
+        /*if (mine.node.active && !mine.node.blocked)
         {
             var sprite = Resources.Load<Sprite>("Prototype/Active");
             estadoMina.sprite = sprite;
@@ -120,7 +120,7 @@ public class BasicMineInfo : MonoBehaviour, IPointerDownHandler, IPointerEnterHa
         {
             var sprite = Resources.Load<Sprite>("Prototype/Blocked");
             estadoMina.sprite = sprite;
-        }
+        }*/
 
         SetDispo();
     }

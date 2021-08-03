@@ -8,22 +8,30 @@ public enum TypeOfNode
     Medium,
     Advanced
 }
+
+public enum StatusNode
+{
+    Active,
+    Inactive,
+    Blocked,
+    Working,
+    Empty
+}
+
 public class Node
 {
     public TypeOfNode type;
     public string name;
     public List<Resource> resources;
     public List<Mine> trails;
-    public bool active;
-    public bool blocked;
+    public StatusNode status;
 
     // Constructores
     public Node(TypeOfNode type, string name)
     {
         this.type = type;
         this.name = name;
-        this.active = false;
-        this.blocked = false;
+        this.status = StatusNode.Inactive;
 
         switch (type)
         {
@@ -75,7 +83,7 @@ public class Node
         List<Mine> activeMines = new List<Mine>();
         foreach (var item in mines)
         {
-            if (item.node.active)
+            if (item.node.status == StatusNode.Active)
             {
                 activeMines.Add(item);
             }
@@ -88,7 +96,7 @@ public class Node
         List<Mine> inactiveMines = new List<Mine>();
         foreach (var item in mines)
         {
-            if (!item.node.active)
+            if (item.node.status == StatusNode.Inactive)
             {
                 inactiveMines.Add(item);
             }

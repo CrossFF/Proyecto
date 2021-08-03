@@ -39,17 +39,18 @@ public class Mine : MonoBehaviour
 
     private void ActivityControl()
     {
-        if (node.active && !node.blocked)
+        switch (node.status)
         {
-
-        }
-        if (node.active && node.blocked)
-        {
-
-        }
-        if (!node.active)
-        {
-
+            case StatusNode.Active:
+                break;
+            case StatusNode.Inactive:
+                break;
+            case StatusNode.Blocked:
+                break;
+            case StatusNode.Working:
+                break;
+            case StatusNode.Empty:
+                break;
         }
     }
 

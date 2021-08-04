@@ -77,30 +77,22 @@ public class Node
         return extractedResources;
     }
 
-    // metodos estaticos 
-    public static List<Mine> GetActiveNodes(List<Mine> mines)
+    public void SetMachine(Machine machine, int indexResource)
     {
-        List<Mine> activeMines = new List<Mine>();
-        foreach (var item in mines)
-        {
-            if (item.node.status == StatusNode.Active)
-            {
-                activeMines.Add(item);
-            }
-        }
-        return activeMines;
+        this.resources[indexResource].SetMachine(machine);
     }
 
-    public static List<Mine> GetInactiveNodes(List<Mine> mines)
+    // metodos estaticos 
+    public static List<Mine> GetTypeNodes(List<Mine> mines, StatusNode type)
     {
-        List<Mine> inactiveMines = new List<Mine>();
+        List<Mine> theMines = new List<Mine>();
         foreach (var item in mines)
         {
-            if (item.node.status == StatusNode.Inactive)
+            if (item.node.status == type)
             {
-                inactiveMines.Add(item);
+                theMines.Add(item);
             }
         }
-        return inactiveMines;
+        return theMines;
     }
 }

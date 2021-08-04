@@ -7,9 +7,11 @@ public class Mine : MonoBehaviour
     public Node node;
     public Outline outline;
     public GameObject basic, medium, advansed;
+    private MineManager manager;
 
     void Start()
     {
+        manager = GameObject.Find("Mine Manager").GetComponent<MineManager>();
         node.trails = new List<Mine>();
         outline.enabled = false;
         switch (node.type)
@@ -62,7 +64,7 @@ public class Mine : MonoBehaviour
 
     private void OnCollisionStay(Collision other)
     {
-        GameObject.Find("Mine Manager").GetComponent<MineManager>().NewPos(this);
+        manager.NewPos(this);
     }
 
     void OnMouseEnter()
@@ -77,7 +79,11 @@ public class Mine : MonoBehaviour
     }
     void OnMouseDown()
     {
-        // le pido al managger que muestre la info de la mina
-        GameObject.Find("Mine Manager").GetComponent<MineManager>().ShowMine(this);
+        //si el menu no se enceuntra desplegado
+        if (manager.ui.infoMine.alpha == 0)
+        {
+            // le pido al managger que muestre la info de la mina
+            manager.ShowMine(this);
+        }
     }
 }

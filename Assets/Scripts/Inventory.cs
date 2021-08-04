@@ -9,12 +9,14 @@ public class Inventory : MonoBehaviour
     List<SystemMecha> systemList;
     List<PartMecha> partsList;
 
-    void Start()
+    void Awake()
     {
         resourcesList = new List<Resource>();
         machineList = new List<Machine>();
         partsList = new List<PartMecha>();
         systemList = new List<SystemMecha>();
+        Machine primerMaquina = new Machine(MachineName.Dron_Excavador);
+        Store(primerMaquina);
     }
 
     // Guardar recursos
@@ -33,13 +35,7 @@ public class Inventory : MonoBehaviour
     // guardar maquina
     public void Store(Machine machine)
     {
-        Debug.Log("Maquina :" + machine.name);
         machineList.Add(machine);
-        // muestro
-        foreach (var item in machineList)
-        {
-            Debug.Log(item.name.ToString());
-        }
     }
 
     public float GetAmount(string thing)
@@ -68,7 +64,6 @@ public class Inventory : MonoBehaviour
 
     public void UseResource(string thing, float amount)
     {
-        Debug.Log("Recurso: " + amount);
         foreach (var item in resourcesList.ToArray())
         {
             if (item.type.ToString() == thing)
@@ -76,6 +71,24 @@ public class Inventory : MonoBehaviour
                 item.amount -= amount;
             }
         }
+    }
+
+    public void UseMachine(Machine machine)
+    {
+        List<Machine> machinesTemp = machineList;
+        for (int i = 0; i < machineList.Count; i++)
+        {
+            if (machineList[i] == machine)
+            {
+                machinesTemp.Remove(machine);
+            }
+        }
+        machineList = machinesTemp;
+    }
+
+    public List<Machine> GetMachines()
+    {
+        return machineList;
     }
 
 }

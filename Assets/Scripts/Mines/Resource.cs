@@ -33,7 +33,7 @@ public class Resource
         this.type = type;
         //this.amount = 1000;
         //this.totalAmount = this.amount;
-        
+
         switch (type)
         {
             case typeResource.basicOre1:
@@ -66,6 +66,11 @@ public class Resource
             return null;
         }
 
+    }
+
+    public void SetMachine(Machine machine)
+    {
+        this.machine = machine;
     }
 
     //metodos estaticos

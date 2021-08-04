@@ -29,7 +29,7 @@ public class MineUI : MonoBehaviour
 
     }
 
-    public void ShowMenu(List<Mine> activeMines)
+    /*public void ShowMenu(List<Mine> activeMines)
     {
         allUI.alpha = 1f;
         allUI.interactable = true;
@@ -44,7 +44,7 @@ public class MineUI : MonoBehaviour
         allUI.interactable = true;
         allUI.blocksRaycasts = true;
         ShowActivesMines(manager.GetActiveMines());
-    }
+    }*/
 
     public void HideMenu()
     {
@@ -60,7 +60,7 @@ public class MineUI : MonoBehaviour
         conectedNodePanel.alpha = 0f;
         inactiveNodePanel.alpha = 0f;
     }
-
+/*
     public void SeeMine(Mine mine)
     {
         mineSelected = mine;
@@ -85,7 +85,7 @@ public class MineUI : MonoBehaviour
         mineSelected = mine;
         ShowActivesMines(manager.GetActiveMines());
         SeeMine(mine);
-    }
+    }*/
 
     private void ClearLists(string type)
     {
@@ -136,7 +136,7 @@ public class MineUI : MonoBehaviour
         }
     }
 
-    private void ShowActivesMines(List<Mine> activeMines)
+    /*private void ShowActivesMines(List<Mine> activeMines)
     {
         ClearLists("active");
         activeNodePanel.alpha = 1f;
@@ -168,7 +168,7 @@ public class MineUI : MonoBehaviour
         List<Mine> inactiveMines = manager.GetInactiveMines();
         inactiveNodePanel.alpha = 1f;
         _inactiveMines = InstantiatePrefab(inactiveMines, inactive);
-    }
+    }*/
 
     private List<GameObject> InstantiatePrefab(List<Mine> mines, Transform parent)
     {

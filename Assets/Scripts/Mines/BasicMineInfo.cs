@@ -27,7 +27,7 @@ public class BasicMineInfo : MonoBehaviour, IPointerDownHandler, IPointerEnterHa
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        switch (transform.parent.parent.parent.name)
+       /* switch (transform.parent.parent.parent.name)
         {
             case "Panel de Minas Activas":
                 selected = true;
@@ -43,7 +43,7 @@ public class BasicMineInfo : MonoBehaviour, IPointerDownHandler, IPointerEnterHa
             default:
                 break;
         }
-
+*/
     }
 
     public void OnPointerEnter(PointerEventData eventData)

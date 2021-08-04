@@ -60,8 +60,8 @@ public class MineManager : MonoBehaviour
         _cronometro -= Time.deltaTime;
         if (_cronometro <= 0f)
         {
-            //extraigo recursos de la minas activas
-            List<Mine> activeMines = Node.GetActiveNodes(_mines);
+            //extraigo recursos de la minas que estan trabajando
+            List<Mine> activeMines = Node.GetTypeNodes(_mines, StatusNode.Working);
             List<Resource> extractedResources = new List<Resource>();
             // si la cantidad de minas activas es distinta de 0
             if (activeMines.Count != 0)
@@ -115,17 +115,17 @@ public class MineManager : MonoBehaviour
         ui.HideMenu();
     }
 
-    public List<Mine> GetInactiveMines()
+    /*public List<Mine> GetInactiveMines()
     {
-        List<Mine> inactiveMines = Node.GetInactiveNodes(_mines);
+        List<Mine> inactiveMines = Node.GetTypeNodes(_mines, StatusNode.Inactive);
         return inactiveMines;
     }
 
     public List<Mine> GetActiveMines()
     {
-        List<Mine> activeMines = Node.GetActiveNodes(_mines);
+        List<Mine> activeMines = Node.GetTypeNodes(_mines, StatusNode.Active);
         return activeMines;
-    }
+    }*/
 
     public void NewPos(Mine mine)
     {
@@ -135,6 +135,33 @@ public class MineManager : MonoBehaviour
 
     public void ShowMine(Mine mine)
     {
+        ui.ShowMine(mine);
+    }
+
+    public List<Machine> GetMachines()
+    {
+        List<Machine> machines = pj.GetMachines();
+        return machines;
+    }
+
+    public void InstallMachine(Machine machine, Mine mine, int indexResource)
+    {
+        // si el nodo esta activo
+        if (mine.node.status == StatusNode.Active || mine.node.status == StatusNode.Working)
+        {
+            // si el recurso ya tiene alguna maquina
+            if (mine.node.resources[indexResource].machine == null)
+            {
+                // instalo la maquina en el recurso correspondiente
+                mine.node.SetMachine(machine, indexResource);
+                // elimino la maquina del inventario
+                pj.UseMachine(machine);
+                // si la mina no tenia el esatdo de trabajando le cambio el estado
+                if(mine.node.status == StatusNode.Active) mine.node.status = StatusNode.Working;
+            }
+        }
+        // refresco la UI de la mina
+        ui.HideMine();
         ui.ShowMine(mine);
     }
 }

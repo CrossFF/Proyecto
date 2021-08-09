@@ -18,6 +18,7 @@ public class MineManager : MonoBehaviour
     // variables privadas
     private List<Mine> _mines;// refrencia a las minas instanciadas   
     private float _cronometro;// coronometro para control de ciclo   
+    private bool conectingMines = false; // para saber si estoy conectando minas
 
     void Start()
     {
@@ -92,21 +93,27 @@ public class MineManager : MonoBehaviour
 
     public void ConectMines(Mine startMine, Mine endMine)
     {
-        //agrego la mina al camino de la primera
-        startMine.node.trails.Add(endMine);
-        //activo la mina a conectar
-        endMine.node.status = StatusNode.Active;
-        //instancio una linea
-        GameObject temp = Instantiate(prefabTrail, Vector3.zero, Quaternion.identity);
-        LineRenderer line = temp.GetComponent<LineRenderer>();
-        line.SetPosition(0, startMine.transform.position);
-        line.SetPosition(1, endMine.transform.position);
+        
+        // verifico que el inicio y el final no sean el mismo
+        if (startMine != endMine)
+        {
+            //agrego la mina al camino de la primera
+            startMine.node.trails.Add(endMine);
+            //activo la mina a conectar
+            endMine.node.status = StatusNode.Active;
+            //instancio una linea
+            GameObject temp = Instantiate(prefabTrail, Vector3.zero, Quaternion.identity);
+            LineRenderer line = temp.GetComponent<LineRenderer>();
+            line.SetPosition(0, startMine.transform.position);
+            line.SetPosition(1, endMine.transform.position);
+            //termino la accion
+            conectingMines = false;
+            //ShowMine(endMine);
+        }
     }
 
     public void ActivateMineUI()
     {
-        //List<Mine> activeMines = Node.GetActiveNodes(_mines);
-        //ui.ShowMenu(activeMines);
         ui.ShowMenu();
     }
 
@@ -114,18 +121,6 @@ public class MineManager : MonoBehaviour
     {
         ui.HideMenu();
     }
-
-    /*public List<Mine> GetInactiveMines()
-    {
-        List<Mine> inactiveMines = Node.GetTypeNodes(_mines, StatusNode.Inactive);
-        return inactiveMines;
-    }
-
-    public List<Mine> GetActiveMines()
-    {
-        List<Mine> activeMines = Node.GetTypeNodes(_mines, StatusNode.Active);
-        return activeMines;
-    }*/
 
     public void NewPos(Mine mine)
     {
@@ -157,11 +152,21 @@ public class MineManager : MonoBehaviour
                 // elimino la maquina del inventario
                 pj.UseMachine(machine);
                 // si la mina no tenia el esatdo de trabajando le cambio el estado
-                if(mine.node.status == StatusNode.Active) mine.node.status = StatusNode.Working;
+                if (mine.node.status == StatusNode.Active) mine.node.status = StatusNode.Working;
             }
         }
         // refresco la UI de la mina
         ui.HideMine();
         ui.ShowMine(mine);
+    }
+
+    public bool IsConecting()
+    {
+        return conectingMines;
+    }
+
+    public void StartConecting()
+    {
+        conectingMines = true;
     }
 }

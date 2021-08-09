@@ -26,13 +26,6 @@ public class Machine
     public int amountPerCycle;
 
     //Constructores
-    public Machine()
-    {
-        this.name = MachineName.Excavadora;
-        this.description = "Extrae 10 de mineral";
-        this.amountPerCycle = 10;
-    }
-
     public Machine(MachineName name)
     {
         // nombre de la maquina
@@ -46,13 +39,23 @@ public class Machine
                 break;
             case MachineName.Excavadora:
                 this.function = MachineFunction.Extraer;
-                this.amountPerCycle = 110;
+                this.amountPerCycle = 10;
                 this.description = "Extrae 10 de mineral";
+                break;
+            case MachineName.Excavadora_Avanzada:
+                this.function = MachineFunction.Extraer;
+                this.amountPerCycle = 20;
+                this.description = "Extrae 20 de mineral";
                 break;
             case MachineName.Tuneladora:
                 this.function = MachineFunction.Conectar;
                 this.amountPerCycle = 0;
                 this.description = "Permite conectar minas";
+                break;
+            case MachineName.Dron_Limpiador:
+                this.function = MachineFunction.Limpiar;
+                this.amountPerCycle = 0;
+                this.description = "Permite desbloquear una mina bloqueada";
                 break;
         }
     }

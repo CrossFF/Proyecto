@@ -44,14 +44,19 @@ public class Mine : MonoBehaviour
         switch (node.status)
         {
             case StatusNode.Active:
+                outline.OutlineColor = Color.cyan;
                 break;
             case StatusNode.Inactive:
+                outline.OutlineColor = Color.yellow;
                 break;
             case StatusNode.Blocked:
+                outline.OutlineColor = Color.red;
                 break;
             case StatusNode.Working:
+                outline.OutlineColor = Color.green;
                 break;
             case StatusNode.Empty:
+                outline.OutlineColor = Color.gray;
                 break;
         }
     }
@@ -70,7 +75,15 @@ public class Mine : MonoBehaviour
     void OnMouseEnter()
     {
         // resalto la mina
-        outline.enabled = true;
+        if (manager.ui.infoMine.alpha == 0)
+        {
+            outline.enabled = true;
+        }
+        else
+        {
+            outline.enabled = false;
+        }
+
     }
     void OnMouseExit()
     {
@@ -79,11 +92,16 @@ public class Mine : MonoBehaviour
     }
     void OnMouseDown()
     {
-        //si el menu no se enceuntra desplegado
-        if (manager.ui.infoMine.alpha == 0)
+        //si el menu no se enceuntra desplegado y no estoy conectando minas
+        if (manager.ui.infoMine.alpha == 0 && !manager.IsConecting())
         {
             // le pido al managger que muestre la info de la mina
             manager.ShowMine(this);
+        }
+        // si estoy conectando minas conecto esa mina
+        if (manager.IsConecting())
+        {
+            manager.ConectMines(manager.ui.GetMine(), this);
         }
     }
 }

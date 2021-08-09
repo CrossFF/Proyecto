@@ -12,19 +12,22 @@ public class NewMineUI : MonoBehaviour
     public Text nameText;
     public Text statusText;
     public Text conectionsText;
+    public Button conectionButton;
     public GameObject prefabResource; // info basica del recurso
     public Transform parentResource;
     public GameObject prefabInventory; // prefab del objeto en inventario
     public Transform parentInventory;
+
+    // variables privadas
     private Mine _mine;
     private List<DispoResource> _resources;
     private List<InventoryObject> _invetory;
-    public bool conectingMines = false; // para saber si estoy conectando minas
 
     void Awake()
     {
         _resources = new List<DispoResource>();
         _invetory = new List<InventoryObject>();
+        HideMenu();
     }
 
     void Update()
@@ -68,6 +71,16 @@ public class NewMineUI : MonoBehaviour
         InstanciarInventario();
         //seteo la info de los recursos
         SetInfoResources();
+        // limito acciones
+        // si la mina no esat activa o trabajando no se puede usar el boton de conectar minas
+        if (_mine.node.status == StatusNode.Inactive || _mine.node.status == StatusNode.Blocked || _mine.node.status == StatusNode.Empty)
+        {
+            conectionButton.interactable = false;
+        }
+        else
+        {
+            conectionButton.interactable = true;
+        }
     }
 
     private void SetInfoResources()
@@ -122,7 +135,10 @@ public class NewMineUI : MonoBehaviour
         {
             foreach (var item in machines)
             {
-                _invetory.Add(Instantiate(prefabInventory, parentInventory).GetComponent<InventoryObject>());
+                if(item.function == MachineFunction.Extraer)
+                {
+                    _invetory.Add(Instantiate(prefabInventory, parentInventory).GetComponent<InventoryObject>());
+                }     
             }
             // seteo la info
             for (int i = 0; i < _invetory.Count; i++)
@@ -150,6 +166,12 @@ public class NewMineUI : MonoBehaviour
 
     public void ConectMines()
     {
+        HideMine();
+        manager.StartConecting();
+    }
 
+    public Mine GetMine()
+    {
+        return _mine;
     }
 }

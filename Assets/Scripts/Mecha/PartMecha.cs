@@ -2,18 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum PartName
-{
-    Cabina,
-    Brazo_Derecho,
-    Brazo_Izquierdo,
-    Pierna_Izquierda,
-    Pierna_Derecha
-}
-
 public class PartMecha
 {
     public PartName name;
+    public PartPosition position;
     public float atack;
     public float defense;
     public List<SystemMecha> systems;
@@ -26,26 +18,31 @@ public class PartMecha
         switch (name)
         {
             case PartName.Cabina:
+                this.position = PartPosition.Cabina;
                 this.atack = 0f;
                 this.defense = 10f;
                 this.systemCapacity = 3;
                 break;
             case PartName.Brazo_Derecho:
+                this.position = PartPosition.Brazo_Derecho;
                 this.atack = 10f;
                 this.defense = 10f;
                 this.systemCapacity = 3;
                 break;
             case PartName.Brazo_Izquierdo:
+                this.position = PartPosition.Brazo_Izquierdo;
                 this.atack = 10f;
                 this.defense = 10f;
                 this.systemCapacity = 3;
                 break;
             case PartName.Pierna_Derecha:
+                this.position = PartPosition.Pierna_Derecha;
                 this.atack = 10f;
                 this.defense = 10f;
                 this.systemCapacity = 3;
                 break;
             case PartName.Pierna_Izquierda:
+                this.position = PartPosition.Pierna_Izquierda;
                 this.atack = 10f;
                 this.defense = 10f;
                 this.systemCapacity = 3;

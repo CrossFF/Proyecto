@@ -104,27 +104,4 @@ public class Resource
         }
         return sorted;
     }
-
-    public static List<Resource> SortList(List<Resource> actualResource, List<Resource> resourcesToSort)
-    {
-        foreach (var item in actualResource.ToArray())
-        {
-            foreach (var item2 in resourcesToSort.ToArray())
-            {
-                if (item.type == item2.type)
-                {
-                    item.amount += item2.amount;
-                    item.totalAmount += item2.amount;
-                }
-                else
-                {
-                    if (item == actualResource[actualResource.Count - 1])
-                    {
-                        actualResource.Add(item2);
-                    }
-                }
-            }
-        }
-        return actualResource;
-    }
 }

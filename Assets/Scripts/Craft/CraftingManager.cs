@@ -147,12 +147,12 @@ public class CraftingManager : MonoBehaviour
         switch (blueprint.blueprintType)
         {
             case BlueprintType.Machine:
-                MachineName name = Machine.GetName(blueprint.blueprintName);
-                Machine machine = new Machine(name);
+                Machine machine = new Machine(Machine.GetName(blueprint.blueprintName));
                 inventory.Store(machine);
                 break;
             case BlueprintType.Part:
-
+                PartMecha part = new PartMecha(PartMecha.GetName(blueprint.blueprintName));
+                inventory.Store(part);
                 break;
             case BlueprintType.System:
 

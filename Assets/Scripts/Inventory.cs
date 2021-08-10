@@ -22,20 +22,23 @@ public class Inventory : MonoBehaviour
     // Guardar recursos
     public void Store(List<Resource> theList)
     {
-        if (resourcesList.Count == 0)
+        foreach (var item in theList)
         {
-            resourcesList = Resource.SortList(theList);
+            resourcesList.Add(item);
         }
-        else
-        {
-            resourcesList = Resource.SortList(resourcesList, theList);
-        }
+        resourcesList = Resource.SortList(resourcesList);
     }
 
     // guardar maquina
     public void Store(Machine machine)
     {
         machineList.Add(machine);
+    }
+
+    // guardar parte
+    public void Store(PartMecha part)
+    {
+        partsList.Add(part);
     }
 
     public float GetAmount(string thing)
@@ -49,16 +52,17 @@ public class Inventory : MonoBehaviour
         {
             if (item.type.ToString() == thing) amount += item.amount;
         }
-        /*
+        
         foreach (var item in partsList)
         {
-            if (item.type.ToString() == thing) amount++;
+            if (item.name.ToString() == thing) amount++;
         }
+        /*
         foreach (var item in systemList)
         {
             if (item.type.ToString() == thing) amount++;
-        }
-        */
+        }*/
+        
         return amount;
     }
 

@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
     private GameObject interactuable;
     public CinemachineVirtualCamera playerCam, mineCam, mechaCam, craftingCam;
     public MineManager mineManager;
-    public MechaUI mechaManager;
+    public MechaManager mechaManager;
     public CraftingManager craftManager;
 
     void Start()

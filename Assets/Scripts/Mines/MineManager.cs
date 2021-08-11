@@ -93,7 +93,7 @@ public class MineManager : MonoBehaviour
 
     public void ConectMines(Mine startMine, Mine endMine)
     {
-        
+
         // verifico que el inicio y el final no sean el mismo
         if (startMine != endMine)
         {

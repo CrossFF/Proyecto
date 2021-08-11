@@ -5,6 +5,9 @@ using UnityEngine.EventSystems;
 
 public class PartGameObject : MonoBehaviour
 {
+    [Header("Parametros")]
+    [SerializeField] private PartPosition position;
+
     [Header("Referencias")]
     [SerializeField] private List<Renderer> _mallas;
     [SerializeField] private Outline _outline;
@@ -31,6 +34,38 @@ public class PartGameObject : MonoBehaviour
         {
             item.material = material;
         }
+    }
+
+    // verifico si se puede equipar la parte
+    public bool Equippable(PartMecha part)
+    {
+        if (part.position == position)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    // equipo la parte
+    public void SetPart(PartMecha part)
+    {
+        if (_part != null)
+        {
+            // cambio la parte equipada por la nueva
+            manager.Store(_part);
+            _part = part;
+            manager.UsePart(part);
+        }
+        else
+        {
+            // instalo la parte
+            _part = part;
+            manager.UsePart(part);
+        }
+        manager.ShowMenu();
     }
 
     void OnMouseEnter()

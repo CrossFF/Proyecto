@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
-    List<Resource> resourcesList;
-    List<Machine> machineList;
-    List<SystemMecha> systemList;
-    List<PartMecha> partsList;
+    private List<Resource> _resourcesList;
+    private List<Machine> _machineList;
+    private List<SystemMecha> _systemList;
+    private List<PartMecha> _partsList;
 
     void Awake()
     {
-        resourcesList = new List<Resource>();
-        machineList = new List<Machine>();
-        partsList = new List<PartMecha>();
-        systemList = new List<SystemMecha>();
+        _resourcesList = new List<Resource>();
+        _machineList = new List<Machine>();
+        _partsList = new List<PartMecha>();
+        _systemList = new List<SystemMecha>();
         Machine primerMaquina = new Machine(MachineName.Dron_Excavador);
         Store(primerMaquina);
     }
@@ -24,36 +24,36 @@ public class Inventory : MonoBehaviour
     {
         foreach (var item in theList)
         {
-            resourcesList.Add(item);
+            _resourcesList.Add(item);
         }
-        resourcesList = Resource.SortList(resourcesList);
+        _resourcesList = Resource.SortList(_resourcesList);
     }
 
     // guardar maquina
     public void Store(Machine machine)
     {
-        machineList.Add(machine);
+        _machineList.Add(machine);
     }
 
     // guardar parte
     public void Store(PartMecha part)
     {
-        partsList.Add(part);
+        _partsList.Add(part);
     }
 
     public float GetAmount(string thing)
     {
         float amount = 0;
-        foreach (var item in machineList)
+        foreach (var item in _machineList)
         {
             if (item.name.ToString() == thing) amount++;
         }
-        foreach (var item in resourcesList)
+        foreach (var item in _resourcesList)
         {
             if (item.type.ToString() == thing) amount += item.amount;
         }
-        
-        foreach (var item in partsList)
+
+        foreach (var item in _partsList)
         {
             if (item.name.ToString() == thing) amount++;
         }
@@ -62,13 +62,13 @@ public class Inventory : MonoBehaviour
         {
             if (item.type.ToString() == thing) amount++;
         }*/
-        
+
         return amount;
     }
 
     public void UseResource(string thing, float amount)
     {
-        foreach (var item in resourcesList.ToArray())
+        foreach (var item in _resourcesList.ToArray())
         {
             if (item.type.ToString() == thing)
             {
@@ -79,20 +79,38 @@ public class Inventory : MonoBehaviour
 
     public void UseMachine(Machine machine)
     {
-        List<Machine> machinesTemp = machineList;
-        for (int i = 0; i < machineList.Count; i++)
+        List<Machine> machinesTemp = _machineList;
+        for (int i = 0; i < _machineList.Count; i++)
         {
-            if (machineList[i] == machine)
+            if (_machineList[i] == machine)
             {
                 machinesTemp.Remove(machine);
             }
         }
-        machineList = machinesTemp;
+        _machineList = machinesTemp;
+    }
+
+    public void UsePart(PartMecha part)
+    {
+        List<PartMecha> partTemp = _partsList;
+        for (int i = 0; i < _partsList.Count; i++)
+        {
+            if (_partsList[i] == part)
+            {
+                partTemp.Remove(part);
+            }
+        }
+        _partsList = partTemp;
     }
 
     public List<Machine> GetMachines()
     {
-        return machineList;
+        return _machineList;
+    }
+
+    public List<PartMecha> GetParts()
+    {
+        return _partsList;
     }
 
 }

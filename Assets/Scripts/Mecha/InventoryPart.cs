@@ -6,5 +6,6 @@ using UnityEngine.EventSystems;
 
 public class InventoryPart : MonoBehaviour
 {
-    
+    public Text nombreParte;
+    public Image imagenParte;
 }

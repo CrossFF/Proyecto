@@ -135,10 +135,10 @@ public class NewMineUI : MonoBehaviour
         {
             foreach (var item in machines)
             {
-                if(item.function == MachineFunction.Extraer)
+                if (item.function == MachineFunction.Extraer)
                 {
                     _invetory.Add(Instantiate(prefabInventory, parentInventory).GetComponent<InventoryObject>());
-                }     
+                }
             }
             // seteo la info
             for (int i = 0; i < _invetory.Count; i++)

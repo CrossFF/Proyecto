@@ -90,6 +90,20 @@ public class Inventory : MonoBehaviour
         _machineList = machinesTemp;
     }
 
+    public void UseMachine(MachineName machine)
+    {
+        Machine machineTemp = null;
+        foreach (var item in _machineList)
+        {
+            if (item.name == machine)
+            {
+                machineTemp = item;
+                break;
+            }
+        }
+        UseMachine(machineTemp);
+    }
+
     public void UsePart(PartMecha part)
     {
         List<PartMecha> partTemp = _partsList;

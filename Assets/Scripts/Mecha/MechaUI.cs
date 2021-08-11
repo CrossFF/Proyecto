@@ -5,7 +5,9 @@ using UnityEngine.UI;
 
 public class MechaUI : MonoBehaviour
 {
-    public CanvasGroup allUI;
+    public CanvasGroup allUI,
+    inventarioParte,
+    informacionParte;
     public MechaManager manager;
     public GameObject prefabPartInventory;
     public Transform parentInventory;
@@ -18,20 +20,27 @@ public class MechaUI : MonoBehaviour
         HideMenu();
     }
 
+    private void SetVisibilidad(CanvasGroup canvasGroup, bool estado)
+    {
+        canvasGroup.alpha = estado ? 1f : 0f;
+        canvasGroup.interactable = estado;
+        canvasGroup.blocksRaycasts = estado;
+    }
+
     public void ShowMenu()
     {
-        allUI.alpha = 1;
-        allUI.interactable = true;
-        allUI.blocksRaycasts = true;
+        SetVisibilidad(allUI, true);
+        SetVisibilidad(inventarioParte, true);
+        SetVisibilidad(informacionParte, false);
         ClearInventory();
         InstantiateInventory();
     }
 
     public void HideMenu()
     {
-        allUI.alpha = 0;
-        allUI.interactable = false;
-        allUI.blocksRaycasts = false;
+        SetVisibilidad(allUI, false);
+        SetVisibilidad(inventarioParte, false);
+        SetVisibilidad(informacionParte, false);
     }
 
     private void ClearInventory()
@@ -60,5 +69,11 @@ public class MechaUI : MonoBehaviour
             var sprite = Resources.Load<Sprite>("La direccion");
             _partsInventory[i].imagenParte.sprite = sprite;
         }
+    }
+
+    public void ShowPart(PartMecha part)
+    {
+        SetVisibilidad(inventarioParte, false);
+        SetVisibilidad(informacionParte, true);
     }
 }

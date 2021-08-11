@@ -7,12 +7,13 @@ public class NewMineUI : MonoBehaviour
 {
     [Header("Referencias")]
     public MineManager manager;
-    public CanvasGroup allUI;
-    public CanvasGroup infoMine;
-    public Text nameText;
-    public Text statusText;
-    public Text conectionsText;
-    public Button conectionButton;
+    public CanvasGroup allUI,
+     infoMine;
+    public Text conectionsText,
+    dispoTuneladoras,
+    dispoDronesLimpieza;
+    public Button conectionButton,// boton de crear conecciones
+    derrumbeButton;// boton de eliminar derrumbes
     public GameObject prefabResource; // info basica del recurso
     public Transform parentResource;
     public GameObject prefabInventory; // prefab del objeto en inventario
@@ -58,9 +59,6 @@ public class NewMineUI : MonoBehaviour
         infoMine.interactable = true;
         infoMine.blocksRaycasts = true;
         //seteo la info basica de la mina
-        nameText.text = _mine.node.name;
-        string text = "Mina: " + _mine.node.status;
-        statusText.text = text;
         conectionsText.text = "Esta mina conecta con: " + _mine.node.trails.Count + " minas";
         // insatancio los recursos
         foreach (var item in _mine.node.resources)
@@ -73,13 +71,25 @@ public class NewMineUI : MonoBehaviour
         SetInfoResources();
         // limito acciones
         // si la mina no esat activa o trabajando no se puede usar el boton de conectar minas
-        if (_mine.node.status == StatusNode.Inactive || _mine.node.status == StatusNode.Blocked || _mine.node.status == StatusNode.Empty)
+        if (manager.GetAmount(BlueprintName.Tuneladora) > 0)
         {
-            conectionButton.interactable = false;
+            Debug.Log(manager.GetAmount(BlueprintName.Tuneladora));
+            if (_mine.node.status == StatusNode.Active || _mine.node.status == StatusNode.Working)
+                conectionButton.interactable = true;
         }
         else
         {
-            conectionButton.interactable = true;
+            conectionButton.interactable = false;
+        }
+        // si la mina no esta bloqueada no se puede usar el boton de eliminar derrumbe
+        if (manager.GetAmount(BlueprintName.Dron_Limpiador) > 0)
+        {
+            if (_mine.node.status == StatusNode.Blocked)
+                derrumbeButton.interactable = true;
+        }
+        else
+        {
+            derrumbeButton.interactable = false;
         }
     }
 
@@ -149,6 +159,12 @@ public class NewMineUI : MonoBehaviour
                 _invetory[i].nombreItem.text = machines[i].name.ToString();
             }
         }
+        // seteo la info de las tuneladoras
+        float num1 = manager.GetAmount(BlueprintName.Tuneladora);
+        dispoTuneladoras.text = "Tuneladoras:\n" + num1;
+        // seteo la info de los drones de limpeza
+        float num2 = manager.GetAmount(BlueprintName.Dron_Limpiador);
+        dispoDronesLimpieza.text = "Drones de Limpeza:\n" + num2;
     }
 
     public void InstallMachine(Machine machine, DispoResource resource)
@@ -168,6 +184,11 @@ public class NewMineUI : MonoBehaviour
     {
         HideMine();
         manager.StartConecting();
+    }
+
+    public void DesbloquearMina()
+    {
+        manager.DesbloquearMina(_mine);
     }
 
     public Mine GetMine()

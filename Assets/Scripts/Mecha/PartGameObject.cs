@@ -77,4 +77,10 @@ public class PartGameObject : MonoBehaviour
     {
         _outline.enabled = false;
     }
+
+    void OnMouseDown()
+    {
+        if (Equiped())
+            manager.ShowPart(_part);
+    }
 }

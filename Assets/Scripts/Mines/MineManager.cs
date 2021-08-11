@@ -7,17 +7,19 @@ public class MineManager : MonoBehaviour
     [Header("Parametros")]
     public int amountOfMines;// cantidad de minas a instanciar
     public float timeCycle;// tiempo entre ciclo de recoleccion
+    public float timeMin, timeMax;// tiempo minimo y maximo entre bloqueo y bloqueo de mina
 
     [Header("Referencias")]
     public GameObject prefabMine;// prefab de la mina
     //public MineUI ui;// referencia a la UI de las minas
     public NewMineUI ui;// referencia a la UI de las minas
-    public Inventory pj;// referencia al inventario del jugador
+    public Inventory inventory;// referencia al inventario del jugador
     public GameObject prefabTrail;// prefab del Line Renderer que hace de camino entre mina y mina
 
     // variables privadas
     private List<Mine> _mines;// refrencia a las minas instanciadas   
-    private float _cronometro;// coronometro para control de ciclo   
+    private float _cronometro;// coronometro para control de ciclo
+    private float _cronometro2;// cronometro de bloqueo de minas   
     private bool conectingMines = false; // para saber si estoy conectando minas
 
     void Start()
@@ -40,6 +42,7 @@ public class MineManager : MonoBehaviour
     void Update()
     {
         ResourceControl();
+        BloqueoDeMinas();
     }
 
     private void InstantiateMine(int amount, TypeOfNode type)
@@ -86,17 +89,35 @@ public class MineManager : MonoBehaviour
         }
     }
 
+    private void BloqueoDeMinas()
+    {
+        _cronometro2 -= Time.deltaTime;
+        if (_cronometro2 <= 0)
+        {
+            // selecciono una mina random que este trabajando
+            List<Mine> mines = Node.GetTypeNodes(_mines, StatusNode.Working);
+            if (mines.Count != 0)
+            {
+                int num = Random.Range(0, mines.Count);
+                mines[num].node.status = StatusNode.Blocked;
+
+            }
+            _cronometro2 = Random.Range(timeMin, timeMax);
+        }
+    }
+
     private void StoreResources(List<Resource> resources)
     {
-        pj.Store(resources);
+        inventory.Store(resources);
     }
 
     public void ConectMines(Mine startMine, Mine endMine)
     {
-
-        // verifico que el inicio y el final no sean el mismo
-        if (startMine != endMine)
+        // verifico que el inicio y el final no sean el mismo y que la mina final no este activa
+        if (startMine != endMine && endMine.node.status == StatusNode.Inactive)
         {
+            //uso una tuneladora
+            inventory.UseMachine(MachineName.Tuneladora);
             //agrego la mina al camino de la primera
             startMine.node.trails.Add(endMine);
             //activo la mina a conectar
@@ -135,7 +156,7 @@ public class MineManager : MonoBehaviour
 
     public List<Machine> GetMachines()
     {
-        List<Machine> machines = pj.GetMachines();
+        List<Machine> machines = inventory.GetMachines();
         return machines;
     }
 
@@ -150,7 +171,7 @@ public class MineManager : MonoBehaviour
                 // instalo la maquina en el recurso correspondiente
                 mine.node.SetMachine(machine, indexResource);
                 // elimino la maquina del inventario
-                pj.UseMachine(machine);
+                inventory.UseMachine(machine);
                 // si la mina no tenia el esatdo de trabajando le cambio el estado
                 if (mine.node.status == StatusNode.Active) mine.node.status = StatusNode.Working;
             }
@@ -168,5 +189,19 @@ public class MineManager : MonoBehaviour
     public void StartConecting()
     {
         conectingMines = true;
+    }
+
+    public float GetAmount(BlueprintName name)
+    {
+        return inventory.GetAmount(name.ToString());
+    }
+
+    public void DesbloquearMina(Mine mine)
+    {
+        inventory.UseMachine(MachineName.Dron_Limpiador);
+        // re activo el nodo
+        mine.node.status = StatusNode.Working;
+        ui.HideMine();
+        ui.ShowMine(mine);
     }
 }

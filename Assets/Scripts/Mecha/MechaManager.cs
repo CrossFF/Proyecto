@@ -24,6 +24,11 @@ public class MechaManager : MonoBehaviour
         ui.HideMenu();
     }
 
+    public void ShowPart(PartMecha part)
+    {
+        ui.ShowPart(part);
+    }
+
     private void CheckParts()
     {
         // verifico si la parte efectivamente tiene algo equipado

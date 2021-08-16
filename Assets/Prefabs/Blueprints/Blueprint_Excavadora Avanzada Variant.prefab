@@ -8,12 +8,28 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 4134008254053242131, guid: db1524d9a748dad4dbe0221a6df1fcc6, type: 3}
+      propertyPath: manager
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4134008254053242131, guid: db1524d9a748dad4dbe0221a6df1fcc6, type: 3}
       propertyPath: blueprintName
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 4134008254053242131, guid: db1524d9a748dad4dbe0221a6df1fcc6, type: 3}
+      propertyPath: blueprintIngredients.Array.data[1]
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4134008254053242131, guid: db1524d9a748dad4dbe0221a6df1fcc6, type: 3}
+      propertyPath: blueprintIngredients.Array.data[2]
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4134008254053242131, guid: db1524d9a748dad4dbe0221a6df1fcc6, type: 3}
+      propertyPath: blueprintIngredients.Array.data[3]
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6389465345543029193, guid: db1524d9a748dad4dbe0221a6df1fcc6, type: 3}
       propertyPath: m_Name
-      value: Blueprint_Excavadora Avanzada
+      value: Blueprint_Excavadora Avanzada Variant
       objectReference: {fileID: 0}
     - target: {fileID: 6389465345543029194, guid: db1524d9a748dad4dbe0221a6df1fcc6, type: 3}
       propertyPath: m_Pivot.x

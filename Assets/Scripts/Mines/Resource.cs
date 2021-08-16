@@ -32,9 +32,6 @@ public class Resource
     public Resource(TypeResource type)
     {
         this.type = type;
-        //this.amount = 1000;
-        //this.totalAmount = this.amount;
-
         switch (type)
         {
             case TypeResource.basicOre1:
@@ -56,11 +53,11 @@ public class Resource
     }
     public Resource(List<Resource> list)
     {
-        Resource resource = new Resource(list[0].type, 0);
+        this.type = list[0].type;
         foreach (var item in list)
         {
-            resource.amount += item.amount;
-            resource.totalAmount += item.amount;
+            this.amount += item.amount;
+            this.totalAmount += item.amount;
         }
     }
 
@@ -83,6 +80,24 @@ public class Resource
     }
 
     //metodos estaticos
+    // ordeno la lista de recursos
+    public static List<Resource> SortList(List<Resource> list)
+    {
+        List<Resource> theList = new List<Resource>();
+        // por cada tipo de recurso genero una lista
+        foreach (var item in Enum.GetNames(typeof(TypeResource)))
+        {
+            List<Resource> listTemp = GetResourcesType(list, item);
+            // si esa lista tiene almenos un elemneto comnvierto esa lista en un solo recurso
+            if (listTemp.Count > 0)
+            {
+                Resource temp = new Resource(listTemp);
+                // agrego ese recurso a la lista
+                theList.Add(temp);
+            }
+        }
+        return theList;
+    }
     // devuelvo una lista del recurso pedido
     public static List<Resource> GetResourcesType(List<Resource> list, string type)
     {
@@ -94,18 +109,5 @@ public class Resource
         return theList;
     }
 
-    public static List<Resource> SortList(List<Resource> list)
-    {
-        List<Resource> theList = new List<Resource>();
-        foreach (var item in Enum.GetNames(typeof(TypeResource)))
-        {
-            List<Resource> listTemp = GetResourcesType(list, item);
-            if (listTemp.Count > 0)
-            {
-                Resource temp = new Resource(listTemp);
-                theList.Add(temp);
-            }
-        }
-        return theList;
-    }
+    
 }

@@ -39,7 +39,7 @@ public class Node
                 List<Resource> temp1 = new List<Resource>();
                 for (int i = 0; i < 3; i++)
                 {
-                    temp1.Add(new Resource(typeResource.basicOre1));
+                    temp1.Add(new Resource(TypeResource.basicOre1));
                 }
                 this.resources = temp1;
                 break;
@@ -47,7 +47,7 @@ public class Node
                 List<Resource> temp2 = new List<Resource>();
                 for (int i = 0; i < 3; i++)
                 {
-                    temp2.Add(new Resource(typeResource.mediumOre1));
+                    temp2.Add(new Resource(TypeResource.mediumOre1));
                 }
                 this.resources = temp2;
                 break;
@@ -55,7 +55,7 @@ public class Node
                 List<Resource> temp3 = new List<Resource>();
                 for (int i = 0; i < 3; i++)
                 {
-                    temp3.Add(new Resource(typeResource.advancedOre1));
+                    temp3.Add(new Resource(TypeResource.advancedOre1));
                 }
                 this.resources = temp3;
                 break;

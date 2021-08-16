@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
-public enum typeResource
+public enum TypeResource
 {
     basicOre1,
     basicOre2,
@@ -16,19 +17,19 @@ public enum typeResource
 }
 public class Resource
 {
-    public typeResource type;
+    public TypeResource type;
     public float amount;
     public float totalAmount;
     public Machine machine;
 
     //Constructores
-    public Resource(typeResource type, float amount)
+    public Resource(TypeResource type, float amount)
     {
         this.type = type;
         this.amount = amount;
         this.totalAmount = this.amount;
     }
-    public Resource(typeResource type)
+    public Resource(TypeResource type)
     {
         this.type = type;
         //this.amount = 1000;
@@ -36,21 +37,30 @@ public class Resource
 
         switch (type)
         {
-            case typeResource.basicOre1:
+            case TypeResource.basicOre1:
                 this.amount = 1000;
                 this.totalAmount = this.amount;
                 break;
-            case typeResource.mediumOre1:
+            case TypeResource.mediumOre1:
                 this.amount = 1000;
                 this.totalAmount = this.amount;
                 break;
-            case typeResource.advancedOre1:
+            case TypeResource.advancedOre1:
                 this.amount = 1000;
                 this.totalAmount = this.amount;
                 break;
             default:
                 Debug.Log("No existe este recurso");
                 break;
+        }
+    }
+    public Resource(List<Resource> list)
+    {
+        Resource resource = new Resource(list[0].type, 0);
+        foreach (var item in list)
+        {
+            resource.amount += item.amount;
+            resource.totalAmount += item.amount;
         }
     }
 
@@ -65,7 +75,6 @@ public class Resource
         {
             return null;
         }
-
     }
 
     public void SetMachine(Machine machine)
@@ -74,34 +83,29 @@ public class Resource
     }
 
     //metodos estaticos
-    public static List<Resource> SortList(List<Resource> resourcesToSort)
+    // devuelvo una lista del recurso pedido
+    public static List<Resource> GetResourcesType(List<Resource> list, string type)
     {
-        List<Resource> sorted = new List<Resource>();
-        foreach (var itemToSort in resourcesToSort.ToArray())
+        List<Resource> theList = new List<Resource>();
+        foreach (var item in list)
         {
-            if (sorted.Count > 0)
+            if (item.type.ToString() == type) theList.Add(item);
+        }
+        return theList;
+    }
+
+    public static List<Resource> SortList(List<Resource> list)
+    {
+        List<Resource> theList = new List<Resource>();
+        foreach (var item in Enum.GetNames(typeof(TypeResource)))
+        {
+            List<Resource> listTemp = GetResourcesType(list, item);
+            if (listTemp.Count > 0)
             {
-                foreach (var sortedItem in sorted.ToArray())
-                {
-                    if (itemToSort.type == sortedItem.type)
-                    {
-                        sortedItem.amount += itemToSort.amount;
-                        sortedItem.totalAmount += itemToSort.amount;
-                    }
-                    else
-                    {
-                        if (sortedItem == sorted[sorted.Count - 1])
-                        {
-                            sorted.Add(itemToSort);
-                        }
-                    }
-                }
-            }
-            else
-            {
-                sorted.Add(itemToSort);
+                Resource temp = new Resource(listTemp);
+                theList.Add(temp);
             }
         }
-        return sorted;
+        return theList;
     }
 }

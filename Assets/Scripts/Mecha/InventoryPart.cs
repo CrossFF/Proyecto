@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class InventoryPart : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler
+public class InventoryPart : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler, IPointerEnterHandler,IPointerExitHandler
 {
     //parametro
     public PartMecha part;
@@ -48,5 +48,15 @@ public class InventoryPart : MonoBehaviour, IPointerDownHandler, IBeginDragHandl
     public void OnPointerDown(PointerEventData eventData)
     {
 
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        canvasGroup.alpha = 1f;
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        canvasGroup.alpha = 0.8f;
     }
 }

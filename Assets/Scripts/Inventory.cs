@@ -22,10 +22,12 @@ public class Inventory : MonoBehaviour
     // Guardar recursos
     public void Store(List<Resource> theList)
     {
+        //agrego los recursos extraidos al inventario
         foreach (var item in theList)
         {
             _resourcesList.Add(item);
         }
+        // ordeno la lista
         _resourcesList = Resource.SortList(_resourcesList);
     }
 

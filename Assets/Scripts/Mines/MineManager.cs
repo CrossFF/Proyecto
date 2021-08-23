@@ -133,12 +133,12 @@ public class MineManager : MonoBehaviour
         }
     }
 
-    public void ActivateMineUI()
+    public void ShowMenu()
     {
         ui.ShowMenu();
     }
 
-    public void HideMineUI()
+    public void HideMenu()
     {
         ui.HideMenu();
     }

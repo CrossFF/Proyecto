@@ -57,7 +57,6 @@ public class Resource
         foreach (var item in list)
         {
             this.amount += item.amount;
-            this.totalAmount += item.amount;
         }
     }
 
@@ -102,12 +101,14 @@ public class Resource
     public static List<Resource> GetResourcesType(List<Resource> list, string type)
     {
         List<Resource> theList = new List<Resource>();
-        foreach (var item in list)
+        foreach (var item in list.ToArray())
         {
-            if (item.type.ToString() == type) theList.Add(item);
+            if (item.type.ToString() == type)
+            {
+                theList.Add(item);
+                list.Remove(item);
+            } 
         }
         return theList;
-    }
-
-    
+    }    
 }

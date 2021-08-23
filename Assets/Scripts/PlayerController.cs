@@ -7,141 +7,85 @@ public class PlayerController : MonoBehaviour
 {
     public float speed;
     public CharacterController characterController;
-    private bool interactuar = false;
-    private GameObject interactuable;
-    public CinemachineVirtualCamera playerCam, mineCam, mechaCam, craftingCam;
-    public MineManager mineManager;
-    public MechaManager mechaManager;
-    public CraftingManager craftManager;
+    public Animator animator;
+    private IInteractable interactuable; // objeto interactuable
+    public CinemachineVirtualCamera camPJ;// camara del personaje
+    private CameraManager cameraManager;// manager de las camaras
 
     void Start()
     {
-        SetPrority("player");
+        cameraManager = GameObject.Find("Cameras Manager").GetComponent<CameraManager>();
+        cameraManager.ChangePriority(camPJ);
     }
-
 
     void Update()
     {
-        Movement();
         Interactuar();
+        Movement();
     }
 
     private void Movement()
     {
-        float x = Input.GetAxisRaw("Horizontal");
-        float z = Input.GetAxisRaw("Vertical");
-        Vector3 fixedSpeed = new Vector3(x, 0f, z);
-        fixedSpeed = fixedSpeed * speed * Time.deltaTime;
-        characterController.Move(fixedSpeed);
+        if (camPJ.Priority > 0)
+        {
+            float x = Input.GetAxisRaw("Horizontal");
+            float z = Input.GetAxisRaw("Vertical");
+            Vector3 fixedSpeed = new Vector3(x, 0f, z);
+            fixedSpeed = fixedSpeed * speed * Time.deltaTime;
+            characterController.Move(fixedSpeed);
+            // animaciones del personaje
+            //caminata
+            if (fixedSpeed != Vector3.zero)
+            {
+                animator.SetFloat("speed", 1);
+                animator.transform.forward = fixedSpeed;
+            }
+            else
+            {
+                animator.SetFloat("speed", 0);
+            }
+        }
     }
 
     private void Interactuar()
     {
-        if (interactuar)
+        // interactuar
+        if (interactuable != null)
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetButtonDown("Interactuar") && camPJ.Priority > 0)
             {
-                switch (interactuable.name)
-                {
-                    case "Consola de Mecha":
-                        SetPrority("mecha");
-                        mechaManager.ShowMenu();
-                        break;
-                    case "Consola de Minas":
-                        SetPrority("mine");
-                        mineManager.ActivateMineUI();
-                        break;
-                    case "Consola de Crafting":
-                        SetPrority("craft");
-                        craftManager.ShowMenu();
-                        break;
-                    default:
-                        break;
-                }
+                interactuable.Interact();
             }
-        }
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            CloseMenus();
+            // salir de la seccion actual
+            if (Input.GetButtonDown("Salir") && camPJ.Priority == 0)
+            {
+                SalirInteractuable();
+            }
         }
     }
 
-    private void SetPrority(string priority)
+    public void SalirInteractuable()
     {
-        switch (priority)
-        {
-            case "player":
-                playerCam.Priority = 10;
-                mineCam.Priority = 0;
-                mechaCam.Priority = 0;
-                craftingCam.Priority = 0;
-                break;
-            case "mine":
-                playerCam.Priority = 0;
-                mineCam.Priority = 10;
-                mechaCam.Priority = 0;
-                craftingCam.Priority = 0;
-                break;
-            case "mecha":
-                playerCam.Priority = 0;
-                mineCam.Priority = 0;
-                mechaCam.Priority = 10;
-                craftingCam.Priority = 0;
-                break;
-            case "craft":
-                playerCam.Priority = 0;
-                mineCam.Priority = 0;
-                mechaCam.Priority = 0;
-                craftingCam.Priority = 10;
-                break;
-            default:
-                break;
-        }
+        cameraManager.ChangePriority(camPJ);
+        interactuable.Salir();
+        interactuable = null;
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.name == "Consola de Mecha")
+        interactuable = other.GetComponent<IInteractable>();
+        if (interactuable != null)
         {
-            interactuar = true;
-            interactuable = other.gameObject;
-        }
-        if (other.name == "Consola de Minas")
-        {
-            interactuar = true;
-            interactuable = other.gameObject;
-        }
-        if (other.name == "Consola de Crafting")
-        {
-            interactuar = true;
-            interactuable = other.gameObject;
+            interactuable.Resaltar();
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.name == "Consola de Mecha")
+        interactuable = other.GetComponent<IInteractable>();
+        if (interactuable != null)
         {
-            interactuar = false;
-            interactuable = null;
+            interactuable.Desmarcar();
         }
-        if (other.name == "Consola de Minas")
-        {
-            interactuar = false;
-            interactuable = null;
-        }
-        if (other.name == "Consola de Crafting")
-        {
-            interactuar = true;
-            interactuable = other.gameObject;
-        }
-    }
-
-    public void CloseMenus()
-    {
-        SetPrority("player");
-        mineManager.HideMineUI();
-        mechaManager.HideMenu();
-        craftManager.HideMenu();
     }
 }

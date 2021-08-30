@@ -21,6 +21,7 @@ public class Interactuable : MonoBehaviour, IInteractable
         mechaManager = GameObject.Find("Mecha Manager").GetComponent<MechaManager>();
         craftingManager = GameObject.Find("Menu de Crafteo").GetComponent<CraftingManager>();
     }
+    
     public void Interact()
     {
         cameraManager.ChangePriority(cam);
@@ -37,6 +38,7 @@ public class Interactuable : MonoBehaviour, IInteractable
                 break;
         }
     }
+
     public void Salir()
     {
         switch (seccion)

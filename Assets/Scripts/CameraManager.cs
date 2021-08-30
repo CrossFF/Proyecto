@@ -25,7 +25,6 @@ public class CameraManager : MonoBehaviour
     }
 }
 
-
 //inrterfaz de los interactuables
 public interface IInteractable 
 {

@@ -26,14 +26,15 @@ public class PlayerController : MonoBehaviour
 
     private void Movement()
     {
+        float x = Input.GetAxisRaw("Horizontal");
+        float z = Input.GetAxisRaw("Vertical");
+        Vector3 fixedSpeed = new Vector3(x, 0f, z);
+        fixedSpeed = fixedSpeed * speed * Time.deltaTime;
+        // si estoy enfocando al personaje
         if (camPJ.Priority > 0)
         {
-            float x = Input.GetAxisRaw("Horizontal");
-            float z = Input.GetAxisRaw("Vertical");
-            Vector3 fixedSpeed = new Vector3(x, 0f, z);
-            fixedSpeed = fixedSpeed * speed * Time.deltaTime;
+            // muevo el personaje
             characterController.Move(fixedSpeed);
-            // animaciones del personaje
             //caminata
             if (fixedSpeed != Vector3.zero)
             {
@@ -86,6 +87,7 @@ public class PlayerController : MonoBehaviour
         if (interactuable != null)
         {
             interactuable.Desmarcar();
+            interactuable = null;
         }
     }
 }

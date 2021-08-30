@@ -432,7 +432,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 991568545}
   m_HandleRect: {fileID: 991568544}
   m_Direction: 2
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -1394,7 +1394,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0.000061035156}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &233119476
@@ -1648,7 +1648,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0.000061035156}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &281482975
@@ -5108,7 +5108,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 729378415}
   m_HandleRect: {fileID: 729378414}
   m_Direction: 2
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -5612,7 +5612,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 354036510443c614bbf7802c6851b450, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4.5
+  speed: 4
   characterController: {fileID: 920552267}
   animator: {fileID: 2034796550}
   camPJ: {fileID: 1152005762}
@@ -5648,7 +5648,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 126
   m_CollisionDetection: 1
 --- !u!114 &920552269
 MonoBehaviour:
@@ -6605,12 +6605,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1146639209}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39ad117e32eab5c42a4d058300648f8c, type: 3}
+  m_Script: {fileID: 11500000, guid: ec0a7b9435d69cc45a15f6cd2eac5d60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 1799809878}
-  seccion: 3
   outline: {fileID: 542495843}
+  vCam: {fileID: 1799809878}
 --- !u!4 &1146639213
 Transform:
   m_ObjectHideFlags: 0
@@ -7177,7 +7176,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0.000061035156}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1165582344
@@ -7490,8 +7489,8 @@ GameObject:
   - component: {fileID: 1225716144}
   - component: {fileID: 1225716143}
   - component: {fileID: 1225716147}
-  - component: {fileID: 1225716148}
   - component: {fileID: 1225716149}
+  - component: {fileID: 1225716148}
   m_Layer: 0
   m_Name: Consola de Minas
   m_TagString: Untagged
@@ -7597,12 +7596,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1225716142}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39ad117e32eab5c42a4d058300648f8c, type: 3}
+  m_Script: {fileID: 11500000, guid: 1dce2f1bb850399459760da9d9a0cc1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 605379493}
-  seccion: 1
   outline: {fileID: 1225716149}
+  vCam: {fileID: 605379493}
 --- !u!114 &1225716149
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7703,7 +7701,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 867850179}
   m_HandleRect: {fileID: 867850178}
   m_Direction: 2
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -10453,8 +10451,8 @@ GameObject:
   - component: {fileID: 1700320679}
   - component: {fileID: 1700320678}
   - component: {fileID: 1700320677}
-  - component: {fileID: 1700320681}
   - component: {fileID: 1700320682}
+  - component: {fileID: 1700320681}
   m_Layer: 0
   m_Name: Consola de Crafting
   m_TagString: Untagged
@@ -10560,12 +10558,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1700320675}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39ad117e32eab5c42a4d058300648f8c, type: 3}
+  m_Script: {fileID: 11500000, guid: 3294d6fa5766a1d458d0332a29ef0983, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 957557777}
-  seccion: 2
   outline: {fileID: 1700320682}
+  vCam: {fileID: 957557777}
+  pos: {x: 110.7, y: 1.43, z: 107.8}
 --- !u!114 &1700320682
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13775,17 +13773,17 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 9022133123643791545, guid: 9e8601bfa025a534f9897a903d76310f, type: 3}
-  - {fileID: 6450065227610047780, guid: 9e8601bfa025a534f9897a903d76310f, type: 3}
-  - {fileID: 506764546841231225, guid: 9e8601bfa025a534f9897a903d76310f, type: 3}
-  - {fileID: -3835135369603622957, guid: 9e8601bfa025a534f9897a903d76310f, type: 3}
-  - {fileID: 4091161774014771753, guid: 9e8601bfa025a534f9897a903d76310f, type: 3}
-  - {fileID: -6437495475105930270, guid: 9e8601bfa025a534f9897a903d76310f, type: 3}
-  - {fileID: -350857129949317082, guid: 9e8601bfa025a534f9897a903d76310f, type: 3}
-  - {fileID: -4562844273938341092, guid: 9e8601bfa025a534f9897a903d76310f, type: 3}
-  - {fileID: 7983569804489322750, guid: 9e8601bfa025a534f9897a903d76310f, type: 3}
-  - {fileID: -3437194871006262605, guid: 9e8601bfa025a534f9897a903d76310f, type: 3}
-  - {fileID: -2893893163261511071, guid: 9e8601bfa025a534f9897a903d76310f, type: 3}
+  - {fileID: 2100000, guid: 2c52ab9e441aaa14aa943803240f0e28, type: 2}
+  - {fileID: 2100000, guid: cede176a6ffcb344c8b05dd490b4b242, type: 2}
+  - {fileID: 2100000, guid: bb9a7cc51b7248e498e785055fc25ada, type: 2}
+  - {fileID: 2100000, guid: 7932269c8581387469d253fde4340e15, type: 2}
+  - {fileID: 2100000, guid: 3e4ba2c2b0de43f4abc484f1823c4831, type: 2}
+  - {fileID: 2100000, guid: fbad372c32d6df947b434e4e23441284, type: 2}
+  - {fileID: 2100000, guid: 6d32e932ad9319649bda0b1d39b21145, type: 2}
+  - {fileID: 2100000, guid: 0c71143e197d85b458bc1f5cef86adf1, type: 2}
+  - {fileID: 2100000, guid: fe170a2352598974099f432b59488023, type: 2}
+  - {fileID: 2100000, guid: 55c39be9d77795c40adb5609e349360b, type: 2}
+  - {fileID: 2100000, guid: 30b78fdf3f40a8942980d6aa34bfd628, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

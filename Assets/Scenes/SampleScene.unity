@@ -432,7 +432,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 991568545}
   m_HandleRect: {fileID: 991568544}
   m_Direction: 2
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -1394,7 +1394,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.000061035156}
+  m_AnchoredPosition: {x: 0, y: 0.000061035156}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &233119476
@@ -1648,7 +1648,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.000061035156}
+  m_AnchoredPosition: {x: 0, y: 0.000061035156}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &281482975
@@ -5108,7 +5108,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 729378415}
   m_HandleRect: {fileID: 729378414}
   m_Direction: 2
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -5722,7 +5722,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 957557776}
-  m_LocalRotation: {x: 0.3507143, y: 0.007398712, z: -0.0027709287, w: 0.9364492}
+  m_LocalRotation: {x: 0.3507143, y: 0.0073986794, z: -0.0027709163, w: 0.9364492}
   m_LocalPosition: {x: 113.39, y: 4.4, z: 104.03}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -7177,7 +7177,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.000061035156}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1165582344
@@ -7702,7 +7702,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 867850179}
   m_HandleRect: {fileID: 867850178}
   m_Direction: 2
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -12182,26 +12182,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventory: {fileID: 920552269}
   prefabBlueprints:
-  - {fileID: 2991828029611679013, guid: 9b672eb1975869b47b1091e5764de27e, type: 3}
-  - {fileID: 4064736799978816676, guid: 422267456545ebe47bfa88602a908fef, type: 3}
-  - {fileID: 6239743232762912416, guid: 09c539ce5d21aa34590011c60309bd02, type: 3}
-  - {fileID: 371590584211383724, guid: 3dd86050f4ff3af4cb0c9ed74242ce60, type: 3}
-  - {fileID: 3027646718291116915, guid: 1f928cea11763774aa5cb7aa6d9e4905, type: 3}
-  - {fileID: 8515051743855827475, guid: 126cba55d350aa540ae2df6e696284a5, type: 3}
-  - {fileID: 696898164439921663, guid: ae480b24d4f5da848bd2e0f2d5f9ad17, type: 3}
-  - {fileID: 1327726409465759526, guid: 4072e0c4480c6614483a456f43ccdc29, type: 3}
-  - {fileID: 4157534259220413350, guid: 9b8d43cbd250a674883f96942a5c955a, type: 3}
-  - {fileID: 3564038623318527223, guid: f179307af9ddc064d9e7c422354d3c7b, type: 3}
-  - {fileID: 3612201334322633573, guid: 4669da26101e648418b04f73f03650a0, type: 3}
-  - {fileID: 8273896752203287972, guid: 8ae4075e4e38e554ca7d8f59872809a2, type: 3}
-  - {fileID: 8515051743855827475, guid: b03768134797e154bb80f349113a39c1, type: 3}
-  - {fileID: 8515051743855827475, guid: b34b74aa07461864a9ae6c2e7f7c9a57, type: 3}
-  - {fileID: 1478693538388626706, guid: 8bf66f79b4c191449831c8b8cffb198b, type: 3}
-  - {fileID: 8702423397585720182, guid: 9ff9bd0699683e542bd745d5c4c79190, type: 3}
-  - {fileID: 8262940316217435197, guid: a90de14d8ccd2f74ab9f1fd92d03b849, type: 3}
-  - {fileID: 3987589303855353806, guid: 419bb13021016bb4aa8772deb375fe81, type: 3}
-  - {fileID: 3024922022194126459, guid: a7f4da699086f364a8585aa6edc3b343, type: 3}
-  - {fileID: 5995069938648285311, guid: 3dfae30d6edf85445bc0ff46a9744445, type: 3}
+  - {fileID: 5261990847631789035, guid: e18da631137b1ff4e8746a68b568ba5d, type: 3}
+  - {fileID: 708597767338068820, guid: 37d74869909ee6f4a9e48305c7c7adf1, type: 3}
+  - {fileID: 1427437982035152716, guid: 6a6fca6ddfe617b4684a83d2abfd870d, type: 3}
+  - {fileID: 1578661583502821257, guid: 26e0d8d8ccda65745b8ce07c9cdea0d3, type: 3}
+  - {fileID: 4648250140205062390, guid: acde9aaee7715864a885e89e5d884409, type: 3}
+  - {fileID: 649032447122849241, guid: a2b48f40adf0a1a41984fb3775d74e62, type: 3}
+  - {fileID: 1437068178287510798, guid: 214e17b44923ccb498b3e5d388cb6592, type: 3}
+  - {fileID: 5541944343694829953, guid: 8dfe52bad4d781e45b520775fbc8717d, type: 3}
+  - {fileID: 2391730263770226656, guid: ef3e9308ccb7afa4d82e4f8df7b2e9f1, type: 3}
+  - {fileID: 1730833552762759664, guid: 7eb2833a39d50654baea668ee4db6112, type: 3}
+  - {fileID: 961283650857552266, guid: c20474eef02136d4386d0ca0cfb3bc9a, type: 3}
+  - {fileID: 4023541259035917602, guid: 9e6f1f97ce714504196f564262eb7638, type: 3}
+  - {fileID: 2199440244971838736, guid: 2b9cb551396a1cb40bb4596487b19b00, type: 3}
+  - {fileID: 7722113363138920901, guid: 6908afca4deebae4e8f25f7020b89d65, type: 3}
   allMenu: {fileID: 1903555722}
   machineMenu: {fileID: 536094568}
   mechaMenu: {fileID: 1111257474}

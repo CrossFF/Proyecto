@@ -37,26 +37,23 @@ public class Node
         {
             case TypeOfNode.Basic:
                 List<Resource> temp1 = new List<Resource>();
-                for (int i = 0; i < 3; i++)
-                {
-                    temp1.Add(new Resource(TypeResource.basicOre1));
-                }
+                temp1.Add(new Resource(TypeResource.BasicOre1));
+                temp1.Add(new Resource(TypeResource.BasicOre2));
+                temp1.Add(new Resource(TypeResource.BasicOre3));
                 this.resources = temp1;
                 break;
             case TypeOfNode.Medium:
                 List<Resource> temp2 = new List<Resource>();
-                for (int i = 0; i < 3; i++)
-                {
-                    temp2.Add(new Resource(TypeResource.mediumOre1));
-                }
+                temp2.Add(new Resource(TypeResource.MediumOre1));
+                temp2.Add(new Resource(TypeResource.MediumOre2));
+                temp2.Add(new Resource(TypeResource.MediumOre3));
                 this.resources = temp2;
                 break;
             case TypeOfNode.Advanced:
                 List<Resource> temp3 = new List<Resource>();
-                for (int i = 0; i < 3; i++)
-                {
-                    temp3.Add(new Resource(TypeResource.advancedOre1));
-                }
+                temp3.Add(new Resource(TypeResource.AdvancedOre1));
+                temp3.Add(new Resource(TypeResource.AdvancedOre2));
+                temp3.Add(new Resource(TypeResource.AdvancedOre3));
                 this.resources = temp3;
                 break;
         }

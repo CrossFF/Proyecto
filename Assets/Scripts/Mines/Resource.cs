@@ -5,15 +5,15 @@ using System;
 
 public enum TypeResource
 {
-    basicOre1,
-    basicOre2,
-    basicOre3,
-    mediumOre1,
-    mediumOre2,
-    mediumOre3,
-    advancedOre1,
-    advancedOre2,
-    advancedOre3
+    BasicOre1,
+    BasicOre2,
+    BasicOre3,
+    MediumOre1,
+    MediumOre2,
+    MediumOre3,
+    AdvancedOre1,
+    AdvancedOre2,
+    AdvancedOre3
 }
 public class Resource
 {
@@ -34,22 +34,38 @@ public class Resource
         this.type = type;
         switch (type)
         {
-            case TypeResource.basicOre1:
+            case TypeResource.BasicOre1:
                 this.amount = 1000;
-                this.totalAmount = this.amount;
                 break;
-            case TypeResource.mediumOre1:
+            case TypeResource.BasicOre2:
                 this.amount = 1000;
-                this.totalAmount = this.amount;
                 break;
-            case TypeResource.advancedOre1:
+            case TypeResource.BasicOre3:
                 this.amount = 1000;
-                this.totalAmount = this.amount;
+                break;
+            case TypeResource.MediumOre1:
+                this.amount = 1000;
+                break;
+            case TypeResource.MediumOre2:
+                this.amount = 1000;
+                break;
+            case TypeResource.MediumOre3:
+                this.amount = 1000;
+                break;
+            case TypeResource.AdvancedOre1:
+                this.amount = 1000;
+                break;
+            case TypeResource.AdvancedOre2:
+                this.amount = 1000;
+                break;
+            case TypeResource.AdvancedOre3:
+                this.amount = 1000;
                 break;
             default:
                 Debug.Log("No existe este recurso");
                 break;
         }
+        this.totalAmount = this.amount;
     }
     public Resource(List<Resource> list)
     {
@@ -107,8 +123,8 @@ public class Resource
             {
                 theList.Add(item);
                 list.Remove(item);
-            } 
+            }
         }
         return theList;
-    }    
+    }
 }

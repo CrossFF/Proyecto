@@ -19,17 +19,22 @@ public class ConsolaDeMecha : MonoBehaviour, IInteractable
 
     public void Interact()
     {
+        BoxCollider collider = GetComponent<BoxCollider>();
         //cambio proridad de camaras
         GameObject.Find("Cameras Manager").GetComponent<CameraManager>().ChangePriority(vCam);
         //activo el menu de crafteo
         GameObject.Find("Mecha Manager").GetComponent<MechaManager>().ShowMenu();
-        // centro la atencion del jugador en el mecha
+        // concentro la atencion del jugador en el mecha
+        outline.enabled = false;
+        collider.enabled = false;
     }
     
     public void Salir()
     {
+        BoxCollider collider = GetComponent<BoxCollider>();
         //oculto el menu de mechas
         GameObject.Find("Mecha Manager").GetComponent<MechaManager>().HideMenu();
         // regreso la atencion del jugador al personaje
+        collider.enabled = true;
     }
 }

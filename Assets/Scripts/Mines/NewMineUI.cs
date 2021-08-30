@@ -103,7 +103,7 @@ public class NewMineUI : MonoBehaviour
                 float fillAmount = _mine.node.resources[i].amount / _mine.node.resources[i].totalAmount;
                 _resources[i].fillImage.fillAmount = fillAmount;
                 _resources[i].nombreRecurso.text = _mine.node.resources[i].type.ToString();
-                var sprite1 = Resources.Load<Sprite>("Prototype/" + _mine.node.resources[i].type);
+                var sprite1 = Resources.Load<Sprite>("Ores/" + _mine.node.resources[i].type);
                 _resources[i].imageRecurso.sprite = sprite1;
                 // info de la maquina
                 if (_mine.node.resources[i].machine != null)

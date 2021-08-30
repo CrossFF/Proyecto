@@ -8,7 +8,7 @@ public class BlueprintGameObject : MonoBehaviour
     [Header("Parametros")]
     public BlueprintName blueprintName;
     public BlueprintType blueprintType;
-    public List<BlueprintIngredients> blueprintIngredients;
+    public List<TypeResource> blueprintIngredients;
     public List<int> ingredientsAmount;
     private bool _crafteable;
 
@@ -71,7 +71,7 @@ public class BlueprintGameObject : MonoBehaviour
         for (int i = 0; i < _ingredients.Count; i++)
         {
             //imagen
-            var spriteTemp = Resources.Load<Sprite>("Prototype/" + blueprintIngredients[i]);
+            var spriteTemp = Resources.Load<Sprite>("Ores/" + blueprintIngredients[i]);
             _ingredients[i].resourceImage.sprite = spriteTemp;
             //cantidad necesaria y en el inventario
             float necesario = ingredientsAmount[i];

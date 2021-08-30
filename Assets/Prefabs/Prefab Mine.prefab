@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2084750465816654799}
   - component: {fileID: 2521427117190535415}
   - component: {fileID: 3379379417085894471}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Minerales.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 649390433436311515}
   - component: {fileID: 5979060505513916022}
   - component: {fileID: 8587635183674319917}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cueba
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -177,7 +177,7 @@ GameObject:
   - component: {fileID: 8025769535923189009}
   - component: {fileID: 8833412565799678384}
   - component: {fileID: 7281439424744960228}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Prefab Mine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -273,7 +273,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 350187497236371284}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Advansed Mine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -310,7 +310,7 @@ GameObject:
   - component: {fileID: 6728428689635948957}
   - component: {fileID: 6798385626248922022}
   - component: {fileID: 3741757053493632538}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Vias madera.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -391,7 +391,7 @@ GameObject:
   - component: {fileID: 6253650710178018985}
   - component: {fileID: 621249563186467507}
   - component: {fileID: 2000922744505964099}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Vias metal.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -472,7 +472,7 @@ GameObject:
   - component: {fileID: 4633173332795837533}
   - component: {fileID: 4546767389773389700}
   - component: {fileID: 6761951315370206969}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Minerales
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -553,7 +553,7 @@ GameObject:
   - component: {fileID: 4360497181835882085}
   - component: {fileID: 1841961879887711689}
   - component: {fileID: 4660051187181174660}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Suelo.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -633,7 +633,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3478851774463621086}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Basic Mine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -670,7 +670,7 @@ GameObject:
   - component: {fileID: 4066065691814879048}
   - component: {fileID: 8621108727197981628}
   - component: {fileID: 2255845131217177903}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Vias metal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -751,7 +751,7 @@ GameObject:
   - component: {fileID: 560697792174180609}
   - component: {fileID: 5975680749443565429}
   - component: {fileID: 2573137864710420989}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cueba.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -834,7 +834,7 @@ GameObject:
   - component: {fileID: 4900890941780388130}
   - component: {fileID: 6543151895219103700}
   - component: {fileID: 5554666811015610536}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Suelo.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -914,7 +914,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8035001043193464195}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Medium Mine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -951,7 +951,7 @@ GameObject:
   - component: {fileID: 8252341766572300537}
   - component: {fileID: 222682787395626185}
   - component: {fileID: 4169406688839912234}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Vias madera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1032,7 +1032,7 @@ GameObject:
   - component: {fileID: 8597317754391475189}
   - component: {fileID: 2529640852596665134}
   - component: {fileID: 6851484721265202102}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cueba.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1115,7 +1115,7 @@ GameObject:
   - component: {fileID: 2700136934890753590}
   - component: {fileID: 974475494660308851}
   - component: {fileID: 6416378513933074514}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Suelo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1197,7 +1197,7 @@ GameObject:
   - component: {fileID: 3741610264722719958}
   - component: {fileID: 2560470382104148514}
   - component: {fileID: 2553078050217116458}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Vias madera.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1278,7 +1278,7 @@ GameObject:
   - component: {fileID: 5273126723193873722}
   - component: {fileID: 2925687181357101751}
   - component: {fileID: 7950459689166236450}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Vias metal.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1359,7 +1359,7 @@ GameObject:
   - component: {fileID: 5319113779957369497}
   - component: {fileID: 5992377589356367443}
   - component: {fileID: 5513590306924682989}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Minerales.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -19,8 +19,11 @@ public class MineManager : MonoBehaviour
     // variables privadas
     private List<Mine> _mines;// refrencia a las minas instanciadas   
     private float _cronometro;// coronometro para control de ciclo
-    private float _cronometro2;// cronometro de bloqueo de minas   
+    private float _cronometro2;// cronometro de bloqueo de minas
+
+    // conexion de minas
     private bool conectingMines = false; // para saber si estoy conectando minas
+    private LineRenderer line; // line renderer de los caminos
 
     void Start()
     {
@@ -111,6 +114,29 @@ public class MineManager : MonoBehaviour
         inventory.Store(resources);
     }
 
+    public bool DispoConect()
+    {
+        bool dispo = false;
+        foreach (var item in _mines)
+        {
+            if (item.node.status == StatusNode.Inactive) dispo = true;
+        }
+        return dispo;
+    }
+
+    public bool IsConecting()
+    {
+        return conectingMines;
+    }
+
+    public void StartConecting(Mine startMine)
+    {
+        conectingMines = true;
+        // instancio un camino donde el origen sea la mina origen y el destino sea la posicion del mouse
+        line = Instantiate(prefabTrail, Vector3.zero, Quaternion.identity).GetComponent<LineRenderer>();
+        line.SetPosition(0, startMine.transform.position);
+    }
+
     public void ConectMines(Mine startMine, Mine endMine)
     {
         // verifico que el inicio y el final no sean el mismo y que la mina final no este activa
@@ -122,11 +148,10 @@ public class MineManager : MonoBehaviour
             startMine.node.trails.Add(endMine);
             //activo la mina a conectar
             endMine.node.status = StatusNode.Active;
-            //instancio una linea
-            GameObject temp = Instantiate(prefabTrail, Vector3.zero, Quaternion.identity);
-            LineRenderer line = temp.GetComponent<LineRenderer>();
-            line.SetPosition(0, startMine.transform.position);
+            //termino de conectar la linea antes instanciada
+            line.GetComponent<FollowMouse>().enabled = false;
             line.SetPosition(1, endMine.transform.position);
+            line = null;
             //termino la accion
             conectingMines = false;
             //ShowMine(endMine);
@@ -179,16 +204,6 @@ public class MineManager : MonoBehaviour
         // refresco la UI de la mina
         ui.HideMine();
         ui.ShowMine(mine);
-    }
-
-    public bool IsConecting()
-    {
-        return conectingMines;
-    }
-
-    public void StartConecting()
-    {
-        conectingMines = true;
     }
 
     public float GetAmount(BlueprintName name)

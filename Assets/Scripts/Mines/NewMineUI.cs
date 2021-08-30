@@ -182,8 +182,11 @@ public class NewMineUI : MonoBehaviour
 
     public void ConectMines()
     {
-        HideMine();
-        manager.StartConecting();
+        if (manager.DispoConect())
+        {
+            HideMine();
+            manager.StartConecting(_mine);
+        }
     }
 
     public void DesbloquearMina()

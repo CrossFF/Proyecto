@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class InventoryObject : MonoBehaviour, IBeginDragHandler, IEndDragHandler,IDragHandler, IPointerDownHandler, IPointerEnterHandler, IPointerExitHandler
+public class InventoryObject : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHandler, IPointerDownHandler, IPointerEnterHandler, IPointerExitHandler
 {
     //parametros
     public Machine machine;
@@ -36,7 +36,7 @@ public class InventoryObject : MonoBehaviour, IBeginDragHandler, IEndDragHandler
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        
+
     }
 
     public void OnPointerEnter(PointerEventData eventData)

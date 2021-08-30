@@ -6,6 +6,7 @@ using Cinemachine;
 public class PlayerController : MonoBehaviour
 {
     public float speed;
+    public float rotationSpeed;
     public CharacterController characterController;
     public Animator animator;
     private IInteractable interactuable; // objeto interactuable
@@ -39,7 +40,9 @@ public class PlayerController : MonoBehaviour
             if (fixedSpeed != Vector3.zero)
             {
                 animator.SetFloat("speed", 1);
-                animator.transform.forward = fixedSpeed;
+                // hago que mire en la direccion que va a caminar
+                float fixedRotation = rotationSpeed * Time.deltaTime;
+                animator.transform.forward = Vector3.Slerp(animator.transform.forward, fixedSpeed, fixedRotation);
             }
             else
             {

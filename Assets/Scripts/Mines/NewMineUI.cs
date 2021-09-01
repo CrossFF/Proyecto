@@ -73,9 +73,14 @@ public class NewMineUI : MonoBehaviour
         // si la mina no esat activa o trabajando no se puede usar el boton de conectar minas
         if (manager.GetAmount(BlueprintName.Tuneladora) > 0)
         {
-            Debug.Log(manager.GetAmount(BlueprintName.Tuneladora));
             if (_mine.node.status == StatusNode.Active || _mine.node.status == StatusNode.Working)
+            {
                 conectionButton.interactable = true;
+            }
+            else
+            {
+                conectionButton.interactable = false;
+            }
         }
         else
         {
@@ -169,6 +174,16 @@ public class NewMineUI : MonoBehaviour
 
     public void InstallMachine(Machine machine, DispoResource resource)
     {
+        manager.InstallMachine(machine, _mine, GetIndexResource(resource));
+    }
+
+    public bool Instalable(Machine machine)
+    {
+        return manager.Instalable(machine, _mine);
+    }
+
+    public int GetIndexResource(DispoResource resource)
+    {
         int index = 0;
         for (int i = 0; i < _resources.Count; i++)
         {
@@ -177,7 +192,7 @@ public class NewMineUI : MonoBehaviour
                 index = i;
             }
         }
-        manager.InstallMachine(machine, _mine, index);
+        return index;
     }
 
     public void ConectMines()

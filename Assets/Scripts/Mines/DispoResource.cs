@@ -13,10 +13,21 @@ public class DispoResource : MonoBehaviour, IDropHandler
 
     public void OnDrop(PointerEventData eventData)
     {
-        if (eventData.pointerDrag != null)
+        NewMineUI ui = GameObject.Find("Menu de minas").GetComponent<NewMineUI>();
+        Machine machine = eventData.pointerDrag.GetComponent<InventoryObject>().machine;
+        //si se dropeo una maquina
+        if (machine != null)
         {
-            // instalo maquina
-            GameObject.Find("Menu de minas").GetComponent<NewMineUI>().InstallMachine(eventData.pointerDrag.GetComponent<InventoryObject>().machine, this);
+            // si la maquina es instalable
+            if (ui.Instalable(machine))
+            {
+                // instalo maquina
+                ui.InstallMachine(machine, this);
+            }
+            else
+            {
+                //informo que la maquina no es instalable en esta mina
+            }
         }
     }
 }

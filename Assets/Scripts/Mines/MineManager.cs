@@ -206,6 +206,11 @@ public class MineManager : MonoBehaviour
         ui.ShowMine(mine);
     }
 
+    public bool Instalable(Machine machine, Mine mine)
+    {
+        return Node.Instalable(machine, mine.node);
+    }
+
     public float GetAmount(BlueprintName name)
     {
         return inventory.GetAmount(name.ToString());

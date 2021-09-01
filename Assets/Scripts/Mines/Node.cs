@@ -92,4 +92,25 @@ public class Node
         }
         return theMines;
     }
+
+    public static bool Instalable(Machine machine, Node mine)
+    {
+        bool instalable = false;
+        switch (mine.type)
+        {
+            case TypeOfNode.Basic:
+                if (machine.name == MachineName.Dron_Excavador || machine.name == MachineName.Excavadora || machine.name == MachineName.Excavadora_Avanzada)
+                    instalable = true;
+                break;
+            case TypeOfNode.Medium:
+                if (machine.name == MachineName.Excavadora || machine.name == MachineName.Excavadora_Avanzada)
+                    instalable = true;
+                break;
+            case TypeOfNode.Advanced:
+                if (machine.name == MachineName.Excavadora_Avanzada)
+                    instalable = true;
+                break;
+        }
+        return instalable;
+    }
 }

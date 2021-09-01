@@ -432,7 +432,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 991568545}
   m_HandleRect: {fileID: 991568544}
   m_Direction: 2
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -1394,7 +1394,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.000061035156}
+  m_AnchoredPosition: {x: 0, y: -0.000061035156}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &233119476
@@ -1648,7 +1648,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.000061035156}
+  m_AnchoredPosition: {x: 0, y: -0.000061035156}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &281482975
@@ -5108,7 +5108,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 729378415}
   m_HandleRect: {fileID: 729378414}
   m_Direction: 2
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -5722,7 +5722,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 957557776}
-  m_LocalRotation: {x: 0.3507143, y: 0.0073986794, z: -0.0027709163, w: 0.9364492}
+  m_LocalRotation: {x: 0.3507143, y: 0.007398712, z: -0.0027709287, w: 0.9364492}
   m_LocalPosition: {x: 113.39, y: 4.4, z: 104.03}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -7177,7 +7177,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -0.000061035156}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1165582344
@@ -7702,7 +7702,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 867850179}
   m_HandleRect: {fileID: 867850178}
   m_Direction: 2
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -7816,7 +7816,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: RECURSOS DE ESTA MINA
+  m_Text: RECURSOS
 --- !u!222 &1256627646
 CanvasRenderer:
   m_ObjectHideFlags: 0

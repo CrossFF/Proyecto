@@ -49,6 +49,11 @@ public class PlayerController : MonoBehaviour
                 animator.SetFloat("speed", 0);
             }
         }
+        else
+        {
+            // la atencion no esta en el personaje
+            animator.SetFloat("speed", 0);
+        }
     }
 
     private void Interactuar()

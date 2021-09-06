@@ -67,14 +67,6 @@ public class Resource
         }
         this.totalAmount = this.amount;
     }
-    public Resource(List<Resource> list)
-    {
-        this.type = list[0].type;
-        foreach (var item in list)
-        {
-            this.amount += item.amount;
-        }
-    }
 
     // metodos propios
     public Resource GetResource()
@@ -94,37 +86,40 @@ public class Resource
         this.machine = machine;
     }
 
-    //metodos estaticos
-    // ordeno la lista de recursos
-    public static List<Resource> SortList(List<Resource> list)
+    // metodos estaticos
+    public static TypeResource GetType(string name)
     {
-        List<Resource> theList = new List<Resource>();
-        // por cada tipo de recurso genero una lista
-        foreach (var item in Enum.GetNames(typeof(TypeResource)))
+        TypeResource type = TypeResource.BasicOre1;
+        switch (name)
         {
-            List<Resource> listTemp = GetResourcesType(list, item);
-            // si esa lista tiene almenos un elemneto comnvierto esa lista en un solo recurso
-            if (listTemp.Count > 0)
-            {
-                Resource temp = new Resource(listTemp);
-                // agrego ese recurso a la lista
-                theList.Add(temp);
-            }
+            case "BasicOre1":
+                type = TypeResource.BasicOre1;
+                break;
+            case "BasicOre2":
+                type = TypeResource.BasicOre2;
+                break;
+            case "BasicOre3":
+                type = TypeResource.BasicOre3;
+                break;
+            case "MediumOre1":
+                type = TypeResource.MediumOre1;
+                break;
+            case "MediumOre2":
+                type = TypeResource.MediumOre2;
+                break;
+            case "MediumOre3":
+                type = TypeResource.MediumOre3;
+                break;
+            case "AdvancedOre1":
+                type = TypeResource.AdvancedOre1;
+                break;
+            case "AdvancedOre2":
+                type = TypeResource.AdvancedOre2;
+                break;
+            case "AdvancedOre3":
+                type = TypeResource.AdvancedOre3;
+                break;
         }
-        return theList;
-    }
-    // devuelvo una lista del recurso pedido
-    public static List<Resource> GetResourcesType(List<Resource> list, string type)
-    {
-        List<Resource> theList = new List<Resource>();
-        foreach (var item in list.ToArray())
-        {
-            if (item.type.ToString() == type)
-            {
-                theList.Add(item);
-                list.Remove(item);
-            }
-        }
-        return theList;
+        return type;
     }
 }

@@ -1,17 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class Inventory : MonoBehaviour
 {
-    private List<Resource> _resourcesList;
+    private Dictionary<TypeResource, float> _resourceDictionary;
     private List<Machine> _machineList;
     private List<SystemMecha> _systemList;
     private List<PartMecha> _partsList;
 
     void Awake()
     {
-        _resourcesList = new List<Resource>();
+        // inicializo el diccionario
+        _resourceDictionary = new Dictionary<TypeResource, float>();
+        foreach (string name in Enum.GetNames(typeof(TypeResource)))
+        {
+            _resourceDictionary.Add(Resource.GetType(name), 0f);
+        }
         _machineList = new List<Machine>();
         _partsList = new List<PartMecha>();
         _systemList = new List<SystemMecha>();
@@ -25,10 +31,8 @@ public class Inventory : MonoBehaviour
         //agrego los recursos extraidos al inventario
         foreach (var item in theList)
         {
-            _resourcesList.Add(item);
+            _resourceDictionary[item.type] += item.amount;
         }
-        // ordeno la lista
-        _resourcesList = Resource.SortList(_resourcesList);
     }
 
     // guardar maquina
@@ -46,15 +50,12 @@ public class Inventory : MonoBehaviour
     public float GetAmount(string thing)
     {
         float amount = 0;
+        // maquinas
         foreach (var item in _machineList)
         {
             if (item.name.ToString() == thing) amount++;
         }
-        foreach (var item in _resourcesList)
-        {
-            if (item.type.ToString() == thing) amount += item.amount;
-        }
-
+        // partes
         foreach (var item in _partsList)
         {
             if (item.name.ToString() == thing) amount++;
@@ -64,18 +65,25 @@ public class Inventory : MonoBehaviour
         {
             if (item.type.ToString() == thing) amount++;
         }*/
-
         return amount;
     }
 
-    public void UseResource(string thing, float amount)
+    // Consigue la cantidad de un recurso
+    public float GetAmount(TypeResource thing)
     {
-        foreach (var item in _resourcesList.ToArray())
+        float amount = 0;
+        if(_resourceDictionary.ContainsKey(thing))
         {
-            if (item.type.ToString() == thing)
-            {
-                item.amount -= amount;
-            }
+            amount += _resourceDictionary[thing];
+        }
+        return amount;
+    }
+
+    public void UseResource(TypeResource type, float amount)
+    {
+        if(_resourceDictionary.ContainsKey(type))
+        {
+            _resourceDictionary[type] -= amount;
         }
     }
 

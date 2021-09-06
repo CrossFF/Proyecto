@@ -141,7 +141,7 @@ public class CraftingManager : MonoBehaviour
         //gasto los recursos necesarios para el crafteo
         for (int i = 0; i < blueprint.blueprintIngredients.Count; i++)
         {
-            inventory.UseResource(blueprint.blueprintIngredients[i].ToString(), blueprint.ingredientsAmount[i]);
+            inventory.UseResource(blueprint.blueprintIngredients[i], blueprint.ingredientsAmount[i]);
         }
         // creo el objeto necesario y lo guardo en el inventario
         switch (blueprint.blueprintType)

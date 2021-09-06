@@ -39,7 +39,7 @@ public class BlueprintGameObject : MonoBehaviour
         int num = 0;
         for (int i = 0; i < blueprintIngredients.Count; i++)
         {
-            float actual = manager.inventory.GetAmount(blueprintIngredients[i].ToString());
+            float actual = manager.inventory.GetAmount(blueprintIngredients[i]);
             if (ingredientsAmount[i] <= actual) num++;
         }
         _crafteable = num == blueprintIngredients.Count ? true : false;
@@ -75,7 +75,7 @@ public class BlueprintGameObject : MonoBehaviour
             _ingredients[i].resourceImage.sprite = spriteTemp;
             //cantidad necesaria y en el inventario
             float necesario = ingredientsAmount[i];
-            float actual = manager.inventory.GetAmount(blueprintIngredients[i].ToString());
+            float actual = manager.inventory.GetAmount(blueprintIngredients[i]);
             _ingredients[i].amountText.text = actual + "/" + necesario;
         }
     }

@@ -5,8 +5,8 @@ using Cinemachine;
 
 public class ConsolaDeMecha : MonoBehaviour, IInteractable
 {
-    [SerializeField]private Outline outline;
-    [SerializeField]private CinemachineVirtualCamera vCam;
+    [SerializeField] private Outline outline;
+    [SerializeField] private CinemachineVirtualCamera vCam;
     public void Desmarcar()
     {
         outline.enabled = false;
@@ -28,7 +28,7 @@ public class ConsolaDeMecha : MonoBehaviour, IInteractable
         outline.enabled = false;
         collider.enabled = false;
     }
-    
+
     public void Salir()
     {
         BoxCollider collider = GetComponent<BoxCollider>();

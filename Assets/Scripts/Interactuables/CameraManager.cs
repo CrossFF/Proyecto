@@ -33,13 +33,3 @@ public interface IInteractable
     void Resaltar();
     void Desmarcar();    
 }
-
-// enum con las posibles interacctions
-public enum Seccion
-{
-    Personaje,
-    Minas,
-    Crafteo,
-    Mecha,
-    Parte
-}

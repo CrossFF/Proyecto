@@ -37,7 +37,7 @@ public class MineManager : MonoBehaviour
         InstantiateMine(medumMines, TypeOfNode.Medium);
         InstantiateMine(advancedMines, TypeOfNode.Advanced);
         // activo la primera mina
-        _mines[0].node.status = StatusNode.Active;
+        _mines[0].node.status = StatusNode.Lista_para_trabajar;
         // seteo el cronometro
         _cronometro = timeCycle;
     }
@@ -68,7 +68,7 @@ public class MineManager : MonoBehaviour
         if (_cronometro <= 0f)
         {
             //extraigo recursos de la minas que estan trabajando
-            List<Mine> activeMines = Node.GetTypeNodes(_mines, StatusNode.Working);
+            List<Mine> activeMines = Node.GetTypeNodes(_mines, StatusNode.Activa);
             List<Resource> extractedResources = new List<Resource>();
             // si la cantidad de minas activas es distinta de 0
             if (activeMines.Count != 0)
@@ -98,11 +98,11 @@ public class MineManager : MonoBehaviour
         if (_cronometro2 <= 0)
         {
             // selecciono una mina random que este trabajando
-            List<Mine> mines = Node.GetTypeNodes(_mines, StatusNode.Working);
+            List<Mine> mines = Node.GetTypeNodes(_mines, StatusNode.Activa);
             if (mines.Count != 0)
             {
                 int num = Random.Range(0, mines.Count);
-                mines[num].node.status = StatusNode.Blocked;
+                mines[num].node.status = StatusNode.Bloqueada;
 
             }
             _cronometro2 = Random.Range(timeMin, timeMax);
@@ -119,7 +119,7 @@ public class MineManager : MonoBehaviour
         bool dispo = false;
         foreach (var item in _mines)
         {
-            if (item.node.status == StatusNode.Inactive) dispo = true;
+            if (item.node.status == StatusNode.Inactiva) dispo = true;
         }
         return dispo;
     }
@@ -140,21 +140,20 @@ public class MineManager : MonoBehaviour
     public void ConectMines(Mine startMine, Mine endMine)
     {
         // verifico que el inicio y el final no sean el mismo y que la mina final no este activa
-        if (startMine != endMine && endMine.node.status == StatusNode.Inactive)
+        if (startMine != endMine && endMine.node.status == StatusNode.Inactiva)
         {
             //uso una tuneladora
             inventory.UseMachine(MachineName.Tuneladora);
             //agrego la mina al camino de la primera
             startMine.node.trails.Add(endMine);
             //activo la mina a conectar
-            endMine.node.status = StatusNode.Active;
+            endMine.node.status = StatusNode.Lista_para_trabajar;
             //termino de conectar la linea antes instanciada
             line.GetComponent<FollowMouse>().enabled = false;
             line.SetPosition(1, endMine.transform.position);
             line = null;
             //termino la accion
             conectingMines = false;
-            //ShowMine(endMine);
         }
     }
 
@@ -181,14 +180,18 @@ public class MineManager : MonoBehaviour
 
     public List<Machine> GetMachines()
     {
-        List<Machine> machines = inventory.GetMachines();
-        return machines;
+        return inventory.GetMachines();
+    }
+
+    public List<Machine> GetMachines(MachineFunction function)
+    {
+        return inventory.GetMachines(function);
     }
 
     public void InstallMachine(Machine machine, Mine mine, int indexResource)
     {
         // si el nodo esta activo
-        if (mine.node.status == StatusNode.Active || mine.node.status == StatusNode.Working)
+        if (mine.node.status == StatusNode.Lista_para_trabajar || mine.node.status == StatusNode.Activa)
         {
             // si el recurso ya tiene alguna maquina
             if (mine.node.resources[indexResource].machine == null)
@@ -198,7 +201,7 @@ public class MineManager : MonoBehaviour
                 // elimino la maquina del inventario
                 inventory.UseMachine(machine);
                 // si la mina no tenia el esatdo de trabajando le cambio el estado
-                if (mine.node.status == StatusNode.Active) mine.node.status = StatusNode.Working;
+                if (mine.node.status == StatusNode.Lista_para_trabajar) mine.node.status = StatusNode.Activa;
             }
         }
         // refresco la UI de la mina
@@ -220,7 +223,7 @@ public class MineManager : MonoBehaviour
     {
         inventory.UseMachine(MachineName.Dron_Limpiador);
         // re activo el nodo
-        mine.node.status = StatusNode.Working;
+        mine.node.status = StatusNode.Activa;
         ui.HideMine();
         ui.ShowMine(mine);
     }

@@ -23,10 +23,7 @@ public class ConsolaDeCrafting : MonoBehaviour, IInteractable
         //cambio proridad de camaras
         GameObject.Find("Cameras Manager").GetComponent<CameraManager>().ChangePriority(vCam);
         //activo el menu de crafteo
-        GameObject.Find("Menu de Crafteo").GetComponent<CraftingManager>().ShowMenu();
-        //le doy una posicion fija al jugador
-        var player = GameObject.Find("Player").GetComponent<Transform>();
-        player.position = pos;
+        GameObject.Find("Menu de Crafteo").GetComponent<CraftingManager>().ShowMenu();     
     }
 
     public void Salir()

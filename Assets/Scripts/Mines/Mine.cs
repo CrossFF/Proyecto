@@ -41,21 +41,33 @@ public class Mine : MonoBehaviour
 
     private void ActivityControl()
     {
+        // verifico si la mina esta vacia
+        float num = 0;
+        foreach (var item in node.resources)
+        {
+            num += item.amount;
+        }
+        if(num == 0)
+        {
+            node.status = StatusNode.Sin_recursos;
+        }
+
+        // activo cosas segun su estado
         switch (node.status)
         {
-            case StatusNode.Active:
+            case StatusNode.Lista_para_trabajar:
                 outline.OutlineColor = Color.cyan;
                 break;
-            case StatusNode.Inactive:
+            case StatusNode.Inactiva:
                 outline.OutlineColor = Color.yellow;
                 break;
-            case StatusNode.Blocked:
+            case StatusNode.Bloqueada:
                 outline.OutlineColor = Color.red;
                 break;
-            case StatusNode.Working:
+            case StatusNode.Activa:
                 outline.OutlineColor = Color.green;
                 break;
-            case StatusNode.Empty:
+            case StatusNode.Sin_recursos:
                 outline.OutlineColor = Color.gray;
                 break;
         }

@@ -5,8 +5,8 @@ using Cinemachine;
 
 public class ConsolaDeMinas : MonoBehaviour, IInteractable
 {
-    [SerializeField]private Outline outline;
-    [SerializeField]private CinemachineVirtualCamera vCam;
+    [SerializeField] private Outline outline;
+    [SerializeField] private CinemachineVirtualCamera vCam;
     public void Desmarcar()
     {
         outline.enabled = false;
@@ -24,7 +24,7 @@ public class ConsolaDeMinas : MonoBehaviour, IInteractable
         //activo el menu de crafteo
         GameObject.Find("Mine Manager").GetComponent<MineManager>().ShowMenu();
     }
-    
+
     public void Salir()
     {
         GameObject.Find("Mine Manager").GetComponent<MineManager>().HideMenu();

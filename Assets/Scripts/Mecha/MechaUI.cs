@@ -6,8 +6,8 @@ using UnityEngine.UI;
 public class MechaUI : MonoBehaviour
 {
     public CanvasGroup allUI,
-    inventarioParte,
-    informacionParte;
+    inventarioParte;
+    //informacionParte;
     public MechaManager manager;
     public GameObject prefabPartInventory;
     public Transform parentInventory;
@@ -31,7 +31,7 @@ public class MechaUI : MonoBehaviour
     {
         SetVisibilidad(allUI, true);
         SetVisibilidad(inventarioParte, true);
-        SetVisibilidad(informacionParte, false);
+        //SetVisibilidad(informacionParte, false);
         ClearInventory();
         InstantiateInventory();
     }
@@ -40,7 +40,7 @@ public class MechaUI : MonoBehaviour
     {
         SetVisibilidad(allUI, false);
         SetVisibilidad(inventarioParte, false);
-        SetVisibilidad(informacionParte, false);
+        //SetVisibilidad(informacionParte, false);
     }
 
     private void ClearInventory()
@@ -74,6 +74,6 @@ public class MechaUI : MonoBehaviour
     public void ShowPart(PartMecha part)
     {
         SetVisibilidad(inventarioParte, false);
-        SetVisibilidad(informacionParte, true);
+        //SetVisibilidad(informacionParte, true);
     }
 }

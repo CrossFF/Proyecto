@@ -124,6 +124,17 @@ public class Inventory : MonoBehaviour
         return _machineList;
     }
 
+    public List<Machine> GetMachines(MachineFunction function)
+    {
+        List<Machine> machines = new List<Machine>();
+        foreach (var item in _machineList)
+        {
+            if (item.function == function)
+                machines.Add(item);
+        }
+        return machines;
+    }
+
     public List<PartMecha> GetParts()
     {
         return _partsList;

@@ -11,11 +11,11 @@ public enum TypeOfNode
 
 public enum StatusNode
 {
-    Active,
-    Inactive,
-    Blocked,
-    Working,
-    Empty
+    Lista_para_trabajar,
+    Inactiva,
+    Bloqueada,
+    Activa,
+    Sin_recursos
 }
 
 public class Node
@@ -31,7 +31,7 @@ public class Node
     {
         this.type = type;
         this.name = name;
-        this.status = StatusNode.Inactive;
+        this.status = StatusNode.Inactiva;
 
         switch (type)
         {

@@ -11,7 +11,8 @@ public class NewMineUI : MonoBehaviour
      infoMine;
     public Text conectionsText,
     dispoTuneladoras,
-    dispoDronesLimpieza;
+    dispoDronesLimpieza,
+    stausText;
     public Button conectionButton,// boton de crear conecciones
     derrumbeButton;// boton de eliminar derrumbes
     public GameObject prefabResource; // info basica del recurso
@@ -60,6 +61,7 @@ public class NewMineUI : MonoBehaviour
         infoMine.blocksRaycasts = true;
         //seteo la info basica de la mina
         conectionsText.text = "Esta mina conecta con: " + _mine.node.trails.Count + " minas";
+        stausText.text = _mine.node.status.ToString();
         // insatancio los recursos
         foreach (var item in _mine.node.resources)
         {
@@ -73,7 +75,7 @@ public class NewMineUI : MonoBehaviour
         // si la mina no esat activa o trabajando no se puede usar el boton de conectar minas
         if (manager.GetAmount(BlueprintName.Tuneladora) > 0)
         {
-            if (_mine.node.status == StatusNode.Active || _mine.node.status == StatusNode.Working)
+            if (_mine.node.status == StatusNode.Lista_para_trabajar || _mine.node.status == StatusNode.Activa)
             {
                 conectionButton.interactable = true;
             }
@@ -89,8 +91,14 @@ public class NewMineUI : MonoBehaviour
         // si la mina no esta bloqueada no se puede usar el boton de eliminar derrumbe
         if (manager.GetAmount(BlueprintName.Dron_Limpiador) > 0)
         {
-            if (_mine.node.status == StatusNode.Blocked)
+            if (_mine.node.status == StatusNode.Bloqueada)
+            {
                 derrumbeButton.interactable = true;
+            }
+            else
+            {
+                derrumbeButton.interactable = false;
+            }
         }
         else
         {
@@ -109,17 +117,22 @@ public class NewMineUI : MonoBehaviour
                 _resources[i].fillImage.fillAmount = fillAmount;
                 _resources[i].nombreRecurso.text = _mine.node.resources[i].type.ToString();
                 var sprite1 = Resources.Load<Sprite>("Ores/" + _mine.node.resources[i].type);
+                // imagen de fondo
                 _resources[i].imageRecurso.sprite = sprite1;
+                // imagen de relleno
+                _resources[i].fillImage.sprite = sprite1;
                 // info de la maquina
                 if (_mine.node.resources[i].machine != null)
                 {
                     _resources[i].nombreMaquina.text = _mine.node.resources[i].machine.name.ToString();
                     var sprite2 = Resources.Load<Sprite>("Prototype/" + _mine.node.resources[i].machine.name);
+                    _resources[i].imageMachine.color = Color.white;
                     _resources[i].imageMachine.sprite = sprite2;
                 }
                 else
                 {
                     _resources[i].nombreMaquina.text = "Empty";
+                    _resources[i].imageMachine.color = new Color32(1, 1, 1, 0);
                 }
             }
         }
@@ -145,15 +158,12 @@ public class NewMineUI : MonoBehaviour
     private void InstanciarInventario()
     {
         Canvas canvas = GameObject.Find("Canvas").GetComponent<Canvas>();
-        List<Machine> machines = manager.GetMachines();
+        List<Machine> machines = manager.GetMachines(MachineFunction.Extraer);
         if (machines.Count != 0)
         {
             foreach (var item in machines)
             {
-                if (item.function == MachineFunction.Extraer)
-                {
-                    _invetory.Add(Instantiate(prefabInventory, parentInventory).GetComponent<InventoryObject>());
-                }
+                _invetory.Add(Instantiate(prefabInventory, parentInventory).GetComponent<InventoryObject>());
             }
             // seteo la info
             for (int i = 0; i < _invetory.Count; i++)
@@ -161,6 +171,9 @@ public class NewMineUI : MonoBehaviour
                 _invetory[i].canvas = canvas;
                 _invetory[i].parent = parentInventory;
                 _invetory[i].machine = machines[i];
+                // imagen de la maquina
+                var sprite = Resources.Load<Sprite>("Prototype/" + _invetory[i].machine.name);
+                _invetory[i].imagenObjeto.sprite = sprite;
                 _invetory[i].nombreItem.text = machines[i].name.ToString();
             }
         }

@@ -266,6 +266,7 @@ GameObject:
   - component: {fileID: 3745598083951187064}
   - component: {fileID: 3745598083951187335}
   - component: {fileID: 5912676449326317919}
+  - component: {fileID: 652788274117561336}
   m_Layer: 5
   m_Name: Blueprint
   m_TagString: Untagged
@@ -358,6 +359,19 @@ MonoBehaviour:
   craftImage: {fileID: 3745598083506678264}
   fabricateButton: {fileID: 1158979980112981412}
   ingredientsParent: {fileID: 4642902145869133235}
+  canvasGroup: {fileID: 652788274117561336}
+--- !u!225 &652788274117561336
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3745598083951187333}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &3745598084030540913
 GameObject:
   m_ObjectHideFlags: 0

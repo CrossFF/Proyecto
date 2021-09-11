@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 961283650857551991}
   - component: {fileID: 961283650857552264}
   - component: {fileID: 7827863188038475088}
+  - component: {fileID: 7261673872336528607}
   m_Layer: 5
   m_Name: Pierna i
   m_TagString: Untagged
@@ -104,6 +105,19 @@ MonoBehaviour:
   craftImage: {fileID: 961283651470276087}
   fabricateButton: {fileID: 3366904548548833707}
   ingredientsParent: {fileID: 9134079704954284476}
+  canvasGroup: {fileID: 7261673872336528607}
+--- !u!225 &7261673872336528607
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 961283650857552266}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &961283650937958526
 GameObject:
   m_ObjectHideFlags: 0

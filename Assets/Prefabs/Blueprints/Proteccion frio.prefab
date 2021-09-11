@@ -166,6 +166,7 @@ GameObject:
   - component: {fileID: 2199440244971838701}
   - component: {fileID: 2199440244971838738}
   - component: {fileID: 9183113711779056074}
+  - component: {fileID: 271185779543026976}
   m_Layer: 5
   m_Name: Proteccion frio
   m_TagString: Untagged
@@ -258,6 +259,19 @@ MonoBehaviour:
   craftImage: {fileID: 2199440243419603309}
   fabricateButton: {fileID: 4425759177345443121}
   ingredientsParent: {fileID: 7858803632590322982}
+  canvasGroup: {fileID: 271185779543026976}
+--- !u!225 &271185779543026976
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2199440244971838736}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &2199440245025662180
 GameObject:
   m_ObjectHideFlags: 0

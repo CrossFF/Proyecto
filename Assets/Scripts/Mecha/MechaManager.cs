@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 public class MechaManager : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class MechaManager : MonoBehaviour
     public List<PartGameObject> parts; // partes del mecha
     public Inventory inventory;
     public MechaUI ui;
+    [SerializeField] private CameraManager cameraManager;
 
     void Start()
     {
@@ -24,9 +26,10 @@ public class MechaManager : MonoBehaviour
         ui.HideMenu();
     }
 
-    public void ShowPart(PartMecha part)
+    public void ShowPart(PartMecha part, CinemachineVirtualCamera cam)
     {
         ui.ShowPart(part);
+        cameraManager.ChangePriority(cam);
     }
 
     private void CheckParts()

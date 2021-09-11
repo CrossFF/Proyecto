@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using Cinemachine;
 
 public class PartGameObject : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class PartGameObject : MonoBehaviour
     [SerializeField] private List<Renderer> _mallas;
     [SerializeField] private Outline _outline;
     [SerializeField] private MechaManager manager;
+    [SerializeField] private CinemachineVirtualCamera cam;
     private PartMecha _part = null;
 
     // verifico si la parte tiene una parte equipada
@@ -81,6 +83,6 @@ public class PartGameObject : MonoBehaviour
     void OnMouseDown()
     {
         if (Equiped())
-            manager.ShowPart(_part);
+            manager.ShowPart(_part, cam);
     }
 }

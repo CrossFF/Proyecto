@@ -224,6 +224,7 @@ GameObject:
   - component: {fileID: 5541944343694829692}
   - component: {fileID: 5541944343694829955}
   - component: {fileID: 3251022232990317915}
+  - component: {fileID: 4228492255843265234}
   m_Layer: 5
   m_Name: Excabadora Avanzada
   m_TagString: Untagged
@@ -316,6 +317,19 @@ MonoBehaviour:
   craftImage: {fileID: 5541944344273851900}
   fabricateButton: {fileID: 8000221145327292832}
   ingredientsParent: {fileID: 4574846329046206903}
+  canvasGroup: {fileID: 4228492255843265234}
+--- !u!225 &4228492255843265234
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5541944343694829953}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &5541944343740747893
 GameObject:
   m_ObjectHideFlags: 0

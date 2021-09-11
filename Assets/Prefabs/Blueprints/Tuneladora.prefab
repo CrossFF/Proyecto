@@ -479,8 +479,9 @@ GameObject:
   - component: {fileID: 7722113363138920504}
   - component: {fileID: 7722113363138920903}
   - component: {fileID: 783476024688235807}
+  - component: {fileID: 5065764154380028536}
   m_Layer: 5
-  m_Name: Excabadora Avanzada 1
+  m_Name: Tuneladora
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -571,6 +572,19 @@ MonoBehaviour:
   craftImage: {fileID: 7722113363634208184}
   fabricateButton: {fileID: 5243591339799902692}
   ingredientsParent: {fileID: 1783313626507485683}
+  canvasGroup: {fileID: 5065764154380028536}
+--- !u!225 &5065764154380028536
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7722113363138920901}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &7722113363551488007
 GameObject:
   m_ObjectHideFlags: 0

@@ -188,6 +188,7 @@ GameObject:
   - component: {fileID: 4023541259035917535}
   - component: {fileID: 4023541259035917600}
   - component: {fileID: 6206944412561582584}
+  - component: {fileID: 6644723590316122045}
   m_Layer: 5
   m_Name: Proteccion calor
   m_TagString: Untagged
@@ -280,6 +281,19 @@ MonoBehaviour:
   craftImage: {fileID: 4023541260654559583}
   fabricateButton: {fileID: 1457181450776446211}
   ingredientsParent: {fileID: 4918935810366004500}
+  canvasGroup: {fileID: 6644723590316122045}
+--- !u!225 &6644723590316122045
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4023541259035917602}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &4023541259048830166
 GameObject:
   m_ObjectHideFlags: 0

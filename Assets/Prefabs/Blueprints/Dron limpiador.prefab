@@ -245,6 +245,7 @@ GameObject:
   - component: {fileID: 1437068178287510771}
   - component: {fileID: 1437068178287510796}
   - component: {fileID: 8215831942256054740}
+  - component: {fileID: 8577596344088456104}
   m_Layer: 5
   m_Name: Dron limpiador
   m_TagString: Untagged
@@ -337,6 +338,19 @@ MonoBehaviour:
   craftImage: {fileID: 1437068176652220787}
   fabricateButton: {fileID: 3467756727632362799}
   ingredientsParent: {fileID: 6945837737563825464}
+  canvasGroup: {fileID: 8577596344088456104}
+--- !u!225 &8577596344088456104
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1437068178287510798}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1437068178411004909
 GameObject:
   m_ObjectHideFlags: 0

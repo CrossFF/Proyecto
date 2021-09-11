@@ -20,6 +20,7 @@ public class BlueprintGameObject : MonoBehaviour
     public Button fabricateButton;
     public Transform ingredientsParent;
     private List<IngredientGameObject> _ingredients;
+    public CanvasGroup canvasGroup;
 
     void Start()
     {
@@ -43,8 +44,9 @@ public class BlueprintGameObject : MonoBehaviour
             if (ingredientsAmount[i] <= actual) num++;
         }
         _crafteable = num == blueprintIngredients.Count ? true : false;
-        //activo y descativo boton
-        fabricateButton.interactable = _crafteable ? true : false;
+        //dejo claro que se puede craftear y que no
+        canvasGroup.alpha = _crafteable ? 1f : 0.5f;// alpha del objeto
+        fabricateButton.interactable = _crafteable ? true : false;// boton
     }
 
     private void SetInfo()

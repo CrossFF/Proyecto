@@ -88,6 +88,7 @@ GameObject:
   - component: {fileID: 1578661583502820980}
   - component: {fileID: 1578661583502821259}
   - component: {fileID: 8366995566485263187}
+  - component: {fileID: 4299253131222013516}
   m_Layer: 5
   m_Name: Cabina
   m_TagString: Untagged
@@ -180,6 +181,19 @@ MonoBehaviour:
   craftImage: {fileID: 1578661585205476340}
   fabricateButton: {fileID: 3892807597704282024}
   ingredientsParent: {fileID: 7385172365373286335}
+  canvasGroup: {fileID: 4299253131222013516}
+--- !u!225 &4299253131222013516
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1578661583502821257}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1578661583590047357
 GameObject:
   m_ObjectHideFlags: 0

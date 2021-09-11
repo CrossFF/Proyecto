@@ -7,6 +7,11 @@ public class CameraManager : MonoBehaviour
 {
     // lista de camaras
     public List<CinemachineVirtualCamera> cameras;
+    void Start()
+    {
+        // pongo como prioridad la camara del jugador
+        ChangePriority(cameras[0]);
+    }
 
     // cambio de prioridad
     public void ChangePriority(CinemachineVirtualCamera camera)

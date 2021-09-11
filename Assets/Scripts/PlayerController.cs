@@ -11,11 +11,10 @@ public class PlayerController : MonoBehaviour
     public Animator animator;
     private IInteractable interactuable; // objeto interactuable
     public CinemachineVirtualCamera camPJ;// camara del personaje
-    private CameraManager cameraManager;// manager de las camaras
+    [SerializeField] private CameraManager cameraManager;// manager de las camaras
 
     void Start()
     {
-        cameraManager = GameObject.Find("Cameras Manager").GetComponent<CameraManager>();
         cameraManager.ChangePriority(camPJ);
     }
 

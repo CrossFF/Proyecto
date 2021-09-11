@@ -166,6 +166,7 @@ GameObject:
   - component: {fileID: 708597767338068649}
   - component: {fileID: 708597767338068822}
   - component: {fileID: 7503124049739947918}
+  - component: {fileID: 7290460192455638023}
   m_Layer: 5
   m_Name: Brazo d
   m_TagString: Untagged
@@ -258,6 +259,19 @@ MonoBehaviour:
   craftImage: {fileID: 708597766843397929}
   fabricateButton: {fileID: 3043305593909883765}
   ingredientsParent: {fileID: 8809215219041889122}
+  canvasGroup: {fileID: 7290460192455638023}
+--- !u!225 &7290460192455638023
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 708597767338068820}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &708597767385084576
 GameObject:
   m_ObjectHideFlags: 0

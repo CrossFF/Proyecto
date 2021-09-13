@@ -47,6 +47,12 @@ public class Inventory : MonoBehaviour
         _partsList.Add(part);
     }
 
+    // guardar sistema
+    public void Store(SystemMecha system)
+    {
+        _systemList.Add(system);
+    }
+
     public float GetAmount(string thing)
     {
         float amount = 0;
@@ -60,11 +66,11 @@ public class Inventory : MonoBehaviour
         {
             if (item.name.ToString() == thing) amount++;
         }
-        /*
-        foreach (var item in systemList)
+        // sistemas
+        foreach (var item in _systemList)
         {
-            if (item.type.ToString() == thing) amount++;
-        }*/
+            if (item.name.ToString() == thing) amount++;
+        }
         return amount;
     }
 
@@ -89,15 +95,7 @@ public class Inventory : MonoBehaviour
 
     public void UseMachine(Machine machine)
     {
-        List<Machine> machinesTemp = _machineList;
-        for (int i = 0; i < _machineList.Count; i++)
-        {
-            if (_machineList[i] == machine)
-            {
-                machinesTemp.Remove(machine);
-            }
-        }
-        _machineList = machinesTemp;
+        _machineList.Remove(machine);
     }
 
     public void UseMachine(MachineName machine)
@@ -116,15 +114,12 @@ public class Inventory : MonoBehaviour
 
     public void UsePart(PartMecha part)
     {
-        List<PartMecha> partTemp = _partsList;
-        for (int i = 0; i < _partsList.Count; i++)
-        {
-            if (_partsList[i] == part)
-            {
-                partTemp.Remove(part);
-            }
-        }
-        _partsList = partTemp;
+        _partsList.Remove(part);
+    }
+
+    public void UseSystem(SystemMecha system)
+    {
+        _systemList.Remove(system);
     }
 
     public List<Machine> GetMachines()
@@ -146,6 +141,11 @@ public class Inventory : MonoBehaviour
     public List<PartMecha> GetParts()
     {
         return _partsList;
+    }
+
+    public List<SystemMecha> GetSystems()
+    {
+        return _systemList;
     }
 
 }

@@ -8,15 +8,22 @@ public class MechaUI : MonoBehaviour
     public CanvasGroup allUI,
     inventarioParte,
     sistemas;
-    //informacionParte;
     public MechaManager manager;
+
+    //informacionParte;
     public GameObject prefabPartInventory;
     public Transform parentInventory;
     private List<InventoryPart> _partsInventory;
 
+    // info sistemas
+    public GameObject prefabSystemInventory;
+    public Transform parentInventorySystems;
+    private List<InventorySystem> _systemsInventory;
+
     void Awake()
     {
         _partsInventory = new List<InventoryPart>();
+        _systemsInventory = new List<InventorySystem>();
         ClearInventory();
         HideMenu();
     }
@@ -33,7 +40,6 @@ public class MechaUI : MonoBehaviour
         SetVisibilidad(allUI, true);
         SetVisibilidad(inventarioParte, true);
         SetVisibilidad(sistemas, false);
-        //SetVisibilidad(informacionParte, false);
         ClearInventory();
         InstantiateInventory();
     }
@@ -43,7 +49,6 @@ public class MechaUI : MonoBehaviour
         SetVisibilidad(allUI, false);
         SetVisibilidad(inventarioParte, false);
         SetVisibilidad(sistemas, false);
-        //SetVisibilidad(informacionParte, false);
     }
 
     private void ClearInventory()
@@ -52,7 +57,12 @@ public class MechaUI : MonoBehaviour
         {
             Destroy(item.gameObject);
         }
+        foreach (var item in _systemsInventory)
+        {
+            Destroy(item.gameObject);
+        }
         _partsInventory.Clear();
+        _systemsInventory.Clear();
     }
 
     public void InstantiateInventory()
@@ -60,9 +70,10 @@ public class MechaUI : MonoBehaviour
         List<PartMecha> parts = manager.inventory.GetParts();
         foreach (var item in parts)
         {
+            //instancio las partes en el inventario
             _partsInventory.Add(Instantiate(prefabPartInventory, parentInventory).GetComponent<InventoryPart>());
         }
-        //seteo la infop
+        //seteo la info
         for (int i = 0; i < parts.Count; i++)
         {
             _partsInventory[i].canvas = GameObject.Find("Canvas").GetComponent<Canvas>();
@@ -78,5 +89,27 @@ public class MechaUI : MonoBehaviour
     {
         SetVisibilidad(inventarioParte, false);
         SetVisibilidad(sistemas, true);
+        ClearInventory();
+        InstantiateSystems();
+    }
+
+    public void InstantiateSystems()
+    {
+        List<SystemMecha> systems = manager.inventory.GetSystems();
+        foreach (var item in systems)
+        {
+            // instancio el sistema en el inventario
+            _systemsInventory.Add(Instantiate(prefabSystemInventory, parentInventorySystems).GetComponent<InventorySystem>());
+        }
+        // seteo la info
+        for (int i = 0; i < systems.Count; i++)
+        {
+            _systemsInventory[i].canvas = GameObject.Find("Canvas").GetComponent<Canvas>();
+            _systemsInventory[i].parent = parentInventory;
+            _systemsInventory[i].system = systems[i];
+            _systemsInventory[i].nombreSistema.text = systems[i].name.ToString();
+            var sprite = Resources.Load<Sprite>("La direccion");
+            _systemsInventory[i].imagenSistema.sprite = sprite;
+        }
     }
 }

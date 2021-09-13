@@ -20,7 +20,8 @@ public enum BlueprintName
     Proteccion_Calor,
     Proteccion_Frio,
     Ataque,
-    Defensa
+    Defensa,
+    Bateria
 }
 
 public enum BlueprintIngredients

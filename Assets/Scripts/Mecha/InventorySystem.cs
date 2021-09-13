@@ -4,14 +4,14 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class InventoryPart : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler, IPointerEnterHandler,IPointerExitHandler
+public class InventorySystem : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler, IPointerEnterHandler,IPointerExitHandler
 {
     //parametro
-    public PartMecha part;
+    public SystemMecha system;
     /// referencias
     public CanvasGroup canvasGroup;
-    public Text nombreParte;
-    public Image imagenParte;
+    public Text nombreSistema;
+    public Image imagenSistema;
     public Canvas canvas;
     public RectTransform rectTransform;
     public Transform parent;
@@ -35,9 +35,12 @@ public class InventoryPart : MonoBehaviour, IPointerDownHandler, IBeginDragHandl
             if (hit.transform.tag == "Mecha")
             {
                 PartGameObject temp = hit.transform.GetComponent<PartGameObject>();
-                if (temp.Equipable(part))
+                if(temp.Equiped())
                 {
-                    temp.SetPart(part);
+                    if (temp.CheckSystemCapacity())
+                    {
+                        temp.SetSystem(system);
+                    }
                 }
             }
         }

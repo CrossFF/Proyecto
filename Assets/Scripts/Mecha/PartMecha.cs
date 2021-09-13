@@ -9,12 +9,13 @@ public class PartMecha
     public float atack;
     public float defense;
     public List<SystemMecha> systems;
-    public int systemCapacity;
+    private int systemCapacity;
 
     //Constructores
     public PartMecha(PartName name)
     {
         this.name = name;
+        this.systems = new List<SystemMecha>();
         switch (name)
         {
             case PartName.Cabina:
@@ -47,6 +48,18 @@ public class PartMecha
                 this.defense = 10f;
                 this.systemCapacity = 3;
                 break;
+        }
+    }
+
+    public bool CheckSystemCapacity()
+    {
+        if(this.systems.Count < systemCapacity)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
         }
     }
 

@@ -75,7 +75,7 @@ public class NewMineUI : MonoBehaviour
         // si la mina no esat activa o trabajando no se puede usar el boton de conectar minas
         if (manager.GetAmount(BlueprintName.Tuneladora) > 0)
         {
-            if (_mine.node.status == StatusNode.Lista_para_trabajar || _mine.node.status == StatusNode.Activa)
+            if (_mine.node.status == StatusNode.Lista_para_trabajar || _mine.node.status == StatusNode.Activa ||_mine.node.status == StatusNode.Sin_recursos)
             {
                 conectionButton.interactable = true;
             }

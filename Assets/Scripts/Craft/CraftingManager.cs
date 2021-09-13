@@ -155,7 +155,8 @@ public class CraftingManager : MonoBehaviour
                 inventory.Store(part);
                 break;
             case BlueprintType.System:
-
+                SystemMecha system = new SystemMecha(SystemMecha.GetName(blueprint.blueprintName));
+                inventory.Store(system);
                 break;
         }
     }

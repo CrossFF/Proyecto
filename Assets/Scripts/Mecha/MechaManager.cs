@@ -40,10 +40,24 @@ public class MechaManager : MonoBehaviour
             if (item.Equiped())
             {
                 item.AsignMaterial(visto);
+                // verifico si tiene sistemas equipados y los muestro
+                PartMecha part = item.GetPart();
+                if (part.systems.Count != 0)
+                {
+                    for (int i = 0; i < part.systems.Count; i++)
+                    {
+                        item.ShowSystem(i);
+                    }
+                }
+                else
+                {
+                    item.HideSystems();
+                }
             }
             else
             {
                 item.AsignMaterial(oculto);
+                item.HideSystems();
             }
         }
     }
@@ -54,6 +68,12 @@ public class MechaManager : MonoBehaviour
         CheckParts();
         HideMenu();
         ShowMenu();
+    }
+
+    public void UseSystem(SystemMecha system)
+    {
+        inventory.UseSystem(system);
+        CheckParts();
     }
 
     public void Store(PartMecha part)

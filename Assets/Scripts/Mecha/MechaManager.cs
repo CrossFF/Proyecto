@@ -44,6 +44,7 @@ public class MechaManager : MonoBehaviour
                 PartMecha part = item.GetPart();
                 if (part.systems.Count != 0)
                 {
+                    item.HideSystems();
                     for (int i = 0; i < part.systems.Count; i++)
                     {
                         item.ShowSystem(i);

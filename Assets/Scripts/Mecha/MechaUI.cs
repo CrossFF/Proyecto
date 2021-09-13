@@ -105,7 +105,7 @@ public class MechaUI : MonoBehaviour
         for (int i = 0; i < systems.Count; i++)
         {
             _systemsInventory[i].canvas = GameObject.Find("Canvas").GetComponent<Canvas>();
-            _systemsInventory[i].parent = parentInventory;
+            _systemsInventory[i].parent = parentInventorySystems;
             _systemsInventory[i].system = systems[i];
             _systemsInventory[i].nombreSistema.text = systems[i].name.ToString();
             var sprite = Resources.Load<Sprite>("La direccion");

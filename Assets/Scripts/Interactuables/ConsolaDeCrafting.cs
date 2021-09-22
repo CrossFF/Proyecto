@@ -7,7 +7,6 @@ public class ConsolaDeCrafting : MonoBehaviour, IInteractable
 {
     [SerializeField]private Outline outline;
     [SerializeField]private CinemachineVirtualCamera vCam;
-    [SerializeField]private Vector3 pos;
     public void Desmarcar()
     {
         outline.enabled = false;

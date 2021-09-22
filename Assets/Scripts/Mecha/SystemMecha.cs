@@ -6,7 +6,8 @@ public class SystemMecha
 {
     public SystemName name;
     public SystemFunction function;
-    public float energryToWork;
+    private float energyToWork{get;}
+    public float energyAsigned = 0;
     public float valueEffect;
 
     public SystemMecha(SystemName name)
@@ -16,29 +17,42 @@ public class SystemMecha
         {
             case SystemName.Ataque:
                 this.function = SystemFunction.Ataque;
-                this.energryToWork = 10f;
+                this.energyToWork = 10f;
                 this.valueEffect = 10f;
                 break;
             case SystemName.Defensa:
                 this.function = SystemFunction.Defensa;
-                this.energryToWork = 10f;
+                this.energyToWork = 10f;
                 this.valueEffect = 10f;
                 break;
             case SystemName.Proteccion_Calor:
                 this.function = SystemFunction.Calor;
-                this.energryToWork = 10f;
+                this.energyToWork = 10f;
                 this.valueEffect = 10f;
                 break;
             case SystemName.Proteccion_Frio:
                 this.function = SystemFunction.Frio;
-                this.energryToWork = 10f;
+                this.energyToWork = 10f;
                 this.valueEffect = 10f;
                 break;
             case SystemName.Bateria:
                 this.function = SystemFunction.Energia;
-                this.energryToWork = 10f;
+                this.energyToWork = 0f;
                 this.valueEffect = 10f;
                 break;
+        }
+    }
+
+    // metodos propios
+    public bool Working()
+    {
+        if(this.energyToWork <= this.energyAsigned)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
         }
     }
 

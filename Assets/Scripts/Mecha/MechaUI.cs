@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Cinemachine;
 
 public class MechaUI : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class MechaUI : MonoBehaviour
     inventarioParte,
     sistemas;
     public MechaManager manager;
+    public CameraManager cameraManager;
+    public CinemachineVirtualCamera camMecha;
 
     //informacionParte;
     public GameObject prefabPartInventory;
@@ -111,5 +114,11 @@ public class MechaUI : MonoBehaviour
             var sprite = Resources.Load<Sprite>("La direccion");
             _systemsInventory[i].imagenSistema.sprite = sprite;
         }
+    }
+
+    public void ReturnPartMenu()
+    {
+        cameraManager.ChangePriority(camMecha);
+        ShowMenu();
     }
 }

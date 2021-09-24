@@ -432,8 +432,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 991568545}
   m_HandleRect: {fileID: 991568544}
   m_Direction: 2
-  m_Value: 1
-  m_Size: 0.98179966
+  m_Value: 0
+  m_Size: 0.9999944
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1183,6 +1183,7 @@ MonoBehaviour:
   - {fileID: 105746423}
   - {fileID: 1474848932}
   - {fileID: 1581324783}
+  _texturas: []
   _mallasSistemas:
   - {fileID: 694793907}
   - {fileID: 1117125787}
@@ -1436,6 +1437,7 @@ MonoBehaviour:
   - {fileID: 155500609}
   - {fileID: 1394542362}
   - {fileID: 1111124285}
+  _texturas: []
   _mallasSistemas:
   - {fileID: 1385749492}
   - {fileID: 1900917253}
@@ -1757,7 +1759,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.000061035156}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &233119476
@@ -2011,7 +2013,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.000061035156}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &281482975
@@ -4617,6 +4619,7 @@ MonoBehaviour:
   _mallas:
   - {fileID: 617125655}
   - {fileID: 593612285}
+  _texturas: []
   _mallasSistemas:
   - {fileID: 1559388097}
   - {fileID: 1356578555}
@@ -6303,8 +6306,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 729378415}
   m_HandleRect: {fileID: 729378414}
   m_Direction: 2
-  m_Value: 1
-  m_Size: 0.98179966
+  m_Value: 0
+  m_Size: 0.9999944
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -6941,6 +6944,7 @@ MonoBehaviour:
   animator: {fileID: 2034796550}
   camPJ: {fileID: 1152005762}
   cameraManager: {fileID: 590460638}
+  debugMode: 1
 --- !u!143 &920552267
 CharacterController:
   m_ObjectHideFlags: 0
@@ -7499,7 +7503,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d98b96490bb82ec4c988e63b41de30d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  visto: {fileID: 2100000, guid: decb1c9dfbda260429f04981031d9cc9, type: 2}
   oculto: {fileID: 2100000, guid: 1073a8ed7071b9d4893bcc67a034b9f1, type: 2}
   parts:
   - {fileID: 355194887006341481}
@@ -8917,7 +8920,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.000061035156}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1165582344
@@ -9537,8 +9540,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 867850179}
   m_HandleRect: {fileID: 867850178}
   m_Direction: 2
-  m_Value: 1
-  m_Size: 0.98179966
+  m_Value: 0
+  m_Size: 0.9999944
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -12740,6 +12743,7 @@ MonoBehaviour:
   - {fileID: 1490839896}
   - {fileID: 681167965}
   - {fileID: 1428543197}
+  _texturas: []
   _mallasSistemas:
   - {fileID: 1349358451}
   - {fileID: 693872650}
@@ -13989,6 +13993,7 @@ MonoBehaviour:
   - {fileID: 608195470}
   - {fileID: 1694246625}
   - {fileID: 1120615578}
+  _texturas: []
   _mallasSistemas:
   - {fileID: 288367530}
   - {fileID: 622293183}
@@ -14784,15 +14789,25 @@ MonoBehaviour:
   prefabBlueprints:
   - {fileID: 5261990847631789035, guid: e18da631137b1ff4e8746a68b568ba5d, type: 3}
   - {fileID: 708597767338068820, guid: 37d74869909ee6f4a9e48305c7c7adf1, type: 3}
+  - {fileID: 3198003990684312527, guid: 24af1972ace9dbb4e8be774c90fc7689, type: 3}
+  - {fileID: 8858386483066776373, guid: 0e6a34432b58dfc4b891be43b93a2f5f, type: 3}
   - {fileID: 1427437982035152716, guid: 6a6fca6ddfe617b4684a83d2abfd870d, type: 3}
+  - {fileID: 2006137042746320925, guid: d2214b4213ec86044aabbd37c9d989f2, type: 3}
+  - {fileID: 6238505491754064293, guid: ea73eceb96f90a447a6a58a588c444c3, type: 3}
   - {fileID: 1578661583502821257, guid: 26e0d8d8ccda65745b8ce07c9cdea0d3, type: 3}
+  - {fileID: 4288287446617720058, guid: 27c13445d3039d949927ba45198bccf0, type: 3}
+  - {fileID: 911687430007901568, guid: 6965c5189da4b714dbf2fdddc6166541, type: 3}
   - {fileID: 4648250140205062390, guid: acde9aaee7715864a885e89e5d884409, type: 3}
   - {fileID: 649032447122849241, guid: a2b48f40adf0a1a41984fb3775d74e62, type: 3}
   - {fileID: 1437068178287510798, guid: 214e17b44923ccb498b3e5d388cb6592, type: 3}
   - {fileID: 5541944343694829953, guid: 8dfe52bad4d781e45b520775fbc8717d, type: 3}
   - {fileID: 2391730263770226656, guid: ef3e9308ccb7afa4d82e4f8df7b2e9f1, type: 3}
   - {fileID: 1730833552762759664, guid: 7eb2833a39d50654baea668ee4db6112, type: 3}
+  - {fileID: 6100284880835315565, guid: ceb7cbfb1db65144193ec829ef43979b, type: 3}
+  - {fileID: 5453582832138853068, guid: 08ef2840baa91b544a88193b57c5a610, type: 3}
   - {fileID: 961283650857552266, guid: c20474eef02136d4386d0ca0cfb3bc9a, type: 3}
+  - {fileID: 6543510475591169744, guid: 89da814c3b3a154479e2ba3089d95476, type: 3}
+  - {fileID: 7953314049379684161, guid: 1782096730bc4124ab8a8f7187c902cd, type: 3}
   - {fileID: 4023541259035917602, guid: 9e6f1f97ce714504196f564262eb7638, type: 3}
   - {fileID: 2199440244971838736, guid: 2b9cb551396a1cb40bb4596487b19b00, type: 3}
   - {fileID: 7722113363138920901, guid: 6908afca4deebae4e8f25f7020b89d65, type: 3}
@@ -16883,6 +16898,10 @@ MonoBehaviour:
   position: 1
   _mallas:
   - {fileID: 9082829035149425735}
+  _texturas:
+  - {fileID: 2100000, guid: 5eadb8b0b05358f4b820a67eb2b1c633, type: 2}
+  - {fileID: 2100000, guid: d4bb547aa86db82489473a23f846ae74, type: 2}
+  - {fileID: 2100000, guid: f5fc9081bb5b743459faee759a1621ff, type: 2}
   _mallasSistemas: []
   _outline: {fileID: 355194887006341480}
   manager: {fileID: 1043359243}
@@ -21945,6 +21964,10 @@ MonoBehaviour:
   position: 0
   _mallas:
   - {fileID: 4410489758444931748}
+  _texturas:
+  - {fileID: 2100000, guid: 30b10a2e74250e940bf949770b512d50, type: 2}
+  - {fileID: 2100000, guid: 8b6296e7e233e57489b616ffe7034442, type: 2}
+  - {fileID: 2100000, guid: 1313c7df0657f064798bd2018224ca12, type: 2}
   _mallasSistemas: []
   _outline: {fileID: 1942906585624738948}
   manager: {fileID: 1043359243}
@@ -32113,6 +32136,10 @@ MonoBehaviour:
   position: 3
   _mallas:
   - {fileID: 2455352124268966988}
+  _texturas:
+  - {fileID: 2100000, guid: 472118677f1b5cb4e90540fda26c1570, type: 2}
+  - {fileID: 2100000, guid: d330aed0cd3c1c84db16b9de24118f5b, type: 2}
+  - {fileID: 2100000, guid: 3f2c531d642d28d46aab4531d316b8cd, type: 2}
   _mallasSistemas: []
   _outline: {fileID: 4947854404824338449}
   manager: {fileID: 1043359243}
@@ -32686,6 +32713,10 @@ MonoBehaviour:
   position: 4
   _mallas:
   - {fileID: 3252528206786594551}
+  _texturas:
+  - {fileID: 2100000, guid: 8b9bbaedf5a7294478d1ab56fe41125b, type: 2}
+  - {fileID: 2100000, guid: 971f16c93fe454a438e58b7399057397, type: 2}
+  - {fileID: 2100000, guid: e05dcfa46034f59479e069f7bb32ca40, type: 2}
   _mallasSistemas: []
   _outline: {fileID: 5191319934500934396}
   manager: {fileID: 1043359243}
@@ -35944,6 +35975,10 @@ MonoBehaviour:
   position: 2
   _mallas:
   - {fileID: 2039650410770509302}
+  _texturas:
+  - {fileID: 2100000, guid: 1e7a6803a927b7448be3830d4b3d1e9b, type: 2}
+  - {fileID: 2100000, guid: fee6e105221104d47b49ef95866ec012, type: 2}
+  - {fileID: 2100000, guid: bc8d565c3979b204596594f7d424c4d0, type: 2}
   _mallasSistemas: []
   _outline: {fileID: 6230276965856383266}
   manager: {fileID: 1043359243}

@@ -148,4 +148,15 @@ public class Inventory : MonoBehaviour
         return _systemList;
     }
 
+
+
+
+    // chetos
+    public void Cheat()
+    {
+        foreach (string name in Enum.GetNames(typeof(TypeResource)))
+        {
+            _resourceDictionary[Resource.GetType(name)] += 1000;
+        }
+    }
 }

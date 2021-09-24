@@ -11,6 +11,7 @@ public class PartGameObject : MonoBehaviour
 
     [Header("Referencias")]
     [SerializeField] private List<Renderer> _mallas;
+    [SerializeField] private Material[] _texturas;
     [SerializeField] private List<Renderer> _mallasSistemas;
     [SerializeField] private Outline _outline;
     [SerializeField] private MechaManager manager;
@@ -34,9 +35,33 @@ public class PartGameObject : MonoBehaviour
     // asigno el material apropiado
     public void AsignMaterial(Material material)
     {
-        foreach (var item in _mallas)
+        // si me pasan un material lo asigno
+        if (material != null)
         {
-            item.material = material;
+            foreach (var item in _mallas)
+            {
+                item.material = material;
+            }
+        }
+        else
+        {
+            // sino asigno una textura dependiendo de la parte que este equipada
+            if (Equiped())
+            {
+                switch (_part.tier)
+                {
+                    case PartTier.Basico:
+                        material = _texturas[0];
+                        break;
+                    case PartTier.Industrial:
+                        material = _texturas[1];
+                        break;
+                    case PartTier.Militar:
+                        material = _texturas[2];
+                        break;
+                }
+                AsignMaterial(material);
+            }
         }
     }
 
@@ -69,7 +94,7 @@ public class PartGameObject : MonoBehaviour
 
     public bool CheckSystemCapacity()
     {
-        if(Equiped())
+        if (Equiped())
         {
             return _part.CheckSystemCapacity();
         }

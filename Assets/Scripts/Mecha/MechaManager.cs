@@ -5,7 +5,7 @@ using Cinemachine;
 
 public class MechaManager : MonoBehaviour
 {
-    public Material visto, oculto;// materiales para las partes que estan colocadas en el meca
+    public Material oculto;// materiales para las partes que estan colocadas en el meca
     public List<PartGameObject> parts; // partes del mecha
     public Inventory inventory;
     public MechaUI ui;
@@ -52,7 +52,7 @@ public class MechaManager : MonoBehaviour
         {
             if (item.Equiped())
             {
-                item.AsignMaterial(visto);
+                item.AsignMaterial(null);
                 // verifico si tiene sistemas equipados y los muestro
                 PartMecha part = item.GetPart();
                 if (part.systems.Count != 0)

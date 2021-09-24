@@ -13,6 +13,9 @@ public class PlayerController : MonoBehaviour
     public CinemachineVirtualCamera camPJ;// camara del personaje
     [SerializeField] private CameraManager cameraManager;// manager de las camaras
 
+    [Header("Test Options")]
+    public bool debugMode = false;
+
     void Start()
     {
         cameraManager.ChangePriority(camPJ);
@@ -68,6 +71,15 @@ public class PlayerController : MonoBehaviour
             if (Input.GetButtonDown("Salir") && camPJ.Priority == 0)
             {
                 SalirInteractuable();
+            }
+        }
+
+        if(debugMode)
+        {
+            // +1000 de todos los minerales
+            if(Input.GetKeyDown(KeyCode.Alpha1))
+            {
+                GetComponent<Inventory>().Cheat();
             }
         }
     }

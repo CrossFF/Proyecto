@@ -7,11 +7,14 @@ public enum BlueprintType
 
 public enum BlueprintName
 {
+    //Maquinas
     Dron_Excavador,
     Excavadora,
     Excavadora_Avanzada,
     Tuneladora,
     Dron_Limpiador,
+
+    //Mecha
     Cabina_Basico,
     Brazo_Izquierdo_Basico,
     Brazo_Derecho_Basico,
@@ -27,23 +30,13 @@ public enum BlueprintName
     Brazo_Izquierdo_Militar,
     Pierna_Izquierda_Militar,
     Pierna_Derecha_Militar,
+
+    //Sistemas
     Proteccion_Calor,
     Proteccion_Frio,
-    Ataque,
-    Defensa,
+    Ametralladora,
+    Cañon,
+    Espada,
     Bateria
-}
-
-public enum BlueprintIngredients
-{
-    basicOre1,
-    basicOre2,
-    basicOre3,
-    mediumOre1,
-    mediumOre2,
-    mediumOre3,
-    advancedOre1,
-    advancedOre2,
-    advancedOre3
 }
 

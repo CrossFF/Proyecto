@@ -6,7 +6,7 @@ public class SystemMecha
 {
     public SystemName name;
     public SystemFunction function;
-    private float energyToWork{get;}
+    private float energyToWork { get; }
     public float energyAsigned = 0;
     public float valueEffect;
 
@@ -15,13 +15,18 @@ public class SystemMecha
         this.name = name;
         switch (name)
         {
-            case SystemName.Ataque:
+            case SystemName.Ametralladora:
                 this.function = SystemFunction.Ataque;
                 this.energyToWork = 10f;
                 this.valueEffect = 10f;
                 break;
-            case SystemName.Defensa:
-                this.function = SystemFunction.Defensa;
+            case SystemName.Cañon:
+                this.function = SystemFunction.Ataque;
+                this.energyToWork = 10f;
+                this.valueEffect = 10f;
+                break;
+            case SystemName.Espada:
+                this.function = SystemFunction.Ataque;
                 this.energyToWork = 10f;
                 this.valueEffect = 10f;
                 break;
@@ -46,7 +51,7 @@ public class SystemMecha
     // metodos propios
     public bool Working()
     {
-        if(this.energyToWork <= this.energyAsigned)
+        if (this.energyToWork <= this.energyAsigned)
         {
             return true;
         }
@@ -59,24 +64,27 @@ public class SystemMecha
     // metodos estaticos
     public static SystemName GetName(BlueprintName blueprint)
     {
-        SystemName name = SystemName.Ataque;
+        SystemName name = SystemName.Ametralladora;
         switch (blueprint)
         {
             case BlueprintName.Proteccion_Calor:
                 name = SystemName.Proteccion_Calor;
-            break;
-            case BlueprintName.Ataque:
-                name = SystemName.Ataque;
-            break;
-            case BlueprintName.Defensa:
-                name = SystemName.Defensa;
-            break;
+                break;
+            case BlueprintName.Ametralladora:
+                name = SystemName.Ametralladora;
+                break;
+            case BlueprintName.Cañon:
+                name = SystemName.Cañon;
+                break;
             case BlueprintName.Proteccion_Frio:
                 name = SystemName.Proteccion_Frio;
-            break;
+                break;
             case BlueprintName.Bateria:
                 name = SystemName.Bateria;
-            break;
+                break;
+            case BlueprintName.Espada:
+                name = SystemName.Espada;
+                break;
         }
         return name;
     }
@@ -86,8 +94,9 @@ public class SystemMecha
 
 public enum SystemName
 {
-    Ataque,
-    Defensa,
+    Ametralladora,
+    Cañon,
+    Espada,
     Proteccion_Calor,
     Proteccion_Frio,
     Bateria

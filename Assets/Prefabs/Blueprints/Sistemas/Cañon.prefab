@@ -535,7 +535,7 @@ GameObject:
   - component: {fileID: 2950801894375792433}
   - component: {fileID: 1236776376921439617}
   m_Layer: 5
-  m_Name: Attaque
+  m_Name: "Ca\xF1on"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -615,7 +615,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2855ac577484c334d891277ff34b6a66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blueprintName: 12
+  blueprintName: 23
   blueprintType: 2
   blueprintIngredients: 00000000040000000600000007000000
   ingredientsAmount: 0a0000000a0000000a0000000a000000

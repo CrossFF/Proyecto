@@ -34,12 +34,12 @@ public class InventorySystem : MonoBehaviour, IPointerDownHandler, IBeginDragHan
         {
             if (hit.transform.tag == "Mecha")
             {
-                PartGameObject temp = hit.transform.GetComponent<PartGameObject>();
-                if(temp.Equiped())
+                PartGameObject part = hit.transform.GetComponent<PartGameObject>();
+                if(part.Equiped())
                 {
-                    if (temp.CheckSystemCapacity())
+                    if (part.CheckSystemCapacity())
                     {
-                        temp.SetSystem(system);
+                        part.SetSystem(system);
                     }
                 }
             }

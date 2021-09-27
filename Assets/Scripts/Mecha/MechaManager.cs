@@ -12,6 +12,7 @@ public class MechaManager : MonoBehaviour
     [SerializeField] private CameraManager _cameraManager;
 
     // informacion del mecha
+    [Header("Mecha")]
     [SerializeField] private float _energiaTotal = 0;
     [SerializeField] private float _energiaUtilizada = 0;
     [SerializeField] private float _ataque = 0;
@@ -116,6 +117,13 @@ public class MechaManager : MonoBehaviour
                 }
             }
         }
+
+        // actualizo los valores de cada estadistica
+        _ataque = ataque;
+        _defensa = defensa;
+        _energiaTotal = energia;
+        _proteccionCalor = proteccionCalor;
+        _proteccionFrio = proteccionFrio;
     }
 
     // chequeo si el sistema funciona

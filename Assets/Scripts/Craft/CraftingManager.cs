@@ -6,95 +6,101 @@ using UnityEngine.UI;
 public class CraftingManager : MonoBehaviour
 {
     public Inventory inventory;
-    public List<GameObject> prefabBlueprints;
+    private int _consoleLevel = 0;
+    [SerializeField] private List<BlueprintsForLevel> prefabsPerLevel;
     public CanvasGroup allMenu, machineMenu, mechaMenu, systemsMenu;
     public Transform machineContent, mechaContent, systemsContent;
     public Button machineButton, mechaButton, systemButton;
-    private List<GameObject> _temps;
-
+    private List<GameObject> _blueprintsGameObjetcs;
     void Awake()
     {
-        _temps = new List<GameObject>();
+        _blueprintsGameObjetcs = new List<GameObject>();
         HideMenu();
+    }
+
+    private void ChangeVisibility(CanvasGroup canvas, bool status)
+    {
+        if (status)
+        {
+            canvas.alpha = 1f;
+            canvas.blocksRaycasts = status;
+        }
+        else
+        {
+            canvas.alpha = 0f;
+            canvas.blocksRaycasts = status;
+        }
+        canvas.interactable = status;
     }
 
     public void HideMenu()
     {
-        allMenu.alpha = 0;
-        machineMenu.alpha = 0;
-        mechaMenu.alpha = 0;
-        systemsMenu.alpha = 0;
-        allMenu.interactable = false;
-        machineMenu.interactable = false;
-        mechaMenu.interactable = false;
-        systemsMenu.interactable = false;
-        allMenu.blocksRaycasts = false;
-        ClearList();
+        ChangeVisibility(allMenu, false);
     }
 
     public void ShowMenu()
     {
-        allMenu.alpha = 1;
-        allMenu.interactable = true;
-        allMenu.blocksRaycasts = true;
-        InstantiateBlueprints();
+        ChangeVisibility(allMenu, true);
+        //Control de instancia
+        LevelControl();
         ShowMachineMenu();
     }
 
     public void ShowMachineMenu()
     {
-        machineMenu.alpha = 1;
-        mechaMenu.alpha = 0;
-        systemsMenu.alpha = 0;
-        machineMenu.interactable = true;
-        mechaMenu.interactable = false;
-        systemsMenu.interactable = false;
-        machineButton.interactable = false;
-        mechaButton.interactable = true;
-        systemButton.interactable = true;
-        machineMenu.blocksRaycasts = true;
-        mechaMenu.blocksRaycasts = false;
-        systemsMenu.blocksRaycasts = false;
+        ChangeVisibility(machineMenu, true);
+        ChangeVisibility(mechaMenu, false);
+        ChangeVisibility(systemsMenu, false);
     }
 
     public void ShowMechaMenu()
     {
-        machineMenu.alpha = 0;
-        mechaMenu.alpha = 1;
-        systemsMenu.alpha = 0;
-        machineMenu.interactable = false;
-        mechaMenu.interactable = true;
-        systemsMenu.interactable = false;
-        machineButton.interactable = true;
-        mechaButton.interactable = false;
-        systemButton.interactable = true;
-        machineMenu.blocksRaycasts = false;
-        mechaMenu.blocksRaycasts = true;
-        systemsMenu.blocksRaycasts = false;
+        ChangeVisibility(machineMenu, false);
+        ChangeVisibility(mechaMenu, true);
+        ChangeVisibility(systemsMenu, false);
     }
 
     public void ShowSystemsMenu()
     {
-        machineMenu.alpha = 0;
-        mechaMenu.alpha = 0;
-        systemsMenu.alpha = 1;
-        machineMenu.interactable = false;
-        mechaMenu.interactable = false;
-        systemsMenu.interactable = true;
-        machineButton.interactable = true;
-        mechaButton.interactable = true;
-        systemButton.interactable = false;
-        machineMenu.blocksRaycasts = false;
-        mechaMenu.blocksRaycasts = false;
-        systemsMenu.blocksRaycasts = true;
+        ChangeVisibility(machineMenu, false);
+        ChangeVisibility(mechaMenu, false);
+        ChangeVisibility(systemsMenu, true);
     }
 
-    private void InstantiateBlueprints()
+    //verifico el nivel de la consola e instancio los planos que corresponda
+    private void LevelControl()
+    {
+        //limpio la lista de planos instaciados por las dudas
+        ClearList();
+        //instancio los planos correspondientes de cada nivel
+        for (int i = 0; i < _consoleLevel+1; i++)
+        {
+            InstantiateBlueprints(prefabsPerLevel[i].prefabsBlueprints);       
+        }
+    }
+
+    // subir de nivel la mesa de crafteo para obtener mas planos
+    public void Upgrade()
+    {
+        if(_consoleLevel+1 < prefabsPerLevel.Count)
+        {
+            //subo de nivel la consola
+            _consoleLevel++;
+            LevelControl();
+        }
+        else
+        {
+            //informo de que no puedo subir de nivel la consola
+            print("No se puede subir de nivel la consola");
+        }
+    }
+
+    private void InstantiateBlueprints(List<GameObject> prefabs)
     {
         List<GameObject> machines = new List<GameObject>();
         List<GameObject> parts = new List<GameObject>();
         List<GameObject> systems = new List<GameObject>();
-        foreach (var item in prefabBlueprints)
+        foreach (var item in prefabs)
         {
             BlueprintGameObject temp = item.GetComponent<BlueprintGameObject>();
             temp.manager = this;
@@ -120,19 +126,19 @@ public class CraftingManager : MonoBehaviour
     {
         foreach (var item in blueprints)
         {
-            _temps.Add(Instantiate(item, parent));
+            _blueprintsGameObjetcs.Add(Instantiate(item, parent));
         }
     }
 
     private void ClearList()
     {
-        if (_temps.Count > 0)
+        if (_blueprintsGameObjetcs.Count > 0)
         {
-            foreach (var item in _temps)
+            foreach (var item in _blueprintsGameObjetcs)
             {
                 Destroy(item);
             }
-            _temps.Clear();
+            _blueprintsGameObjetcs.Clear();
         }
     }
 

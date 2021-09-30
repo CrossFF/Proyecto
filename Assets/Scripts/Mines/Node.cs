@@ -79,7 +79,18 @@ public class Node
         this.resources[indexResource].SetMachine(machine);
     }
 
-    // metodos estaticos 
+    // metodos estaticos
+    public static int GetAmountOfType(List<Mine> mines, StatusNode type)
+    {
+        int value = 0;
+        foreach (var item in mines)
+        {
+            if (item.node.status == type)
+                value++;
+        }
+        return value;
+    }
+    
     public static List<Mine> GetTypeNodes(List<Mine> mines, StatusNode type)
     {
         List<Mine> theMines = new List<Mine>();

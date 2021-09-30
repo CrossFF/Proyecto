@@ -25,6 +25,9 @@ public class MineManager : MonoBehaviour
     private bool conectingMines = false; // para saber si estoy conectando minas
     private LineRenderer line; // line renderer de los caminos
 
+    // referencia a la consola
+    [SerializeField] private ConsolaDeMinas _consola;
+
     void Start()
     {
         _mines = new List<Mine>();
@@ -103,7 +106,8 @@ public class MineManager : MonoBehaviour
             {
                 int num = Random.Range(0, mines.Count);
                 mines[num].node.status = StatusNode.Bloqueada;
-
+                // informo al jugador que hay minas bloqueadas
+                _consola.Error(); // cambio el material de la consola
             }
             _cronometro2 = Random.Range(timeMin, timeMax);
         }
@@ -226,5 +230,8 @@ public class MineManager : MonoBehaviour
         mine.node.status = StatusNode.Activa;
         ui.HideMine();
         ui.ShowMine(mine);
+        // verifico si hay mas minas bloqueadas
+        if (Node.GetAmountOfType(_mines, StatusNode.Bloqueada) == 0)
+            _consola.Funcionado();
     }
 }

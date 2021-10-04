@@ -6,9 +6,11 @@ using UnityEngine.UI;
 public class NewMineUI : MonoBehaviour
 {
     [Header("Referencias")]
+    private UIActions _uiActions;
     public MineManager manager;
     public CanvasGroup allUI,
-     infoMine;
+    infoMine,
+    minaBloqueada;
     public Text conectionsText,
     dispoTuneladoras,
     dispoDronesLimpieza,
@@ -27,6 +29,7 @@ public class NewMineUI : MonoBehaviour
 
     void Awake()
     {
+        _uiActions = new UIActions();
         _resources = new List<DispoResource>();
         _invetory = new List<InventoryObject>();
         HideMenu();
@@ -37,57 +40,41 @@ public class NewMineUI : MonoBehaviour
         SetInfoResources();
     }
 
+    // muestro el menu de la mas minas
     public void ShowMenu()
     {
-        allUI.alpha = 1f;
-        allUI.blocksRaycasts = true;
-        allUI.interactable = true;
+        _uiActions.OnOffCanvasGroup(allUI, true);
         HideMine();
     }
 
     public void HideMenu()
     {
-        allUI.alpha = 0f;
-        allUI.blocksRaycasts = false;
-        allUI.interactable = false;
+        _uiActions.OnOffCanvasGroup(allUI, false);
         HideMine();
     }
 
+    // muestro la interfaz de la mina
     public void ShowMine(Mine mine)
     {
+        // guardo la mina
         _mine = mine;
-        infoMine.alpha = 1f;
-        infoMine.interactable = true;
-        infoMine.blocksRaycasts = true;
-        //seteo la info basica de la mina
-        conectionsText.text = "Esta mina conecta con: " + _mine.node.trails.Count + " minas";
-        stausText.text = _mine.node.status.ToString();
-        // insatancio los recursos
-        foreach (var item in _mine.node.resources)
+        // dependiendo el estado de la mina muestro distintos menus
+        switch (mine.node.status)
         {
-            _resources.Add(Instantiate(prefabResource, parentResource).GetComponent<DispoResource>());
+            case StatusNode.Lista_para_trabajar:
+                Activa();
+                break;
+            case StatusNode.Activa:
+                Activa();
+                break;
+            case StatusNode.Sin_recursos:
+                break;
+            case StatusNode.Inactiva:
+                break;
+            case StatusNode.Bloqueada:
+                break;
         }
-        // instancio el inventario
-        InstanciarInventario();
-        //seteo la info de los recursos
-        SetInfoResources();
-        // limito acciones
-        // si la mina no esat activa o trabajando no se puede usar el boton de conectar minas
-        if (manager.GetAmount(BlueprintName.Tuneladora) > 0)
-        {
-            if (_mine.node.status == StatusNode.Lista_para_trabajar || _mine.node.status == StatusNode.Activa ||_mine.node.status == StatusNode.Sin_recursos)
-            {
-                conectionButton.interactable = true;
-            }
-            else
-            {
-                conectionButton.interactable = false;
-            }
-        }
-        else
-        {
-            conectionButton.interactable = false;
-        }
+
         // si la mina no esta bloqueada no se puede usar el boton de eliminar derrumbe
         if (manager.GetAmount(BlueprintName.Dron_Limpiador) > 0)
         {
@@ -104,6 +91,57 @@ public class NewMineUI : MonoBehaviour
         {
             derrumbeButton.interactable = false;
         }
+    }
+
+    private void Activa()
+    {
+        // muestro la interfaz
+        _uiActions.OnOffCanvasGroup(infoMine,true);
+        //seteo la info basica de la mina
+        conectionsText.text = "Esta mina conecta con: " + _mine.node.trails.Count + " minas";
+        stausText.text = _mine.node.status.ToString();
+        // insatancio los recursos
+        foreach (var item in _mine.node.resources)
+        {
+            _resources.Add(Instantiate(prefabResource, parentResource).GetComponent<DispoResource>());
+        }
+        // instancio el inventario
+        InstanciarInventario();
+        //seteo la info de los recursos
+        SetInfoResources();
+        // limito acciones
+        // si la mina no esat activa o trabajando no se puede usar el boton de conectar minas
+        if (manager.GetAmount(BlueprintName.Tuneladora) > 0)
+        {
+            if (_mine.node.status == StatusNode.Lista_para_trabajar || _mine.node.status == StatusNode.Activa || _mine.node.status == StatusNode.Sin_recursos)
+            {
+                conectionButton.interactable = true;
+            }
+            else
+            {
+                conectionButton.interactable = false;
+            }
+        }
+        else
+        {
+            conectionButton.interactable = false;
+        }
+    }
+
+    private void Inactiva()
+    {
+
+    }
+
+    private void Vacia()
+    {
+
+    }
+
+    private void Bloqueada()
+    {
+        // muestro la interfaz
+        _uiActions.OnOffCanvasGroup(minaBloqueada, true);
     }
 
     private void SetInfoResources()
@@ -138,11 +176,13 @@ public class NewMineUI : MonoBehaviour
         }
     }
 
+    // oculto cualquier interfaz relacionada con las minas
     public void HideMine()
     {
-        infoMine.alpha = 0f;
-        infoMine.interactable = false;
-        infoMine.blocksRaycasts = false;
+        // oculto interfaz
+        _uiActions.OnOffCanvasGroup(infoMine,false);
+        _uiActions.OnOffCanvasGroup(minaBloqueada, false);
+        // borro elemntos instanciados
         foreach (var item in _resources)
         {
             Destroy(item.gameObject);
@@ -151,6 +191,7 @@ public class NewMineUI : MonoBehaviour
         {
             Destroy(item.gameObject);
         }
+        //Limpio listas
         _resources.Clear();
         _invetory.Clear();
     }

@@ -8,6 +8,8 @@ public class Mine : MonoBehaviour
     public Outline outline;
     public GameObject basic, medium, advansed;
     private MineManager manager;
+    public Light spot;
+    public ParticleSystem particulas;
 
     void Start()
     {
@@ -47,7 +49,7 @@ public class Mine : MonoBehaviour
         {
             num += item.amount;
         }
-        if(num == 0)
+        if (num == 0)
         {
             node.status = StatusNode.Sin_recursos;
         }
@@ -57,18 +59,31 @@ public class Mine : MonoBehaviour
         {
             case StatusNode.Lista_para_trabajar:
                 outline.OutlineColor = Color.cyan;
+                spot.enabled = true;
+                spot.color = Color.white;
+                particulas.Stop();
                 break;
             case StatusNode.Inactiva:
                 outline.OutlineColor = Color.yellow;
+                spot.enabled = false;
+                particulas.Stop();
                 break;
             case StatusNode.Bloqueada:
                 outline.OutlineColor = Color.red;
+                spot.color = Color.red;
+                particulas.Stop();
                 break;
             case StatusNode.Activa:
                 outline.OutlineColor = Color.green;
+                spot.enabled = true;
+                spot.color = Color.white;
+                if (!particulas.isPlaying)
+                    particulas.Play();
                 break;
             case StatusNode.Sin_recursos:
                 outline.OutlineColor = Color.gray;
+                spot.enabled = true;
+                particulas.Stop();
                 break;
         }
     }

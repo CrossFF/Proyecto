@@ -10,7 +10,9 @@ public class NewMineUI : MonoBehaviour
     public MineManager manager;
     public CanvasGroup allUI,
     infoMine,
-    minaBloqueada;
+    minaBloqueada,
+    minaInactiva,
+    minaVacia;
     public Text conectionsText,
     dispoTuneladoras,
     dispoDronesLimpieza,
@@ -68,35 +70,21 @@ public class NewMineUI : MonoBehaviour
                 Activa();
                 break;
             case StatusNode.Sin_recursos:
+                Vacia();
                 break;
             case StatusNode.Inactiva:
+                Inactiva();
                 break;
             case StatusNode.Bloqueada:
+                Bloqueada();
                 break;
-        }
-
-        // si la mina no esta bloqueada no se puede usar el boton de eliminar derrumbe
-        if (manager.GetAmount(BlueprintName.Dron_Limpiador) > 0)
-        {
-            if (_mine.node.status == StatusNode.Bloqueada)
-            {
-                derrumbeButton.interactable = true;
-            }
-            else
-            {
-                derrumbeButton.interactable = false;
-            }
-        }
-        else
-        {
-            derrumbeButton.interactable = false;
         }
     }
 
     private void Activa()
     {
         // muestro la interfaz
-        _uiActions.OnOffCanvasGroup(infoMine,true);
+        _uiActions.OnOffCanvasGroup(infoMine, true);
         //seteo la info basica de la mina
         conectionsText.text = "Esta mina conecta con: " + _mine.node.trails.Count + " minas";
         stausText.text = _mine.node.status.ToString();
@@ -130,18 +118,36 @@ public class NewMineUI : MonoBehaviour
 
     private void Inactiva()
     {
-
+        // muestro interfaz
+        _uiActions.OnOffCanvasGroup(minaInactiva, true);
+        // seteo la info de las tuneladoras
+        float num = manager.GetAmount(BlueprintName.Tuneladora);
+        dispoTuneladoras.text = num + "/1";
     }
 
     private void Vacia()
     {
-
+        // mina vacia
+        _uiActions.OnOffCanvasGroup(minaVacia, true);
+        // seteo la info de los recursos necesarios
     }
 
     private void Bloqueada()
     {
         // muestro la interfaz
         _uiActions.OnOffCanvasGroup(minaBloqueada, true);
+        // muestro cuantos drones hay disponibles
+        float num = manager.GetAmount(BlueprintName.Dron_Limpiador);
+        dispoDronesLimpieza.text = num + "/1";
+        // si la cantidad de drones no es suficiente no se puede desbloquear
+        if (num > 0)
+        {
+            derrumbeButton.interactable = true;
+        }
+        else
+        {
+            derrumbeButton.interactable = false;
+        }
     }
 
     private void SetInfoResources()
@@ -180,8 +186,10 @@ public class NewMineUI : MonoBehaviour
     public void HideMine()
     {
         // oculto interfaz
-        _uiActions.OnOffCanvasGroup(infoMine,false);
+        _uiActions.OnOffCanvasGroup(infoMine, false);
         _uiActions.OnOffCanvasGroup(minaBloqueada, false);
+        _uiActions.OnOffCanvasGroup(minaInactiva, false);
+        _uiActions.OnOffCanvasGroup(minaVacia,false);
         // borro elemntos instanciados
         foreach (var item in _resources)
         {
@@ -218,12 +226,6 @@ public class NewMineUI : MonoBehaviour
                 _invetory[i].nombreItem.text = machines[i].name.ToString();
             }
         }
-        // seteo la info de las tuneladoras
-        float num1 = manager.GetAmount(BlueprintName.Tuneladora);
-        dispoTuneladoras.text = "Tuneladoras:\n" + num1;
-        // seteo la info de los drones de limpeza
-        float num2 = manager.GetAmount(BlueprintName.Dron_Limpiador);
-        dispoDronesLimpieza.text = "Drones de Limpeza:\n" + num2;
     }
 
     public void InstallMachine(Machine machine, DispoResource resource)
@@ -261,6 +263,11 @@ public class NewMineUI : MonoBehaviour
     public void DesbloquearMina()
     {
         manager.DesbloquearMina(_mine);
+    }
+
+    public void NuevosRecursos()
+    {
+
     }
 
     public Mine GetMine()

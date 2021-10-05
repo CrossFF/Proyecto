@@ -6,6 +6,7 @@ using Cinemachine;
 
 public class MechaUI : MonoBehaviour
 {
+    private UIActions _uiActions;
     public CanvasGroup allUI,
     inventarioParte,
     sistemas;
@@ -25,33 +26,27 @@ public class MechaUI : MonoBehaviour
 
     void Awake()
     {
+        _uiActions = new UIActions();
         _partsInventory = new List<InventoryPart>();
         _systemsInventory = new List<InventorySystem>();
         ClearInventory();
         HideMenu();
     }
 
-    private void SetVisibilidad(CanvasGroup canvasGroup, bool estado)
-    {
-        canvasGroup.alpha = estado ? 1f : 0f;
-        canvasGroup.interactable = estado;
-        canvasGroup.blocksRaycasts = estado;
-    }
-
     public void ShowMenu()
     {
-        SetVisibilidad(allUI, true);
-        SetVisibilidad(inventarioParte, true);
-        SetVisibilidad(sistemas, false);
+        _uiActions.OnOffCanvasGroup(allUI, true);
+        _uiActions.OnOffCanvasGroup(inventarioParte, true);
+        _uiActions.OnOffCanvasGroup(sistemas, false);
         ClearInventory();
         InstantiateInventory();
     }
 
     public void HideMenu()
     {
-        SetVisibilidad(allUI, false);
-        SetVisibilidad(inventarioParte, false);
-        SetVisibilidad(sistemas, false);
+        _uiActions.OnOffCanvasGroup(allUI, false);
+        _uiActions.OnOffCanvasGroup(inventarioParte, false);
+        _uiActions.OnOffCanvasGroup(sistemas, false);
     }
 
     private void ClearInventory()
@@ -90,8 +85,8 @@ public class MechaUI : MonoBehaviour
 
     public void ShowPart(PartMecha part)
     {
-        SetVisibilidad(inventarioParte, false);
-        SetVisibilidad(sistemas, true);
+        _uiActions.OnOffCanvasGroup(inventarioParte, false);
+        _uiActions.OnOffCanvasGroup(sistemas, true);
         ClearInventory();
         InstantiateSystems();
     }

@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class CraftingManager : MonoBehaviour
 {
+    private UIActions _uiActions;
     public Inventory inventory;
     private int _consoleLevel = 0;
     [SerializeField] private List<BlueprintsForLevel> prefabsPerLevel;
@@ -14,33 +15,19 @@ public class CraftingManager : MonoBehaviour
     private List<GameObject> _blueprintsGameObjetcs;
     void Awake()
     {
+        _uiActions = new UIActions();
         _blueprintsGameObjetcs = new List<GameObject>();
         HideMenu();
     }
 
-    private void ChangeVisibility(CanvasGroup canvas, bool status)
-    {
-        if (status)
-        {
-            canvas.alpha = 1f;
-            canvas.blocksRaycasts = status;
-        }
-        else
-        {
-            canvas.alpha = 0f;
-            canvas.blocksRaycasts = status;
-        }
-        canvas.interactable = status;
-    }
-
     public void HideMenu()
     {
-        ChangeVisibility(allMenu, false);
+        _uiActions.OnOffCanvasGroup(allMenu, false);
     }
 
     public void ShowMenu()
     {
-        ChangeVisibility(allMenu, true);
+        _uiActions.OnOffCanvasGroup(allMenu, true);
         //Control de instancia
         LevelControl();
         ShowMachineMenu();
@@ -48,23 +35,23 @@ public class CraftingManager : MonoBehaviour
 
     public void ShowMachineMenu()
     {
-        ChangeVisibility(machineMenu, true);
-        ChangeVisibility(mechaMenu, false);
-        ChangeVisibility(systemsMenu, false);
+        _uiActions.OnOffCanvasGroup(machineMenu, true);
+        _uiActions.OnOffCanvasGroup(mechaMenu, false);
+        _uiActions.OnOffCanvasGroup(systemsMenu, false);
     }
 
     public void ShowMechaMenu()
     {
-        ChangeVisibility(machineMenu, false);
-        ChangeVisibility(mechaMenu, true);
-        ChangeVisibility(systemsMenu, false);
+        _uiActions.OnOffCanvasGroup(machineMenu, false);
+        _uiActions.OnOffCanvasGroup(mechaMenu, true);
+        _uiActions.OnOffCanvasGroup(systemsMenu, false);
     }
 
     public void ShowSystemsMenu()
     {
-        ChangeVisibility(machineMenu, false);
-        ChangeVisibility(mechaMenu, false);
-        ChangeVisibility(systemsMenu, true);
+        _uiActions.OnOffCanvasGroup(machineMenu, false);
+        _uiActions.OnOffCanvasGroup(mechaMenu, false);
+        _uiActions.OnOffCanvasGroup(systemsMenu, true);
     }
 
     //verifico el nivel de la consola e instancio los planos que corresponda

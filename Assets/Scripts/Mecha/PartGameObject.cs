@@ -12,7 +12,7 @@ public class PartGameObject : MonoBehaviour
     [Header("Referencias")]
     [SerializeField] private List<Renderer> _mallas;
     [SerializeField] private Material[] _texturas;
-    [SerializeField] private List<Renderer> _mallasSistemas;
+    [SerializeField] private List<SystemGameObject> _sistemasGameObject;
     [SerializeField] private Outline _outline;
     [SerializeField] private MechaManager manager;
     [SerializeField] private CinemachineVirtualCamera cam;
@@ -66,16 +66,34 @@ public class PartGameObject : MonoBehaviour
     }
 
     // muestro los systemas
-    public void ShowSystem(int index)
+    public void ShowSystems()
     {
-        _mallasSistemas[index].enabled = true;
+        //oculto los sistemas
+        HideSystems();
+        //verifico que haya sistemas equipados para mostrar
+        if (Equiped())
+        {
+            if (_part.systems.Count != 0)
+            {
+                //recorro los sistemas equipables y los comparo con los equipados
+                for (int i = 0; i < _sistemasGameObject.Count; i++)
+                {
+                    foreach (var system in _part.systems)
+                    {
+                        if (_sistemasGameObject[i].nombre == system.name)
+                            _sistemasGameObject[i].malla.enabled = true;
+                    }
+                }
+            }
+        }
     }
+
     // oculto todos los sistemas
     public void HideSystems()
     {
-        foreach (var item in _mallasSistemas)
+        foreach (var item in _sistemasGameObject)
         {
-            item.enabled = false;
+            item.malla.enabled = false;
         }
     }
 
@@ -94,15 +112,12 @@ public class PartGameObject : MonoBehaviour
 
     public bool CheckSystemCapacity()
     {
-        if (Equiped())
-        {
-            return _part.CheckSystemCapacity();
-        }
-        else
-        {
-            // informo que es una accion incorrecta
-            return false;
-        }
+        return _part.CheckSystemCapacity();
+    }
+
+    public bool CheckSystemCompatibility(SystemMecha system)
+    {
+        return _part.CheckSystemCompatibility(system);
     }
 
     // equipo la parte

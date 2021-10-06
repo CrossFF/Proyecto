@@ -6,6 +6,7 @@ public class SystemMecha
 {
     public SystemName name;
     public SystemFunction function;
+    public List<PartPosition> positions;
     private float energyToWork { get; }
     public float energyAsigned = 0;
     public float valueEffect;
@@ -13,35 +14,78 @@ public class SystemMecha
     public SystemMecha(SystemName name)
     {
         this.name = name;
+        this.positions = new List<PartPosition>();
         switch (name)
         {
             case SystemName.Ametralladora:
+                //funcion
                 this.function = SystemFunction.Ataque;
+                // posicion equipable
+                this.positions.Add(PartPosition.Cabina);
+                this.positions.Add(PartPosition.Brazo_Derecho);
+                this.positions.Add(PartPosition.Brazo_Izquierdo);
+                // energia y valor
                 this.energyToWork = 10f;
                 this.valueEffect = 10f;
                 break;
             case SystemName.Cañon:
+                //funcion
                 this.function = SystemFunction.Ataque;
+                // posicion equipable
+                this.positions.Add(PartPosition.Cabina);
+                this.positions.Add(PartPosition.Brazo_Derecho);
+                this.positions.Add(PartPosition.Brazo_Izquierdo);
+                // energia y valor
                 this.energyToWork = 10f;
                 this.valueEffect = 10f;
                 break;
             case SystemName.Espada:
+                //funcion
                 this.function = SystemFunction.Ataque;
+                // posicion equipable
+
+                this.positions.Add(PartPosition.Brazo_Derecho);
+                this.positions.Add(PartPosition.Brazo_Izquierdo);
+                // energia y valor
                 this.energyToWork = 10f;
                 this.valueEffect = 10f;
                 break;
             case SystemName.Proteccion_Calor:
+                //funcion
                 this.function = SystemFunction.Calor;
+                // posicion equipable
+                this.positions.Add(PartPosition.Cabina);
+                this.positions.Add(PartPosition.Brazo_Derecho);
+                this.positions.Add(PartPosition.Brazo_Izquierdo);
+                this.positions.Add(PartPosition.Pierna_Derecha);
+                this.positions.Add(PartPosition.Pierna_Izquierda);
+                // energia y valor
                 this.energyToWork = 10f;
                 this.valueEffect = 10f;
                 break;
             case SystemName.Proteccion_Frio:
+                //funcion
                 this.function = SystemFunction.Frio;
+                // posicion equipable
+                this.positions.Add(PartPosition.Cabina);
+                this.positions.Add(PartPosition.Brazo_Derecho);
+                this.positions.Add(PartPosition.Brazo_Izquierdo);
+                this.positions.Add(PartPosition.Pierna_Derecha);
+                this.positions.Add(PartPosition.Pierna_Izquierda);
+                // energia y valor
                 this.energyToWork = 10f;
                 this.valueEffect = 10f;
                 break;
             case SystemName.Bateria:
+                //funcion
                 this.function = SystemFunction.Energia;
+                // posicion equipable
+                this.positions.Add(PartPosition.Cabina);
+                this.positions.Add(PartPosition.Brazo_Derecho);
+                this.positions.Add(PartPosition.Brazo_Izquierdo);
+                this.positions.Add(PartPosition.Pierna_Derecha);
+                this.positions.Add(PartPosition.Pierna_Izquierda);
+                // energia y valor
                 this.energyToWork = 0f;
                 this.valueEffect = 10f;
                 break;

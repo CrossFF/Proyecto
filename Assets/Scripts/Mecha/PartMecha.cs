@@ -142,6 +142,17 @@ public class PartMecha
         }
     }
 
+    public bool CheckSystemCompatibility(SystemMecha system)
+    {
+        bool result = false;
+        foreach (var item in system.positions)
+        {
+            if (item == this.position)
+                result = true;
+        }
+        return result;
+    }
+
     // funciones estaticas
     public static PartName GetName(BlueprintName name)
     {

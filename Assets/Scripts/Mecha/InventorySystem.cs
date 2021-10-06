@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class InventorySystem : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler, IPointerEnterHandler,IPointerExitHandler
+public class InventorySystem : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler, IPointerEnterHandler, IPointerExitHandler
 {
     //parametro
     public SystemMecha system;
@@ -27,20 +27,31 @@ public class InventorySystem : MonoBehaviour, IPointerDownHandler, IBeginDragHan
         rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
     }
 
+    // cuando termina el drag
     public void OnEndDrag(PointerEventData eventData)
     {
+        // uso un raycast
         RaycastHit hit;
         if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit))
         {
+            // si el objeto es un mecha
             if (hit.transform.tag == "Mecha")
             {
+                // pido la informacion de la parte inpactada
                 PartGameObject part = hit.transform.GetComponent<PartGameObject>();
-                if(part.Equiped())
+                // si la parte esta equipada
+                if (part.Equiped())
                 {
-                    if (part.CheckSystemCapacity())
+                    //verifico si hay espacio disponible para el sistema y si el systema es compatible con la parte
+                    if (part.CheckSystemCapacity() && part.CheckSystemCompatibility(system))
                     {
+                        // equipo el sistema
                         part.SetSystem(system);
                     }
+                }
+                else
+                {
+                    // la accion no es posible
                 }
             }
         }

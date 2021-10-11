@@ -184,10 +184,10 @@ TextureImporter:
       name: window
       rect:
         serializedVersion: 2
-        x: 50
-        y: 3090
-        width: 974
-        height: 956
+        x: 63
+        y: 3110
+        width: 950
+        height: 917
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 114, y: 117, z: 110, w: 110}
@@ -205,10 +205,10 @@ TextureImporter:
       name: window1
       rect:
         serializedVersion: 2
-        x: 1056
-        y: 3090
-        width: 974
-        height: 956
+        x: 1074
+        y: 3106
+        width: 938
+        height: 922
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 128, y: 118, z: 115, w: 112}
@@ -268,10 +268,10 @@ TextureImporter:
       name: progress_bar1
       rect:
         serializedVersion: 2
-        x: 3773
-        y: 3037
-        width: 56
-        height: 998
+        x: 3778
+        y: 3042
+        width: 44
+        height: 986
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -331,10 +331,10 @@ TextureImporter:
       name: button1
       rect:
         serializedVersion: 2
-        x: 30
-        y: 2648
-        width: 877
-        height: 395
+        x: 38
+        y: 2658
+        width: 861
+        height: 378
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 147, y: 151, z: 161, w: 154}
@@ -855,7 +855,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 0d7b2ab2566335e40bb8df045267951c
     internalID: 0
     vertices: []
     indices: 

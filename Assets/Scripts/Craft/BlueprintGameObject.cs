@@ -16,7 +16,6 @@ public class BlueprintGameObject : MonoBehaviour
     public CraftingManager manager;
     public GameObject prefabIngredientCraft;
     public Text nameText, amountText;
-    public Image craftImage;
     public Button fabricateButton;
     public Transform ingredientsParent;
     private List<IngredientGameObject> _ingredients;
@@ -66,9 +65,6 @@ public class BlueprintGameObject : MonoBehaviour
         //existencias
         float actualAmount = manager.inventory.GetAmount(blueprintName.ToString());
         amountText.text = "Tienes: " + actualAmount;
-        //imagen
-        var sprite = Resources.Load<Sprite>("");
-        craftImage.sprite = sprite;
         //seteo la info de los ingredientes
         for (int i = 0; i < _ingredients.Count; i++)
         {

@@ -159,7 +159,7 @@ public class NewMineUI : MonoBehaviour
                 // info del recurso
                 float fillAmount = _mine.node.resources[i].amount / _mine.node.resources[i].totalAmount;
                 _resources[i].fillImage.fillAmount = fillAmount;
-                _resources[i].nombreRecurso.text = _mine.node.resources[i].type.ToString();
+                _resources[i].nombreRecurso.text = new UIActions().CleanString(_mine.node.resources[i].type.ToString());
                 var sprite1 = Resources.Load<Sprite>("Ores/" + _mine.node.resources[i].type);
                 // imagen de fondo
                 _resources[i].imageRecurso.sprite = sprite1;
@@ -168,8 +168,8 @@ public class NewMineUI : MonoBehaviour
                 // info de la maquina
                 if (_mine.node.resources[i].machine != null)
                 {
-                    _resources[i].nombreMaquina.text = _mine.node.resources[i].machine.name.ToString();
-                    var sprite2 = Resources.Load<Sprite>("Prototype/" + _mine.node.resources[i].machine.name);
+                    _resources[i].nombreMaquina.text = new UIActions().CleanString(_mine.node.resources[i].machine.name.ToString());
+                    var sprite2 = Resources.Load<Sprite>("Iconos/" + _mine.node.resources[i].machine.name);
                     _resources[i].imageMachine.color = Color.white;
                     _resources[i].imageMachine.sprite = sprite2;
                 }
@@ -221,9 +221,9 @@ public class NewMineUI : MonoBehaviour
                 _invetory[i].parent = parentInventory;
                 _invetory[i].machine = machines[i];
                 // imagen de la maquina
-                var sprite = Resources.Load<Sprite>("Prototype/" + _invetory[i].machine.name);
+                var sprite = Resources.Load<Sprite>("Iconos/" + _invetory[i].machine.name);
                 _invetory[i].imagenObjeto.sprite = sprite;
-                _invetory[i].nombreItem.text = machines[i].name.ToString();
+                _invetory[i].nombreItem.text = new UIActions().CleanString(machines[i].name.ToString());
             }
         }
     }

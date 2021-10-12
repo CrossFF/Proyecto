@@ -250,13 +250,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blueprintName: 7
   blueprintType: 1
-  blueprintIngredients: 00000000040000000600000007000000
-  ingredientsAmount: 0a0000000a0000000a0000000a000000
+  blueprintIngredients: 000000000100000002000000
+  ingredientsAmount: 0a0000000a0000000a000000
   manager: {fileID: 0}
   prefabIngredientCraft: {fileID: 7906691944865965319, guid: a40a133c38e47f344b0db83f8a78fc24, type: 3}
   nameText: {fileID: 708597767192953576}
   amountText: {fileID: 708597767385084578}
-  craftImage: {fileID: 708597766843397929}
   fabricateButton: {fileID: 3043305593909883765}
   ingredientsParent: {fileID: 8809215219041889122}
   canvasGroup: {fileID: 7290460192455638023}

@@ -314,7 +314,6 @@ MonoBehaviour:
   prefabIngredientCraft: {fileID: 7906691944865965319, guid: a40a133c38e47f344b0db83f8a78fc24, type: 3}
   nameText: {fileID: 5541944344620277821}
   amountText: {fileID: 5541944343740747895}
-  craftImage: {fileID: 5541944344273851900}
   fabricateButton: {fileID: 8000221145327292832}
   ingredientsParent: {fileID: 4574846329046206903}
   canvasGroup: {fileID: 4228492255843265234}
@@ -550,7 +549,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 7715306878478736312, guid: 9586ebe348533ff41814b9916292e8bb, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

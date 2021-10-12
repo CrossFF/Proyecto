@@ -44,7 +44,7 @@ public class BlueprintGameObject : MonoBehaviour
         }
         _crafteable = num == blueprintIngredients.Count ? true : false;
         //dejo claro que se puede craftear y que no
-        canvasGroup.alpha = _crafteable ? 1f : 0.5f;// alpha del objeto
+        canvasGroup.alpha = _crafteable ? 1f : 0.8f;// alpha del objeto
         fabricateButton.interactable = _crafteable ? true : false;// boton
     }
 
@@ -61,7 +61,7 @@ public class BlueprintGameObject : MonoBehaviour
         }
         // seteo la info basica del craft
         //nombre
-        nameText.text = blueprintName.ToString();
+        nameText.text = new UIActions().CleanString(blueprintName.ToString());
         //existencias
         float actualAmount = manager.inventory.GetAmount(blueprintName.ToString());
         amountText.text = "Tienes: " + actualAmount;

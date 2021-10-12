@@ -11,4 +11,22 @@ public class UIActions
         canvasGroup.interactable = active;
         canvasGroup.blocksRaycasts = active;
     }
+
+    // transforma un texto con _ en un texto con espacios
+    public string CleanString(string toClean)
+    {
+        string text = "";
+        foreach (var item in toClean)
+        {
+            if(item.ToString() == "_")
+            {
+                text += " ";
+            }
+            else
+            {
+                text += item.ToString();
+            }
+        }
+        return text;
+    }
 }

@@ -77,7 +77,7 @@ public class MechaUI : MonoBehaviour
             _partsInventory[i].canvas = GameObject.Find("Canvas").GetComponent<Canvas>();
             _partsInventory[i].parent = parentInventory;
             _partsInventory[i].part = parts[i];
-            _partsInventory[i].nombreParte.text = parts[i].name.ToString();
+            _partsInventory[i].nombreParte.text = new UIActions().CleanString(parts[i].name.ToString());
             var sprite = Resources.Load<Sprite>("La direccion");
             _partsInventory[i].imagenParte.sprite = sprite;
         }
@@ -105,7 +105,7 @@ public class MechaUI : MonoBehaviour
             _systemsInventory[i].canvas = GameObject.Find("Canvas").GetComponent<Canvas>();
             _systemsInventory[i].parent = parentInventorySystems;
             _systemsInventory[i].system = systems[i];
-            _systemsInventory[i].nombreSistema.text = systems[i].name.ToString();
+            _systemsInventory[i].nombreSistema.text = new UIActions().CleanString(systems[i].name.ToString());
             var sprite = Resources.Load<Sprite>("La direccion");
             _systemsInventory[i].imagenSistema.sprite = sprite;
         }

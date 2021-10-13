@@ -35,31 +35,31 @@ public class Resource
         switch (type)
         {
             case TypeResource.Cobriun_Blando:
-                this.amount = 1000;
+                this.amount = 500;
                 break;
             case TypeResource.Alusteno:
-                this.amount = 1000;
+                this.amount = 500;
                 break;
             case TypeResource.Zar_Opaco:
-                this.amount = 1000;
+                this.amount = 500;
                 break;
             case TypeResource.Bibrio:
-                this.amount = 1000;
+                this.amount = 300;
                 break;
             case TypeResource.Terusteno:
-                this.amount = 1000;
+                this.amount = 300;
                 break;
             case TypeResource.Zar_Puro:
-                this.amount = 1000;
+                this.amount = 300;
                 break;
             case TypeResource.Infinium:
-                this.amount = 1000;
+                this.amount = 100;
                 break;
             case TypeResource.Markurio:
-                this.amount = 1000;
+                this.amount = 100;
                 break;
             case TypeResource.Zar_Refinado:
-                this.amount = 1000;
+                this.amount = 100;
                 break;
             default:
                 Debug.Log("No existe este recurso");

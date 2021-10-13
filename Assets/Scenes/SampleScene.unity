@@ -1586,6 +1586,99 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 164286274}
   m_CullTransparentMesh: 1
+--- !u!1 &181935398
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 181935399}
+  - component: {fileID: 181935400}
+  m_Layer: 0
+  m_Name: Spot Light
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &181935399
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 181935398}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 2.666, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 920552265}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!108 &181935400
+Light:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 181935398}
+  m_Enabled: 1
+  serializedVersion: 10
+  m_Type: 0
+  m_Shape: 0
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 2.09
+  m_Range: 10
+  m_SpotAngle: 41.4
+  m_InnerSpotAngle: 1
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+    m_CullingMatrixOverride:
+      e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    m_UseCullingMatrixOverride: 0
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_RenderingLayerMask: 1
+  m_Lightmapping: 4
+  m_LightShadowCasterMode: 0
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_UseBoundingSphereOverride: 0
+  m_UseViewFrustumForShadowCasterCull: 1
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
 --- !u!1 &188589062
 GameObject:
   m_ObjectHideFlags: 0
@@ -8469,6 +8562,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 543450653505298347}
+  - {fileID: 181935399}
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -9113,7 +9207,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.000038146973, y: -0.000061035156}
+  m_AnchoredPosition: {x: 63.801064, y: -0.000061035156}
   m_SizeDelta: {x: -63.800995, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1004259342
@@ -10450,7 +10544,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1152005761}
-  m_LocalRotation: {x: 0.32098076, y: -0.000000028225354, z: 0.000000009565972, w: 0.94708574}
+  m_LocalRotation: {x: 0.32098073, y: 3.1767352e-15, z: -1.3925269e-15, w: 0.94708574}
   m_LocalPosition: {x: 98.55, y: 7.274, z: 99.56}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -18518,7 +18612,7 @@ GameObject:
   - component: {fileID: 8405300213662215691}
   - component: {fileID: 151628336403220389}
   - component: {fileID: 18388640271133699}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Caja 1.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18641,7 +18735,7 @@ GameObject:
   - component: {fileID: 3545050621009881889}
   - component: {fileID: 2146382320490384326}
   - component: {fileID: 310779518475061736}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Caja 1.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18938,7 +19032,7 @@ GameObject:
   - component: {fileID: 6183271215469106695}
   - component: {fileID: 5243202569053912253}
   - component: {fileID: 154748292765135031}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Tanque.005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19135,7 +19229,7 @@ GameObject:
   - component: {fileID: 7544801884983134406}
   - component: {fileID: 3925137896184398708}
   - component: {fileID: 1089298264761053894}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cylinder.008
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19248,7 +19342,7 @@ GameObject:
   - component: {fileID: 7899705652591833835}
   - component: {fileID: 8927186104253993119}
   - component: {fileID: 5938077882143677957}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19311,7 +19405,7 @@ GameObject:
   - component: {fileID: 7570694814450215023}
   - component: {fileID: 7510673001185583259}
   - component: {fileID: 241651495567309555}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Caja 1.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19373,7 +19467,7 @@ GameObject:
   - component: {fileID: 4858204016496317068}
   - component: {fileID: 786721437627485894}
   - component: {fileID: 253867704623432700}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Barras de metal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19449,7 +19543,7 @@ GameObject:
   - component: {fileID: 3424400107083535599}
   - component: {fileID: 6962752832718467143}
   - component: {fileID: 270324047843363911}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Caja 1.021
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19817,7 +19911,7 @@ GameObject:
   - component: {fileID: 7851349984657066683}
   - component: {fileID: 7998841642411953722}
   - component: {fileID: 3001241450328409227}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cylinder.006
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19957,7 +20051,7 @@ GameObject:
   - component: {fileID: 3127492061373913216}
   - component: {fileID: 962695097787972014}
   - component: {fileID: 389367229234382729}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Caja 1.045
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20398,7 +20492,7 @@ GameObject:
   - component: {fileID: 4870262556850308999}
   - component: {fileID: 4629233735654576408}
   - component: {fileID: 2949451298159952716}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cylinder.011
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20416,7 +20510,7 @@ GameObject:
   - component: {fileID: 1514098175319761766}
   - component: {fileID: 7736649325697109229}
   - component: {fileID: 2119048090498144893}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Escalon.018
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20867,7 +20961,7 @@ GameObject:
   - component: {fileID: 4263262901379644134}
   - component: {fileID: 1055668217492760858}
   - component: {fileID: 1549484991801127984}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Escalon.012
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21037,7 +21131,7 @@ GameObject:
   - component: {fileID: 4137078861987311395}
   - component: {fileID: 8004519148173486157}
   - component: {fileID: 781222229484741917}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Caja 2.010
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22111,7 +22205,7 @@ GameObject:
   - component: {fileID: 299619858324495940}
   - component: {fileID: 1085702097506600208}
   - component: {fileID: 942899441552769957}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Barandillas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22142,7 +22236,7 @@ GameObject:
   - component: {fileID: 2743026670814078180}
   - component: {fileID: 5212031299814099360}
   - component: {fileID: 462508402270690168}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Plataforma mecha
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22290,7 +22384,7 @@ GameObject:
   - component: {fileID: 4550624569113701045}
   - component: {fileID: 2397001246162742408}
   - component: {fileID: 971266376761494788}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Suelo Taller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22685,7 +22779,7 @@ GameObject:
   - component: {fileID: 1734587614241211720}
   - component: {fileID: 388159248568370105}
   - component: {fileID: 1081360616248478930}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Caja 1.019
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22856,7 +22950,7 @@ GameObject:
   - component: {fileID: 3048863691476798956}
   - component: {fileID: 4448763392605168439}
   - component: {fileID: 1116186276471957486}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Caja 2.006
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22901,7 +22995,7 @@ GameObject:
   - component: {fileID: 8042064030863546929}
   - component: {fileID: 8678551112999634009}
   - component: {fileID: 952527498908270735}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Caja 1.041
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22972,7 +23066,7 @@ GameObject:
   - component: {fileID: 1155705486193622114}
   - component: {fileID: 1155705486193622113}
   - component: {fileID: 1155705486193622112}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Paredes base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23071,7 +23165,7 @@ GameObject:
   - component: {fileID: 1870318058877576363}
   - component: {fileID: 7276034741262917371}
   - component: {fileID: 779178458080300431}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Escalon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23143,7 +23237,7 @@ GameObject:
   - component: {fileID: 7515964191925814176}
   - component: {fileID: 3223609945557258238}
   - component: {fileID: 5536914361041777007}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Plataforma
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23267,7 +23361,7 @@ GameObject:
   - component: {fileID: 1492212623635510655}
   - component: {fileID: 2121629420242915434}
   - component: {fileID: 691415497615609357}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Caja 1.010
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23337,7 +23431,7 @@ GameObject:
   - component: {fileID: 7147719148544669394}
   - component: {fileID: 5112712902294890389}
   - component: {fileID: 2192370121385241889}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Caja 1.027
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23527,7 +23621,7 @@ GameObject:
   - component: {fileID: 6779411888466342247}
   - component: {fileID: 1341184299128153784}
   - component: {fileID: 1336002392759378735}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Panel de control 3.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23615,7 +23709,7 @@ GameObject:
   - component: {fileID: 3256074316067424737}
   - component: {fileID: 2006666909268250870}
   - component: {fileID: 1344426915671667973}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Caja 1.026
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23740,7 +23834,7 @@ GameObject:
   - component: {fileID: 5461593431014362250}
   - component: {fileID: 7647700210411296425}
   - component: {fileID: 1365240128020025307}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Caja 1.025
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23799,7 +23893,7 @@ GameObject:
   - component: {fileID: 2275306111405326198}
   - component: {fileID: 5629894220665263137}
   - component: {fileID: 6746072053738271777}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cylinder.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24101,7 +24195,7 @@ GameObject:
   - component: {fileID: 1546897894066347300}
   - component: {fileID: 2310398434640536336}
   - component: {fileID: 7264273512363063648}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cylinder.013
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24276,7 +24370,7 @@ GameObject:
   - component: {fileID: 1017925979599829499}
   - component: {fileID: 8201254613428695185}
   - component: {fileID: 7623670231358150647}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Caja 2.014
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24686,7 +24780,7 @@ GameObject:
   - component: {fileID: 6435493410895571621}
   - component: {fileID: 2813892354960818506}
   - component: {fileID: 1617419884763802003}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Caja 1.050
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24778,7 +24872,7 @@ GameObject:
   - component: {fileID: 5598882543961666111}
   - component: {fileID: 8258764126346539448}
   - component: {fileID: 5907471516072979186}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cylinder.005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24811,7 +24905,7 @@ GameObject:
   - component: {fileID: 806750843526841302}
   - component: {fileID: 6430089213284451357}
   - component: {fileID: 3199908835907412803}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Escalon.017
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25051,7 +25145,7 @@ GameObject:
   - component: {fileID: 5877558808273522000}
   - component: {fileID: 4118348014527903106}
   - component: {fileID: 1789805973355765513}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Barras de metal.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25082,7 +25176,7 @@ GameObject:
   - component: {fileID: 2057453129154854664}
   - component: {fileID: 2283551653443419375}
   - component: {fileID: 7329677255242790556}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Caja 2.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25363,7 +25457,7 @@ GameObject:
   - component: {fileID: 494863590474043916}
   - component: {fileID: 2154347792285242477}
   - component: {fileID: 5636909305345185070}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Caja 1.009
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25619,7 +25713,7 @@ GameObject:
   - component: {fileID: 1003123833175218044}
   - component: {fileID: 4601247454840037170}
   - component: {fileID: 1948537212787916723}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Paredes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25740,7 +25834,7 @@ GameObject:
   - component: {fileID: 5264303851537910671}
   - component: {fileID: 8941440857655975752}
   - component: {fileID: 1985413979224418743}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Tanque.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25959,7 +26053,7 @@ GameObject:
   - component: {fileID: 4050637392494994157}
   - component: {fileID: 2341769966972571464}
   - component: {fileID: 2023637518453142675}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cosas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27079,7 +27173,7 @@ GameObject:
   - component: {fileID: 378466066015676712}
   - component: {fileID: 7270053550195741083}
   - component: {fileID: 2347530492902334611}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Barras de metal.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27224,7 +27318,7 @@ GameObject:
   - component: {fileID: 860056751104096870}
   - component: {fileID: 5921232420151778420}
   - component: {fileID: 7848799713679296248}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Caja 1.037
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27559,7 +27653,7 @@ GameObject:
   - component: {fileID: 859847637665510159}
   - component: {fileID: 3091531698710938320}
   - component: {fileID: 663951365650206947}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Caja 2.016
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27671,7 +27765,7 @@ GameObject:
   - component: {fileID: 7415085467088107319}
   - component: {fileID: 1222386369350619160}
   - component: {fileID: 6965549476914907718}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Caja 1.030
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27690,7 +27784,7 @@ GameObject:
   - component: {fileID: 7292921250685936273}
   - component: {fileID: 988718256201904190}
   - component: {fileID: 2507130779996852896}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Caja 1.020
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28791,7 +28885,7 @@ GameObject:
   - component: {fileID: 4790065914429304096}
   - component: {fileID: 7694264154386067283}
   - component: {fileID: 2940157939306488843}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Caja 1.032
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28892,7 +28986,7 @@ GameObject:
   - component: {fileID: 6085038270787772620}
   - component: {fileID: 3645618066499952184}
   - component: {fileID: 3523212697597430426}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Escalon.019
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29343,7 +29437,7 @@ GameObject:
   - component: {fileID: 4226750385158775448}
   - component: {fileID: 3473240728912218290}
   - component: {fileID: 6101711177335569833}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Caja 1.017
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29377,7 +29471,7 @@ GameObject:
   - component: {fileID: 7122639993386096719}
   - component: {fileID: 4714250052129447860}
   - component: {fileID: 3153605500943490693}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Barras de metal.006
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29749,7 +29843,7 @@ GameObject:
   - component: {fileID: 6371976790388457508}
   - component: {fileID: 1305105026511450707}
   - component: {fileID: 2480696947085869260}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Escalon.015
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29782,7 +29876,7 @@ GameObject:
   - component: {fileID: 5750428842207933357}
   - component: {fileID: 3332837538002080508}
   - component: {fileID: 3243760804557308154}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Caja 1.013
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29994,7 +30088,7 @@ GameObject:
   - component: {fileID: 2790524336063063645}
   - component: {fileID: 3744678738798128274}
   - component: {fileID: 901855468859612061}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Respiradero.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30131,7 +30225,7 @@ GameObject:
   - component: {fileID: 4557701604416283739}
   - component: {fileID: 3227446737981411191}
   - component: {fileID: 8154299907889710071}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Caja 1.051
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30363,7 +30457,7 @@ GameObject:
   - component: {fileID: 5410148632023736368}
   - component: {fileID: 7687951702784160950}
   - component: {fileID: 3427228503020747257}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Caja 1.014
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30424,7 +30518,7 @@ GameObject:
   - component: {fileID: 6925584958902651428}
   - component: {fileID: 4940611596002788518}
   - component: {fileID: 940105560547537991}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Caja 1.035
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30442,7 +30536,7 @@ GameObject:
   - component: {fileID: 2216388338029098550}
   - component: {fileID: 7307112139899419678}
   - component: {fileID: 7372886578612513146}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Escalon.014
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30468,7 +30562,7 @@ GameObject:
   - component: {fileID: 4795297537785597938}
   - component: {fileID: 9020529844250120412}
   - component: {fileID: 3385935464652233681}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Escalon.013
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30582,7 +30676,7 @@ GameObject:
   - component: {fileID: 6520086779734995318}
   - component: {fileID: 2151949753436176913}
   - component: {fileID: 3498472533159380086}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Caja 1.011
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30628,7 +30722,7 @@ GameObject:
   - component: {fileID: 2710299404754680648}
   - component: {fileID: 4883271637400653979}
   - component: {fileID: 3508474323453872251}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Caja 1.039
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30801,7 +30895,7 @@ GameObject:
   - component: {fileID: 8116846324057619324}
   - component: {fileID: 4961824079736414899}
   - component: {fileID: 3516580633386126819}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Respiradero
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30892,7 +30986,7 @@ GameObject:
   - component: {fileID: 2146278802288574995}
   - component: {fileID: 2931097417316606995}
   - component: {fileID: 2309539845134548099}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Escalon.021
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31003,7 +31097,7 @@ GameObject:
   - component: {fileID: 6002665260615098030}
   - component: {fileID: 8906228475006739976}
   - component: {fileID: 3573783790303754651}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Panel de control 2.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31119,7 +31213,7 @@ GameObject:
   - component: {fileID: 3909258627619443341}
   - component: {fileID: 2939923322327522703}
   - component: {fileID: 7072462814795114524}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Caja 1.034
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31222,7 +31316,7 @@ GameObject:
   - component: {fileID: 5574742323232141704}
   - component: {fileID: 2207129202846075674}
   - component: {fileID: 3612732805405817268}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Caja 1.042
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31535,7 +31629,7 @@ GameObject:
   - component: {fileID: 7224426152785063425}
   - component: {fileID: 7703181337123570921}
   - component: {fileID: 3123184839689066608}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Caja 2.005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31570,7 +31664,7 @@ GameObject:
   - component: {fileID: 1844841878889624625}
   - component: {fileID: 2421153959518601488}
   - component: {fileID: 3742733907077468668}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Tanque
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31790,7 +31884,7 @@ GameObject:
   - component: {fileID: 1594417876519429890}
   - component: {fileID: 8153407449719895796}
   - component: {fileID: 8776939386326833130}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BezierCurve
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32487,7 +32581,7 @@ GameObject:
   - component: {fileID: 5563556376675215874}
   - component: {fileID: 7943653764843121622}
   - component: {fileID: 6750146891092373860}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Escalon.022
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32715,7 +32809,7 @@ GameObject:
   - component: {fileID: 5318586901006748417}
   - component: {fileID: 1945020705134995545}
   - component: {fileID: 1274219929376997551}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cylinder.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33027,7 +33121,7 @@ GameObject:
   - component: {fileID: 5404716441913492046}
   - component: {fileID: 4381722025798394037}
   - component: {fileID: 4214749730587689738}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Caja 1.023
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33103,7 +33197,7 @@ GameObject:
   - component: {fileID: 8138534611893635671}
   - component: {fileID: 6385374936881043812}
   - component: {fileID: 4338096973659535158}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Caja 1.015
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33666,7 +33760,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3896010157672091441}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Escenario02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34057,7 +34151,7 @@ GameObject:
   - component: {fileID: 1814095975455046638}
   - component: {fileID: 1350680627192724691}
   - component: {fileID: 8229617669049457965}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Caja 1.006
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34560,7 +34654,7 @@ GameObject:
   - component: {fileID: 2878851840181933677}
   - component: {fileID: 2328697319136130391}
   - component: {fileID: 901284965484637631}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Caja 1.005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34594,7 +34688,7 @@ GameObject:
   - component: {fileID: 411794440008083216}
   - component: {fileID: 2703099444759137793}
   - component: {fileID: 4732242241988526123}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Barras de metal.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34626,7 +34720,7 @@ GameObject:
   - component: {fileID: 2032496593282726495}
   - component: {fileID: 4373233949741196380}
   - component: {fileID: 4735734822644612707}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Panel de control 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34760,7 +34854,7 @@ GameObject:
   - component: {fileID: 6090967409995978361}
   - component: {fileID: 5079325916076484963}
   - component: {fileID: 4756419895909033438}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Caja 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34876,7 +34970,7 @@ GameObject:
   - component: {fileID: 3198859777803785672}
   - component: {fileID: 6955291419540944048}
   - component: {fileID: 4795922917252236055}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Caja 2.012
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34907,7 +35001,7 @@ GameObject:
   - component: {fileID: 2720561384310836070}
   - component: {fileID: 6148759037343288716}
   - component: {fileID: 4509413618469368271}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Caja 1.016
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34939,7 +35033,7 @@ GameObject:
   - component: {fileID: 244876773046535682}
   - component: {fileID: 8914273145145400983}
   - component: {fileID: 475997045209067100}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Caja 1.033
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35013,7 +35107,7 @@ GameObject:
   - component: {fileID: 2088763264194607384}
   - component: {fileID: 763690260399471005}
   - component: {fileID: 4834591858405762021}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Caja 1.031
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35629,7 +35723,7 @@ GameObject:
   - component: {fileID: 785491992200692702}
   - component: {fileID: 5060179453063945069}
   - component: {fileID: 8842421977208775261}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Piso con cables debajo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35962,7 +36056,7 @@ GameObject:
   - component: {fileID: 7789002570563516939}
   - component: {fileID: 620462854124599499}
   - component: {fileID: 6033190332640018528}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cylinder.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36315,7 +36409,7 @@ GameObject:
   - component: {fileID: 121021385895272284}
   - component: {fileID: 5245625970104376719}
   - component: {fileID: 5245625970104376720}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Barras de metal.005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36429,7 +36523,7 @@ GameObject:
   - component: {fileID: 9167440987641193246}
   - component: {fileID: 8312535227017272391}
   - component: {fileID: 4483076936803386211}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cylinder.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36447,7 +36541,7 @@ GameObject:
   - component: {fileID: 1367016838969303479}
   - component: {fileID: 3783084272556226495}
   - component: {fileID: 4690690082095227393}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Caja 1.047
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36807,7 +36901,7 @@ GameObject:
   - component: {fileID: 1940270084953486661}
   - component: {fileID: 1785599435258177367}
   - component: {fileID: 4827564353371477951}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Respiradero.005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37423,7 +37517,7 @@ GameObject:
   - component: {fileID: 2376289842851401371}
   - component: {fileID: 7303215293155641429}
   - component: {fileID: 5572872978058970289}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Caja 1.046
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37703,7 +37797,7 @@ GameObject:
   - component: {fileID: 1226011785932890892}
   - component: {fileID: 1188202043138416902}
   - component: {fileID: 6864847813010275155}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Caja 1.043
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37875,7 +37969,7 @@ GameObject:
   - component: {fileID: 2778149649817661038}
   - component: {fileID: 3840576484794910528}
   - component: {fileID: 3721919666457267344}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Caja 1.049
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38093,7 +38187,7 @@ GameObject:
   - component: {fileID: 6583275910368451178}
   - component: {fileID: 1747089844723218267}
   - component: {fileID: 5758772613922710597}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Caja 1.007
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38139,7 +38233,7 @@ GameObject:
   - component: {fileID: 3401091534027863501}
   - component: {fileID: 863142468956508432}
   - component: {fileID: 8446104875445997518}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Caja 2.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38258,7 +38352,7 @@ GameObject:
   - component: {fileID: 3504060100616380743}
   - component: {fileID: 4045493349420238852}
   - component: {fileID: 5426540203512960574}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Caja 1.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38393,7 +38487,7 @@ GameObject:
   - component: {fileID: 1225722329706165212}
   - component: {fileID: 7908485353541365118}
   - component: {fileID: 8908820588401403549}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Caja 1.029
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38412,7 +38506,7 @@ GameObject:
   - component: {fileID: 7453296757983306088}
   - component: {fileID: 3779402020332034194}
   - component: {fileID: 5878235537877509920}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Caja 2.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38443,7 +38537,7 @@ GameObject:
   - component: {fileID: 571531937314150864}
   - component: {fileID: 405783750572272486}
   - component: {fileID: 2023211172883959236}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cylinder.009
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38575,7 +38669,7 @@ GameObject:
   - component: {fileID: 4892244102496472984}
   - component: {fileID: 824190007716932277}
   - component: {fileID: 5935757490752766453}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Panel de control 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38781,7 +38875,7 @@ GameObject:
   - component: {fileID: 8820720302059545765}
   - component: {fileID: 3180757938124107795}
   - component: {fileID: 6016612006492691493}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Suelo Mecha
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39012,7 +39106,7 @@ GameObject:
   - component: {fileID: 8951481082021075562}
   - component: {fileID: 765966886993413768}
   - component: {fileID: 7425908459359729255}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Respiradero.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40232,7 +40326,7 @@ GameObject:
   - component: {fileID: 8310835369778169296}
   - component: {fileID: 1683465525071287312}
   - component: {fileID: 2784170545194123158}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Caja 1.036
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40250,7 +40344,7 @@ GameObject:
   - component: {fileID: 5563242115661390104}
   - component: {fileID: 9158542244217138998}
   - component: {fileID: 1542067797424239428}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Caja 2.017
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40403,7 +40497,7 @@ GameObject:
   - component: {fileID: 4416072685696131784}
   - component: {fileID: 4904726435618739296}
   - component: {fileID: 6575136392428549956}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Caja 2.007
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40594,7 +40688,7 @@ GameObject:
   - component: {fileID: 6067995965612334906}
   - component: {fileID: 5457666104810428183}
   - component: {fileID: 6677868559799629487}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Caja 1.012
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40972,7 +41066,7 @@ GameObject:
   - component: {fileID: 5500688273787333559}
   - component: {fileID: 354804415846412763}
   - component: {fileID: 6781479603695092198}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Caja 1.038
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41157,7 +41251,7 @@ GameObject:
   - component: {fileID: 5486957901209102006}
   - component: {fileID: 3107434749530699359}
   - component: {fileID: 8386293877341923934}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Escalon.016
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41431,7 +41525,7 @@ GameObject:
   - component: {fileID: 7243411674627760858}
   - component: {fileID: 1968144133690337018}
   - component: {fileID: 6969653011680222446}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Caja 1.022
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41557,7 +41651,7 @@ GameObject:
   - component: {fileID: 490140713775560424}
   - component: {fileID: 4598586630324284259}
   - component: {fileID: 5406768518924621359}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Escalon.020
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41787,7 +41881,7 @@ GameObject:
   - component: {fileID: 3811881158032573565}
   - component: {fileID: 3928162511241107068}
   - component: {fileID: 913368705212919866}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Caja 2.008
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41964,7 +42058,7 @@ GameObject:
   - component: {fileID: 3664184082600456523}
   - component: {fileID: 5955277699110931223}
   - component: {fileID: 8280418265473893385}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Plataforma mecha.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42398,7 +42492,7 @@ GameObject:
   - component: {fileID: 1813699733335186982}
   - component: {fileID: 6282955022375234871}
   - component: {fileID: 7313169904920864717}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Barras de metal.007
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42501,7 +42595,7 @@ GameObject:
   - component: {fileID: 4456549732975262961}
   - component: {fileID: 387006557680536124}
   - component: {fileID: 7341625657069631135}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Barras de metal.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42563,7 +42657,7 @@ GameObject:
   - component: {fileID: 1645339465824591954}
   - component: {fileID: 7608604956506979757}
   - component: {fileID: 725457401859610783}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cylinder.012
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42668,7 +42762,7 @@ GameObject:
   - component: {fileID: 581882084124263696}
   - component: {fileID: 2170808926152894288}
   - component: {fileID: 7406520389028426189}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Panel de control 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43339,7 +43433,7 @@ GameObject:
   - component: {fileID: 4469749620868577413}
   - component: {fileID: 5770870207594328083}
   - component: {fileID: 1083075085953725883}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Caja 1.028
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43399,7 +43493,7 @@ GameObject:
   - component: {fileID: 3172014541599962527}
   - component: {fileID: 884349030180394393}
   - component: {fileID: 7635207822809248092}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Panel de control 1.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43446,7 +43540,7 @@ GameObject:
   - component: {fileID: 3529092445522630807}
   - component: {fileID: 2472273284883331151}
   - component: {fileID: 4541216589133262940}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Caja 1.008
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43923,7 +44017,7 @@ GameObject:
   - component: {fileID: 7112799089848376340}
   - component: {fileID: 5212047646733140111}
   - component: {fileID: 4745050629717305833}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cylinder.007
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44199,7 +44293,7 @@ GameObject:
   - component: {fileID: 1363630052966253482}
   - component: {fileID: 6975242874632446497}
   - component: {fileID: 7875386466400803786}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Tanque.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44260,7 +44354,7 @@ GameObject:
   - component: {fileID: 4940252490078566126}
   - component: {fileID: 5707696364810100462}
   - component: {fileID: 7888310718812622114}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Caja 1.018
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44945,7 +45039,7 @@ GameObject:
   - component: {fileID: 5040405935065011852}
   - component: {fileID: 6069597142627406447}
   - component: {fileID: 8157832672281073953}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Caja 1.024
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45159,7 +45253,7 @@ GameObject:
   - component: {fileID: 3520607899616124929}
   - component: {fileID: 5114070208130916667}
   - component: {fileID: 174774351877177232}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Caja 1.044
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45261,7 +45355,7 @@ GameObject:
   - component: {fileID: 2270490349192423107}
   - component: {fileID: 2519980858427172959}
   - component: {fileID: 8264173845955024296}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Tanque.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45469,7 +45563,7 @@ GameObject:
   - component: {fileID: 6643203921236556499}
   - component: {fileID: 4191511192915090576}
   - component: {fileID: 3249153560109017017}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Caja 1.040
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45502,7 +45596,7 @@ GameObject:
   - component: {fileID: 2177769511921558630}
   - component: {fileID: 9200732459858212066}
   - component: {fileID: 6768478276280854947}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Respiradero.006
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45556,7 +45650,7 @@ GameObject:
   - component: {fileID: 224682510640714061}
   - component: {fileID: 712620599691837801}
   - component: {fileID: 7427170927382015625}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Caja 2.011
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45715,7 +45809,7 @@ GameObject:
   - component: {fileID: 2872487186616846449}
   - component: {fileID: 1412174168492255252}
   - component: {fileID: 5601868464576255561}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Respiradero.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46030,7 +46124,7 @@ GameObject:
   - component: {fileID: 9154273894718506476}
   - component: {fileID: 188810033002394773}
   - component: {fileID: 8747630615841679594}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Caja 2.013
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46264,7 +46358,7 @@ GameObject:
   - component: {fileID: 9051928791737762576}
   - component: {fileID: 4159633169858708567}
   - component: {fileID: 2849695448651461487}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Caja 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46427,7 +46521,7 @@ GameObject:
   - component: {fileID: 168451056852056868}
   - component: {fileID: 7815071037657688580}
   - component: {fileID: 6552051054108899642}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cylinder.010
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47143,7 +47237,7 @@ GameObject:
   - component: {fileID: 8905027022056266522}
   - component: {fileID: 3580533246975009627}
   - component: {fileID: 8940418269412283338}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Caja 2.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47845,7 +47939,7 @@ GameObject:
   - component: {fileID: 6202689527181186314}
   - component: {fileID: 6756251051773289373}
   - component: {fileID: 9220673577808853519}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Caja 2.009
   m_TagString: Untagged
   m_Icon: {fileID: 0}

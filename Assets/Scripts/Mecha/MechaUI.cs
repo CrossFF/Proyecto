@@ -78,7 +78,7 @@ public class MechaUI : MonoBehaviour
             _partsInventory[i].parent = parentInventory;
             _partsInventory[i].part = parts[i];
             _partsInventory[i].nombreParte.text = new UIActions().CleanString(parts[i].name.ToString());
-            var sprite = Resources.Load<Sprite>("La direccion");
+            var sprite = Resources.Load<Sprite>("Iconos/Mecha/" + parts[i].name);
             _partsInventory[i].imagenParte.sprite = sprite;
         }
     }

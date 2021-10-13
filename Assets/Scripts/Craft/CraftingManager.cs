@@ -9,14 +9,23 @@ public class CraftingManager : MonoBehaviour
     public Inventory inventory;
     private int _consoleLevel = 0;
     [SerializeField] private List<BlueprintsForLevel> prefabsPerLevel;
-    public CanvasGroup allMenu, machineMenu, mechaMenu, systemsMenu;
+    public CanvasGroup allMenu, machineMenu, mechaMenu, systemsMenu, craftPanel, upgradePanel;
     public Transform machineContent, mechaContent, systemsContent;
     public Button machineButton, mechaButton, systemButton;
     private List<GameObject> _blueprintsGameObjetcs;
+
+    [Header("Confirmacion de Upgrade")]
+    public Text textNewBlueprints;
+    public GameObject prefabMaterial;
+    public Transform parentMaterial;
+    private List<IngredientGameObject> _nextLevelMaterials;
+    public Button confirmarButton;
+
     void Awake()
     {
         _uiActions = new UIActions();
         _blueprintsGameObjetcs = new List<GameObject>();
+        _nextLevelMaterials = new List<IngredientGameObject>();
         HideMenu();
     }
 
@@ -28,6 +37,8 @@ public class CraftingManager : MonoBehaviour
     public void ShowMenu()
     {
         _uiActions.OnOffCanvasGroup(allMenu, true);
+        _uiActions.OnOffCanvasGroup(craftPanel, true);
+        _uiActions.OnOffCanvasGroup(upgradePanel, false);
         //Control de instancia
         LevelControl();
         ShowMachineMenu();
@@ -60,26 +71,96 @@ public class CraftingManager : MonoBehaviour
         //limpio la lista de planos instaciados por las dudas
         ClearList();
         //instancio los planos correspondientes de cada nivel
-        for (int i = 0; i < _consoleLevel+1; i++)
+        for (int i = 0; i < _consoleLevel + 1; i++)
         {
-            InstantiateBlueprints(prefabsPerLevel[i].prefabsBlueprints);       
+            InstantiateBlueprints(prefabsPerLevel[i].prefabsBlueprints);
         }
+    }
+
+    public void MenuDeConfirmacion()
+    {
+        // muestro el menu de confirmacion y oculto el de craft
+        _uiActions.OnOffCanvasGroup(craftPanel, false);
+        _uiActions.OnOffCanvasGroup(upgradePanel, true);
+        // instacio el nivel disponible
+        if (_consoleLevel + 1 < prefabsPerLevel.Count)
+        {
+            //variable de siguiente nivel
+            int nextLevel = _consoleLevel + 1;
+            // materiales
+            // borro los elementos que estuvieran en los materiales
+            foreach (var item in _nextLevelMaterials)
+            {
+                Destroy(item.gameObject);
+            }
+            _nextLevelMaterials.Clear();
+            // index para evitar errores
+            int index = 0; 
+            foreach (var ingrediente in prefabsPerLevel[nextLevel].materials)
+            {
+                // instancio un material
+                IngredientGameObject tempMaterial;
+                tempMaterial = Instantiate(prefabMaterial, parentMaterial).GetComponent<IngredientGameObject>();
+                // imagen del material
+                var sprite = Resources.Load<Sprite>("Ores/" + ingrediente);
+                tempMaterial.resourceImage.sprite = sprite;
+                // cantidades del material
+                float actualTemp = inventory.GetAmount(ingrediente);
+                float necesarioTemp = prefabsPerLevel[nextLevel].amounts[index];
+                tempMaterial.amountText.text = actualTemp + "/" + necesarioTemp;
+                // agrego el material a la lista
+                _nextLevelMaterials.Add(tempMaterial);
+                index++;
+            }  
+            // blueprints
+            // borro lo que tuviera escrio de antes;
+            textNewBlueprints.text = "";
+            foreach (var item in prefabsPerLevel[nextLevel].prefabsBlueprints)
+            {
+                textNewBlueprints.text += _uiActions.CleanString(item.GetComponent<BlueprintGameObject>().blueprintName.ToString()) + "\n";
+            }
+            // verifico si los recursos disponibles son suficientes para la actualizacion
+            int num = 0;
+            for (int i = 0; i < prefabsPerLevel[nextLevel].materials.Count; i++)
+            {
+                float actual = inventory.GetAmount(prefabsPerLevel[nextLevel].materials[i]);
+                if(actual >= prefabsPerLevel[nextLevel].amounts[i])
+                    num++;
+            }
+            confirmarButton.interactable = num == prefabsPerLevel[nextLevel].materials.Count ? true : false;   
+        }
+        else
+        {
+            // no es posible seguir actualizando
+            // desabilito boton de confirmacion
+            confirmarButton.interactable = false;
+        }
+    }
+
+    public void CancelarMenuDeConfirmacion()
+    {
+        // muestro el menu de craft y oculto el de confirmacion
+        _uiActions.OnOffCanvasGroup(craftPanel, true);
+        _uiActions.OnOffCanvasGroup(upgradePanel, false);
     }
 
     // subir de nivel la mesa de crafteo para obtener mas planos
     public void Upgrade()
     {
-        if(_consoleLevel+1 < prefabsPerLevel.Count)
+        // cierro menu de confirmacion mustro menu de craft
+        _uiActions.OnOffCanvasGroup(upgradePanel, false);
+        _uiActions.OnOffCanvasGroup(craftPanel, true);
+        //subo de nivel la consola
+        _consoleLevel++;
+        // uso los recursos necesarios
+        int index = 0;
+        foreach (var item in prefabsPerLevel[_consoleLevel].materials)
         {
-            //subo de nivel la consola
-            _consoleLevel++;
-            LevelControl();
+            inventory.UseResource(item,prefabsPerLevel[_consoleLevel].amounts[index]);
+            index++;
         }
-        else
-        {
-            //informo de que no puedo subir de nivel la consola
-            print("No se puede subir de nivel la consola");
-        }
+        // actualizo los blueprints
+        LevelControl();
     }
 
     private void InstantiateBlueprints(List<GameObject> prefabs)

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1154916953855696068}
   - component: {fileID: 5094541051297995133}
   m_Layer: 0
-  m_Name: lvl0
+  m_Name: lvl 0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46,3 +46,5 @@ MonoBehaviour:
   prefabsBlueprints:
   - {fileID: 649032447122849241, guid: a2b48f40adf0a1a41984fb3775d74e62, type: 3}
   - {fileID: 7722113363138920901, guid: 6908afca4deebae4e8f25f7020b89d65, type: 3}
+  materials: 
+  amounts: 

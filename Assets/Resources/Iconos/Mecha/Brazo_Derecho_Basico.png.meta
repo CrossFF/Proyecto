@@ -1,19 +1,10 @@
 fileFormatVersion: 2
-guid: 9586ebe348533ff41814b9916292e8bb
+guid: ed455c0e9b32463498efa74daf45ea6b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5782036011555852661
-    second: Dron_Excabador
-  - first:
-      213: 1523271317924476916
-    second: Excavadora
-  - first:
-      213: 7715306878478736312
-    second: Excavadora_Avanzada
-  - first:
-      213: -3746419555313515167
-    second: Tuneladora
+      213: -8092827127926106732
+    second: Brazo_Derecho_Basico
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -53,13 +44,13 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteBorder: {x: 469, y: 62, z: 552, w: 128}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -127,13 +118,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Dron_Excabador
+      name: Brazo_Derecho_Basico
       rect:
         serializedVersion: 2
-        x: 182
-        y: 1474
-        width: 997
-        height: 967
+        x: 373
+        y: 35
+        width: 996
+        height: 996
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,71 +132,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b8e62bcc1e412cfa0800000000000000
-      internalID: -5782036011555852661
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Excavadora
-      rect:
-        serializedVersion: 2
-        x: 1340
-        y: 1451
-        width: 997
-        height: 997
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4f7fd69613fb32510800000000000000
-      internalID: 1523271317924476916
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Excavadora_Avanzada
-      rect:
-        serializedVersion: 2
-        x: 2415
-        y: 1434
-        width: 997
-        height: 997
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8bb5ad08ab6421b60800000000000000
-      internalID: 7715306878478736312
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Tuneladora
-      rect:
-        serializedVersion: 2
-        x: 248
-        y: 317
-        width: 997
-        height: 997
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 16506f9834b020cc0800000000000000
-      internalID: -3746419555313515167
+      spriteID: 495d153da9080bf80800000000000000
+      internalID: -8092827127926106732
       vertices: []
       indices: 
       edges: []
@@ -213,7 +141,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 128ee864d41136946ba232dada3057f6
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 

@@ -15,6 +15,7 @@ public class NewMineUI : MonoBehaviour
     minaVacia;
     public Text conectionsText,
     dispoTuneladoras,
+    dispoTuneladoras2,
     dispoDronesLimpieza,
     stausText;
     public Button conectionButton,// boton de crear conecciones
@@ -130,6 +131,8 @@ public class NewMineUI : MonoBehaviour
         // mina vacia
         _uiActions.OnOffCanvasGroup(minaVacia, true);
         // seteo la info de los recursos necesarios
+        float num = manager.GetAmount(BlueprintName.Tuneladora);
+        dispoTuneladoras2.text = num + "/1";
     }
 
     private void Bloqueada()
@@ -267,7 +270,15 @@ public class NewMineUI : MonoBehaviour
 
     public void NuevosRecursos()
     {
-
+        // verifico si se puede usar una tuneladora
+        if(manager.inventory.GetAmount("Tuneladora") >= 1)
+        {
+            _mine.node = new Node(_mine.node.type, "Nueva mina xD");
+        }
+        else
+        {
+            // no se puede generar nueva mina
+        }
     }
 
     public Mine GetMine()

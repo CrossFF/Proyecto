@@ -5,15 +5,15 @@ using System;
 
 public enum TypeResource
 {
-    BasicOre1,
-    BasicOre2,
-    BasicOre3,
-    MediumOre1,
-    MediumOre2,
-    MediumOre3,
-    AdvancedOre1,
-    AdvancedOre2,
-    AdvancedOre3
+    Cobriun_Blando,
+    Alusteno,
+    Zar_Opaco,
+    Bibrio,
+    Terusteno,
+    Zar_Puro,
+    Infinium,
+    Markurio,
+    Zar_Refinado
 }
 public class Resource
 {
@@ -34,31 +34,31 @@ public class Resource
         this.type = type;
         switch (type)
         {
-            case TypeResource.BasicOre1:
+            case TypeResource.Cobriun_Blando:
                 this.amount = 1000;
                 break;
-            case TypeResource.BasicOre2:
+            case TypeResource.Alusteno:
                 this.amount = 1000;
                 break;
-            case TypeResource.BasicOre3:
+            case TypeResource.Zar_Opaco:
                 this.amount = 1000;
                 break;
-            case TypeResource.MediumOre1:
+            case TypeResource.Bibrio:
                 this.amount = 1000;
                 break;
-            case TypeResource.MediumOre2:
+            case TypeResource.Terusteno:
                 this.amount = 1000;
                 break;
-            case TypeResource.MediumOre3:
+            case TypeResource.Zar_Puro:
                 this.amount = 1000;
                 break;
-            case TypeResource.AdvancedOre1:
+            case TypeResource.Infinium:
                 this.amount = 1000;
                 break;
-            case TypeResource.AdvancedOre2:
+            case TypeResource.Markurio:
                 this.amount = 1000;
                 break;
-            case TypeResource.AdvancedOre3:
+            case TypeResource.Zar_Refinado:
                 this.amount = 1000;
                 break;
             default:
@@ -89,35 +89,35 @@ public class Resource
     // metodos estaticos
     public static TypeResource GetType(string name)
     {
-        TypeResource type = TypeResource.BasicOre1;
+        TypeResource type = TypeResource.Cobriun_Blando;
         switch (name)
         {
-            case "BasicOre1":
-                type = TypeResource.BasicOre1;
+            case "Cobriun_Blando":
+                type = TypeResource.Cobriun_Blando;
                 break;
-            case "BasicOre2":
-                type = TypeResource.BasicOre2;
+            case "Alusteno":
+                type = TypeResource.Alusteno;
                 break;
-            case "BasicOre3":
-                type = TypeResource.BasicOre3;
+            case "Zar_Opaco":
+                type = TypeResource.Zar_Opaco;
                 break;
-            case "MediumOre1":
-                type = TypeResource.MediumOre1;
+            case "Bibrio":
+                type = TypeResource.Bibrio;
                 break;
-            case "MediumOre2":
-                type = TypeResource.MediumOre2;
+            case "Terusteno":
+                type = TypeResource.Terusteno;
                 break;
-            case "MediumOre3":
-                type = TypeResource.MediumOre3;
+            case "Zar_Puro":
+                type = TypeResource.Zar_Puro;
                 break;
-            case "AdvancedOre1":
-                type = TypeResource.AdvancedOre1;
+            case "Infinium":
+                type = TypeResource.Infinium;
                 break;
-            case "AdvancedOre2":
-                type = TypeResource.AdvancedOre2;
+            case "Markurio":
+                type = TypeResource.Markurio;
                 break;
-            case "AdvancedOre3":
-                type = TypeResource.AdvancedOre3;
+            case "Zar_Refinado":
+                type = TypeResource.Zar_Refinado;
                 break;
         }
         return type;

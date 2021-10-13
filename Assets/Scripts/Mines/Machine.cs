@@ -34,17 +34,17 @@ public class Machine
         {
             case MachineName.Dron_Excavador:
                 this.function = MachineFunction.Extraer;
-                this.amountPerCycle = 5;
+                this.amountPerCycle = 1;
                 this.description = "Extrae 5 de mineral";
                 break;
             case MachineName.Excavadora:
                 this.function = MachineFunction.Extraer;
-                this.amountPerCycle = 10;
+                this.amountPerCycle = 2;
                 this.description = "Extrae 10 de mineral";
                 break;
             case MachineName.Excavadora_Avanzada:
                 this.function = MachineFunction.Extraer;
-                this.amountPerCycle = 20;
+                this.amountPerCycle = 3;
                 this.description = "Extrae 20 de mineral";
                 break;
             case MachineName.Tuneladora:

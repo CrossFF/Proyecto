@@ -37,23 +37,23 @@ public class Node
         {
             case TypeOfNode.Basic:
                 List<Resource> temp1 = new List<Resource>();
-                temp1.Add(new Resource(TypeResource.BasicOre1));
-                temp1.Add(new Resource(TypeResource.BasicOre2));
-                temp1.Add(new Resource(TypeResource.BasicOre3));
+                temp1.Add(new Resource(TypeResource.Cobriun_Blando));
+                temp1.Add(new Resource(TypeResource.Alusteno));
+                temp1.Add(new Resource(TypeResource.Zar_Opaco));
                 this.resources = temp1;
                 break;
             case TypeOfNode.Medium:
                 List<Resource> temp2 = new List<Resource>();
-                temp2.Add(new Resource(TypeResource.MediumOre1));
-                temp2.Add(new Resource(TypeResource.MediumOre2));
-                temp2.Add(new Resource(TypeResource.MediumOre3));
+                temp2.Add(new Resource(TypeResource.Bibrio));
+                temp2.Add(new Resource(TypeResource.Terusteno));
+                temp2.Add(new Resource(TypeResource.Zar_Puro));
                 this.resources = temp2;
                 break;
             case TypeOfNode.Advanced:
                 List<Resource> temp3 = new List<Resource>();
-                temp3.Add(new Resource(TypeResource.AdvancedOre1));
-                temp3.Add(new Resource(TypeResource.AdvancedOre2));
-                temp3.Add(new Resource(TypeResource.AdvancedOre3));
+                temp3.Add(new Resource(TypeResource.Infinium));
+                temp3.Add(new Resource(TypeResource.Markurio));
+                temp3.Add(new Resource(TypeResource.Zar_Refinado));
                 this.resources = temp3;
                 break;
         }

@@ -251,7 +251,7 @@ MonoBehaviour:
   blueprintName: 0
   blueprintType: 0
   blueprintIngredients: 00000000
-  ingredientsAmount: 0a000000
+  ingredientsAmount: 14000000
   manager: {fileID: 0}
   prefabIngredientCraft: {fileID: 7906691944865965319, guid: a40a133c38e47f344b0db83f8a78fc24, type: 3}
   nameText: {fileID: 649032445647942757}

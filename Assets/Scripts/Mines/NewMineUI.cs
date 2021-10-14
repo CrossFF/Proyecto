@@ -273,11 +273,13 @@ public class NewMineUI : MonoBehaviour
         // verifico si se puede usar una tuneladora
         if(manager.inventory.GetAmount("Tuneladora") >= 1)
         {
-            _mine.node = new Node(_mine.node.type, "Nueva mina xD");
+            manager.NuevaMina(_mine);
+            // sonido de confirmacion
         }
         else
         {
             // no se puede generar nueva mina
+            // sonido de error
         }
     }
 

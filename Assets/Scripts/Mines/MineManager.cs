@@ -234,4 +234,16 @@ public class MineManager : MonoBehaviour
         if (Node.GetAmountOfType(_mines, StatusNode.Bloqueada) == 0)
             _consola.Funcionado();
     }
+
+    public void NuevaMina(Mine mine)
+    {
+        // gasto una tuneladora
+        inventory.UseMachine(MachineName.Tuneladora);
+        // genero la nueva mina
+        mine.node = new Node(mine.node.type, "Nueva mina");
+        // re activo el nodo
+        mine.node.status = StatusNode.Lista_para_trabajar;
+        ui.HideMine();
+        ui.ShowMine(mine);
+    }
 }

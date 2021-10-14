@@ -100,6 +100,15 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    void OnTriggerStay(Collider other)
+    {
+        // verifco si no hay algo con lo que interactuar
+        if(interactuable == null)
+        {
+            interactuable = other.GetComponent<IInteractable>();
+        }
+    }
+
     private void OnTriggerExit(Collider other)
     {
         interactuable = other.GetComponent<IInteractable>();

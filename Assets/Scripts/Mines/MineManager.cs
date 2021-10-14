@@ -239,8 +239,8 @@ public class MineManager : MonoBehaviour
     {
         // gasto una tuneladora
         inventory.UseMachine(MachineName.Tuneladora);
-        // genero la nueva mina
-        mine.node = new Node(mine.node.type, "Nueva mina");
+        // genero nuevos recursos para la mina
+        mine.node.NewResources();
         // re activo el nodo
         mine.node.status = StatusNode.Lista_para_trabajar;
         ui.HideMine();

@@ -79,6 +79,34 @@ public class Node
         this.resources[indexResource].SetMachine(machine);
     }
 
+    public void NewResources()
+    {
+        switch (this.type)
+        {
+            case TypeOfNode.Basic:
+                List<Resource> temp1 = new List<Resource>();
+                temp1.Add(new Resource(TypeResource.Cobriun_Blando));
+                temp1.Add(new Resource(TypeResource.Alusteno));
+                temp1.Add(new Resource(TypeResource.Zar_Opaco));
+                this.resources = temp1;
+                break;
+            case TypeOfNode.Medium:
+                List<Resource> temp2 = new List<Resource>();
+                temp2.Add(new Resource(TypeResource.Bibrio));
+                temp2.Add(new Resource(TypeResource.Terusteno));
+                temp2.Add(new Resource(TypeResource.Zar_Puro));
+                this.resources = temp2;
+                break;
+            case TypeOfNode.Advanced:
+                List<Resource> temp3 = new List<Resource>();
+                temp3.Add(new Resource(TypeResource.Infinium));
+                temp3.Add(new Resource(TypeResource.Markurio));
+                temp3.Add(new Resource(TypeResource.Zar_Refinado));
+                this.resources = temp3;
+                break;
+        }
+    }
+
     // metodos estaticos
     public static int GetAmountOfType(List<Mine> mines, StatusNode type)
     {

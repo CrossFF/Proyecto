@@ -8578,13 +8578,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 354036510443c614bbf7802c6851b450, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4
-  rotationSpeed: 5
+  _speed: 4
+  _rotationSpeed: 5
   characterController: {fileID: 920552267}
   animator: {fileID: 2034796550}
   camPJ: {fileID: 1152005762}
   cameraManager: {fileID: 590460638}
-  debugMode: 0
+  debugMode: 1
 --- !u!143 &920552267
 CharacterController:
   m_ObjectHideFlags: 0

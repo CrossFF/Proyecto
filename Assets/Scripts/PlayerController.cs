@@ -5,8 +5,8 @@ using Cinemachine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float speed;
-    public float rotationSpeed;
+    [SerializeField] private float _speed;
+    [SerializeField] private float _rotationSpeed;
     public CharacterController characterController;
     public Animator animator;
     private IInteractable interactuable; // objeto interactuable
@@ -32,7 +32,7 @@ public class PlayerController : MonoBehaviour
         float x = Input.GetAxisRaw("Horizontal");
         float z = Input.GetAxisRaw("Vertical");
         Vector3 fixedSpeed = new Vector3(x, 0f, z);
-        fixedSpeed = fixedSpeed * speed * Time.deltaTime;
+        fixedSpeed = fixedSpeed * _speed * Time.deltaTime;
         // si estoy enfocando al personaje
         if (camPJ.Priority > 0)
         {
@@ -43,7 +43,7 @@ public class PlayerController : MonoBehaviour
             {
                 animator.SetFloat("speed", 1);
                 // hago que mire en la direccion que va a caminar
-                float fixedRotation = rotationSpeed * Time.deltaTime;
+                float fixedRotation = _rotationSpeed * Time.deltaTime;
                 animator.transform.forward = Vector3.Slerp(animator.transform.forward, fixedSpeed, fixedRotation);
             }
             else
@@ -74,10 +74,10 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        if(debugMode)
+        if (debugMode)
         {
             // +1000 de todos los minerales
-            if(Input.GetKeyDown(KeyCode.Alpha1))
+            if (Input.GetKeyDown(KeyCode.Alpha1))
             {
                 GetComponent<Inventory>().Cheat();
             }
@@ -107,6 +107,20 @@ public class PlayerController : MonoBehaviour
         {
             interactuable.Desmarcar();
             interactuable = null;
+        }
+    }
+
+    public void ControlSpeed(bool movement)
+    {
+        if (movement)
+        {
+            _speed = 4;
+            _rotationSpeed = 5;
+        }
+        else
+        {
+            _speed = 0;
+            _rotationSpeed = 0;
         }
     }
 }

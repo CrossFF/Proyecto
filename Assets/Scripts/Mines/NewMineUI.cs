@@ -87,7 +87,7 @@ public class NewMineUI : MonoBehaviour
         // muestro la interfaz
         _uiActions.OnOffCanvasGroup(infoMine, true);
         //seteo la info basica de la mina
-        conectionsText.text = "Esta mina conecta con: " + _mine.node.trails.Count + " minas";
+        conectionsText.text = "Esta mina conecta con " + _mine.node.trails.Count + " minas";
         stausText.text = _mine.node.status.ToString();
         // insatancio los recursos
         foreach (var item in _mine.node.resources)

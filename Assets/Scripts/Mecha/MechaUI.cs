@@ -9,7 +9,8 @@ public class MechaUI : MonoBehaviour
     private UIActions _uiActions;
     public CanvasGroup allUI,
     inventarioParte,
-    sistemas;
+    sistemas,
+    gestionSistemas;
     public MechaManager manager;
     public CameraManager cameraManager;
     public CinemachineVirtualCamera camMecha;
@@ -38,8 +39,17 @@ public class MechaUI : MonoBehaviour
         _uiActions.OnOffCanvasGroup(allUI, true);
         _uiActions.OnOffCanvasGroup(inventarioParte, true);
         _uiActions.OnOffCanvasGroup(sistemas, false);
+        _uiActions.OnOffCanvasGroup(gestionSistemas, false);
         ClearInventory();
         InstantiateInventory();
+    }
+
+    public void ShowSystemMenu()
+    {
+        _uiActions.OnOffCanvasGroup(allUI, true);
+        _uiActions.OnOffCanvasGroup(gestionSistemas, true);
+        _uiActions.OnOffCanvasGroup(inventarioParte, false);
+        _uiActions.OnOffCanvasGroup(sistemas, false);
     }
 
     public void HideMenu()
@@ -47,6 +57,7 @@ public class MechaUI : MonoBehaviour
         _uiActions.OnOffCanvasGroup(allUI, false);
         _uiActions.OnOffCanvasGroup(inventarioParte, false);
         _uiActions.OnOffCanvasGroup(sistemas, false);
+        _uiActions.OnOffCanvasGroup(gestionSistemas, false);
     }
 
     private void ClearInventory()

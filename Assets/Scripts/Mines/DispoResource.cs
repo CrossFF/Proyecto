@@ -10,6 +10,9 @@ public class DispoResource : MonoBehaviour, IDropHandler
     public Text nombreRecurso;
     public Text nombreMaquina;
     public Image imageRecurso, imageMachine;
+    
+    //para las animaciones
+    public Animator animator;
 
     public void OnDrop(PointerEventData eventData)
     {
@@ -21,12 +24,16 @@ public class DispoResource : MonoBehaviour, IDropHandler
             // si la maquina es instalable
             if (ui.Instalable(machine))
             {
+                // animacion de instalacion
+                animator.SetTrigger("Equipable");
                 // instalo maquina
-                ui.InstallMachine(machine, this);
+                ui.InstallMachine(machine, this);  
             }
             else
             {
                 //informo que la maquina no es instalable en esta mina
+                // animacion de no instalable
+                animator.SetTrigger("No Equipable");
             }
         }
     }

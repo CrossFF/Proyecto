@@ -35,6 +35,11 @@ public class MechaManager : MonoBehaviour
         ui.ShowMenu();
     }
 
+    public void ShowSystemMenu()
+    {
+        ui.ShowSystemMenu();
+    }
+
     public void HideMenu()
     {
         ui.HideMenu();

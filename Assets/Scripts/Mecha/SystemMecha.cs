@@ -105,6 +105,11 @@ public class SystemMecha
         }
     }
 
+    public float GetEnergyToWork()
+    {
+        return this.energyToWork;
+    }
+
     // metodos estaticos
     public static SystemName GetName(BlueprintName blueprint)
     {

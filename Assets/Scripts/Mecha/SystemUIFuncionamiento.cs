@@ -9,7 +9,13 @@ public class SystemUIFuncionamiento : MonoBehaviour, IPointerEnterHandler, IPoin
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        // activo el menu de gestion de energia
+        //si hay un sistema asignado
+        if(system != null)
+        {
+            // activo el menu de gestion de energia
+            GameObject.Find("Panel_Funcionamiento").GetComponent<UIFuncionamiento>().GestionarEnergia(system);  
+        }
+        
     }
 
     public void OnPointerEnter(PointerEventData eventData)

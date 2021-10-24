@@ -10,10 +10,10 @@ public class UIFuncionamiento : MonoBehaviour
     public CanvasGroup panelDeEnergia;
     public MechaManager manager;
     private UIActions _uiActions;
+    public GestionDeEnergia gestionDeEnergia;
 
     [Header("Esquema de colores")]
     public Color funcionando;
-    public Color medioFuncionamiento;
     public Color sinFuncionar;
     public Color sinEquipar;
 
@@ -58,11 +58,15 @@ public class UIFuncionamiento : MonoBehaviour
                         SystemMecha system = part.systems[i];
                         if (system != null)
                         {
+                            // guardo la info del sistema que es
+                            item.sistemas[i].GetComponent<SystemUIFuncionamiento>().system = system;
+                            // le asigno un color
                             item.sistemas[i].color = system.Working() ? funcionando : sinFuncionar;
                         }
                         else
                         {
                             item.sistemas[i].color = sinEquipar;
+                            item.sistemas[i].GetComponent<SystemUIFuncionamiento>().system = null;
                         }
                     }
                 }
@@ -88,6 +92,18 @@ public class UIFuncionamiento : MonoBehaviour
         textDefensa.text = manager.GetDefensa().ToString();
         textFrio.text = manager.GetFrio().ToString();
         textCalor.text = manager.GetCalor().ToString();
-        textEnergia.text = manager.GetEnergia().ToString();
+        textEnergia.text = manager.GetEnergiaTotal().ToString();
+    }
+
+    // muestro el menu de gestion de energia
+    public void GestionarEnergia(SystemMecha system)
+    {
+        _uiActions.OnOffCanvasGroup(panelDeEnergia, true);
+        gestionDeEnergia.SetSystem(system);
+    }
+
+    public void OcultarPanelDeEnergia()
+    {
+        _uiActions.OnOffCanvasGroup(panelDeEnergia, false);
     }
 }

@@ -73,7 +73,7 @@ public class MechaManager : MonoBehaviour
     private void CheckMechaValues()
     {
         // varaibles temporales para asignar los valores correspondientes
-        float ataque = 0, defensa = 0, energia = 0, proteccionCalor = 0, proteccionFrio = 0;
+        float ataque = 0, defensa = 0, energia = 0, proteccionCalor = 0, proteccionFrio = 0, energiaUtilizada = 0;
         //recorro el array de partes
         foreach (var item in parts)
         {
@@ -106,6 +106,9 @@ public class MechaManager : MonoBehaviour
                             proteccionFrio += CheckSystem(system);
                             break;
                     }
+
+                    // cambio el valor de eneregia actual
+                    energiaUtilizada += system.energyAsigned;
                 }
             }
         }
@@ -116,6 +119,7 @@ public class MechaManager : MonoBehaviour
         _energiaTotal = energia;
         _proteccionCalor = proteccionCalor;
         _proteccionFrio = proteccionFrio;
+        _energiaUtilizada = energiaUtilizada;
     }
 
     // chequeo si el sistema funciona
@@ -179,8 +183,13 @@ public class MechaManager : MonoBehaviour
         return _proteccionFrio;
     }
 
-    public float GetEnergia()
+    public float GetEnergiaTotal()
     {
         return _energiaTotal;
+    }
+
+    public float GetEnergiaAsignada()
+    {
+        return _energiaUtilizada;
     }
 }

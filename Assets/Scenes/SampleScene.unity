@@ -6169,11 +6169,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2010690139}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0051041, y: 2.2}
+  m_AnchoredPosition: {x: 0.0051041, y: -31.800121}
   m_SizeDelta: {x: 375.2, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &637666586
@@ -6387,7 +6387,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 494, y: -449.31}
+  m_AnchoredPosition: {x: 346, y: -416.29}
   m_SizeDelta: {x: 268, y: 181.3815}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &668511990
@@ -6732,7 +6732,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0024719, y: -22.8}
+  m_AnchoredPosition: {x: -0.0024719, y: -56.80012}
   m_SizeDelta: {x: 375.21, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &680017089
@@ -7479,8 +7479,8 @@ MonoBehaviour:
   - {fileID: 337605855}
   panelDeEnergia: {fileID: 2010690142}
   manager: {fileID: 1043359243}
+  gestionDeEnergia: {fileID: 2010690143}
   funcionando: {r: 0.11877227, g: 1, b: 0, a: 1}
-  medioFuncionamiento: {r: 1, g: 0.7241974, b: 0, a: 1}
   sinFuncionar: {r: 1, g: 0, b: 0, a: 1}
   sinEquipar: {r: 0, g: 0, b: 0, a: 0}
   textAtaque: {fileID: 1280076699}
@@ -12034,7 +12034,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0007019, y: 0.00012589}
+  m_AnchoredPosition: {x: 0.0007019, y: -34}
   m_SizeDelta: {x: 668.88, y: 329.24}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1194524019
@@ -12520,6 +12520,85 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1241244959}
   m_CullTransparentMesh: 1
+--- !u!1 &1256665203
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1256665204}
+  - component: {fileID: 1256665206}
+  - component: {fileID: 1256665205}
+  m_Layer: 5
+  m_Name: Text_Nombre Sistema
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1256665204
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1256665203}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2010690139}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -0.0074691, y: 92.132324}
+  m_SizeDelta: {x: 375.2, y: 40.2646}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1256665205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1256665203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 8297a2bf97dbbba468bd2518d003a876, type: 3}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 1
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Nombre sistema
+--- !u!222 &1256665206
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1256665203}
+  m_CullTransparentMesh: 1
 --- !u!1 &1260306230
 GameObject:
   m_ObjectHideFlags: 0
@@ -12653,10 +12732,10 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 21300032, guid: 56d84991286850f428b4e7df0cca7380, type: 3}
-  m_Type: 0
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
-  m_FillMethod: 4
+  m_FillMethod: 0
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
@@ -14774,11 +14853,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2010690139}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0051041, y: 75.1}
+  m_AnchoredPosition: {x: 0.0051041, y: 41.099876}
   m_SizeDelta: {x: 375.2, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1476491044
@@ -19276,7 +19355,7 @@ RectTransform:
   m_Children:
   - {fileID: 1920801256}
   m_Father: {fileID: 2010690139}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -19326,7 +19405,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1923252094}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2010690143}
+        m_TargetAssemblyTypeName: GestionDeEnergia, Assembly-CSharp
+        m_MethodName: GuardarCambios
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1923252094
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20049,6 +20140,7 @@ GameObject:
   - component: {fileID: 2010690141}
   - component: {fileID: 2010690140}
   - component: {fileID: 2010690142}
+  - component: {fileID: 2010690143}
   m_Layer: 5
   m_Name: Panel_Gestion de Energia
   m_TagString: Untagged
@@ -20069,6 +20161,7 @@ RectTransform:
   m_Children:
   - {fileID: 680017088}
   - {fileID: 1188461716}
+  - {fileID: 1256665204}
   - {fileID: 637666585}
   - {fileID: 1476491043}
   - {fileID: 1923252092}
@@ -20130,6 +20223,23 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &2010690143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2010690138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ade04a02b0269e4883224cb7b094d55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textNombreSistema: {fileID: 1256665205}
+  textEnergiaDisponible: {fileID: 1767829884}
+  imagenBarraEnergia: {fileID: 1274852340}
+  sliderEnergiaAplicada: {fileID: 680017089}
+  manager: {fileID: 1043359243}
 --- !u!1 &2029795062
 GameObject:
   m_ObjectHideFlags: 0

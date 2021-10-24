@@ -123,7 +123,7 @@ public class PlayerController : MonoBehaviour
     {
         if (movement)
         {
-            _speed = 4;
+            _speed = 3.2f;
             _rotationSpeed = 5;
         }
         else

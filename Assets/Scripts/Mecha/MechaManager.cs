@@ -152,5 +152,35 @@ public class MechaManager : MonoBehaviour
         inventory.Store(part);
     }
 
+    // devuelve una parte segun un index
+    public PartMecha GetPart(int index)
+    {
+        return parts[index].GetPart();
+    }
 
+    // devuelve valores del meka
+    public float GetAtaque()
+    {
+        return _ataque;
+    }
+
+    public float GetDefensa()
+    {
+        return _defensa;
+    }
+
+    public float GetCalor()
+    {
+        return _proteccionCalor;
+    }
+
+    public float GetFrio()
+    {
+        return _proteccionFrio;
+    }
+
+    public float GetEnergia()
+    {
+        return _energiaTotal;
+    }
 }

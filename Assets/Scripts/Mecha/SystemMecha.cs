@@ -8,7 +8,7 @@ public class SystemMecha
     public SystemFunction function;
     public List<PartPosition> positions;
     private float energyToWork { get; }
-    public float energyAsigned = 0;
+    public float energyAsigned = 0f;
     public float valueEffect;
 
     public SystemMecha(SystemName name)
@@ -95,7 +95,7 @@ public class SystemMecha
     // metodos propios
     public bool Working()
     {
-        if (this.energyToWork <= this.energyAsigned)
+        if (this.energyAsigned >= this.energyToWork)
         {
             return true;
         }

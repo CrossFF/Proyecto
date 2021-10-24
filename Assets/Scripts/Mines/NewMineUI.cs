@@ -99,7 +99,7 @@ public class NewMineUI : MonoBehaviour
         //seteo la info de los recursos
         SetInfoResources();
         // limito acciones
-        // si la mina no esat activa o trabajando no se puede usar el boton de conectar minas
+        // si la mina no esta activa o trabajando no se puede usar el boton de conectar minas
         if (manager.GetAmount(BlueprintName.Tuneladora) > 0)
         {
             if (_mine.node.status == StatusNode.Lista_para_trabajar || _mine.node.status == StatusNode.Activa || _mine.node.status == StatusNode.Sin_recursos)
@@ -192,7 +192,7 @@ public class NewMineUI : MonoBehaviour
         _uiActions.OnOffCanvasGroup(infoMine, false);
         _uiActions.OnOffCanvasGroup(minaBloqueada, false);
         _uiActions.OnOffCanvasGroup(minaInactiva, false);
-        _uiActions.OnOffCanvasGroup(minaVacia,false);
+        _uiActions.OnOffCanvasGroup(minaVacia, false);
         // borro elemntos instanciados
         foreach (var item in _resources)
         {
@@ -205,6 +205,16 @@ public class NewMineUI : MonoBehaviour
         //Limpio listas
         _resources.Clear();
         _invetory.Clear();
+    }
+
+    public void ResetearInventario()
+    {
+        foreach (var item in _invetory)
+        {
+            Destroy(item.gameObject);
+        }
+        _invetory.Clear();
+        InstanciarInventario();
     }
 
     private void InstanciarInventario()
@@ -271,7 +281,7 @@ public class NewMineUI : MonoBehaviour
     public void NuevosRecursos()
     {
         // verifico si se puede usar una tuneladora
-        if(manager.inventory.GetAmount("Tuneladora") >= 1)
+        if (manager.inventory.GetAmount("Tuneladora") >= 1)
         {
             manager.NuevaMina(_mine);
             // sonido de confirmacion

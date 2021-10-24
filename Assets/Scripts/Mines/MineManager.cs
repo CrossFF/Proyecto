@@ -209,8 +209,7 @@ public class MineManager : MonoBehaviour
             }
         }
         // refresco la UI de la mina
-        ui.HideMine();
-        ui.ShowMine(mine);
+        ui.ResetearInventario();
     }
 
     public bool Instalable(Machine machine, Mine mine)

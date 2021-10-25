@@ -2808,8 +2808,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   amountOfMines: 8
   timeCycle: 0.5
-  timeMin: 300
-  timeMax: 500
+  timeMin: 600
+  timeMax: 900
   prefabMine: {fileID: 879703985583986143, guid: b6e6e470aded79c4b89bd7441ea4e465, type: 3}
   ui: {fileID: 858259920}
   inventory: {fileID: 920552269}
@@ -7314,9 +7314,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c64cf0e56e3ca94f8128d7886f0af3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textToShow: Esta es la consola donde podras asegurate de que tu Mecha funciona.
-    No te molestes en interactuar con esto, no llegue a implementarlo. *Sad Nahuel
-    noises*
+  textToShow: Muy bien, este consola me sirve para gestionar los sistemas del Meka
+    y probar si esta listo para la aventura.
   text: {fileID: 303229117}
   panelTutorial: {fileID: 531509994}
   col: {fileID: 687525077}
@@ -12135,8 +12134,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c64cf0e56e3ca94f8128d7886f0af3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textToShow: Aqui es donde podras armar a tu Mecha, pero para eso deberas tener
-    las piezas ya construidas.
+  textToShow: "Aqu\xED es donde podr\xE9 armar al Meka, pero para eso deber\xE9 tener
+    las piezas ya construidas."
   text: {fileID: 303229117}
   panelTutorial: {fileID: 531509994}
   col: {fileID: 1115713641}
@@ -13654,8 +13653,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c64cf0e56e3ca94f8128d7886f0af3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textToShow: Esta es la consola de crafteos, aqui podras cosntruir todo lo que necesites,
-    siempre y cuando tengas los materiales necesarios.
+  textToShow: "Esta es la consola de crafteos, estoy muy orgulloso de ella. Aqu\xED
+    me encargare de cosntruir todo lo que necesite, siempre y cuando tenga los materiales
+    necesarios."
   text: {fileID: 303229117}
   panelTutorial: {fileID: 531509994}
   col: {fileID: 1277330513}
@@ -13822,9 +13822,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c64cf0e56e3ca94f8128d7886f0af3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textToShow: "Esta consola accede a las minas, aqui podras extraer los recursos
-    necesarios para construir lo que necesites. Te recomiendo ver tus posibles crafteos
-    antes de ingresar aqu\xED si no lo has hecho ya."
+  textToShow: "Esta consola accede a las minas,sinceramente no quiero volver a trabajar
+    aqui pero no tengo de otra si quiero armar mi Meka. Dever\xEDa ver mis posibles
+    crafteos antes de ingresar aqu\xED si no lo hize ya."
   text: {fileID: 303229117}
   panelTutorial: {fileID: 531509994}
   col: {fileID: 1283396604}

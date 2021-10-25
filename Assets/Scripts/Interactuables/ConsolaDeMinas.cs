@@ -10,6 +10,7 @@ public class ConsolaDeMinas : MonoBehaviour, IInteractable
     [SerializeField] private Material _mFuncionando;
     [SerializeField] private Material _mError;
     [SerializeField] private Renderer _renderer;
+    [SerializeField] private AudioSource _audioAlarma;
     public void Desmarcar()
     {
         _outline.enabled = false;
@@ -41,6 +42,7 @@ public class ConsolaDeMinas : MonoBehaviour, IInteractable
         // aplico mataerial
         _renderer.material = _mFuncionando;
         // sonido off
+        _audioAlarma.Stop();
     }
 
     public void Error()
@@ -48,5 +50,6 @@ public class ConsolaDeMinas : MonoBehaviour, IInteractable
         // aplico material
         _renderer.material = _mError;
         // alarma
+        _audioAlarma.Play();
     }
 }

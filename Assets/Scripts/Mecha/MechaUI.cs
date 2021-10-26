@@ -127,4 +127,16 @@ public class MechaUI : MonoBehaviour
         cameraManager.ChangePriority(camMecha);
         ShowMenu();
     }
+
+    public bool PartIsInteracble()
+    {
+        if(inventarioParte.alpha != 0)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
 }

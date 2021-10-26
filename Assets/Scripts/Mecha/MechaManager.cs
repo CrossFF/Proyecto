@@ -192,4 +192,10 @@ public class MechaManager : MonoBehaviour
     {
         return _energiaUtilizada;
     }
+
+    //devuelve si es posible interactuar con la parte
+    public bool PartIsInteracble()
+    {
+        return ui.PartIsInteracble();
+    }
 }

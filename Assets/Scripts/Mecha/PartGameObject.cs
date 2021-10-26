@@ -163,7 +163,7 @@ public class PartGameObject : MonoBehaviour
 
     void OnMouseDown()
     {
-        if (Equiped())
+        if (Equiped() && manager.PartIsInteracble())
             manager.ShowPart(_part, cam);
     }
 }

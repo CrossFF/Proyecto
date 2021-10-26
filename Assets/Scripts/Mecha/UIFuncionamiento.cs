@@ -41,47 +41,41 @@ public class UIFuncionamiento : MonoBehaviour
     private void Funcionamiento()
     {
         // recorro las partes y verfico su estado en el manager
-        int index = 0;
-        foreach (var item in partes.ToArray())
+        for (int i = 0; i < partes.Count; i++)
         {
-            PartMecha part = manager.GetPart(index);
+            PartMecha part = manager.GetPart(i);
             // si la parte existe
             if (part != null)
             {
                 // color de funcionamiento
-                item.parte.color = funcionando;
+                partes[i].parte.color = funcionando;
                 // chequeo los sistemas de la parte
-                if (part.systems.Count != 0)
+                for (int x = 0; x < 3; x++)
                 {
-                    for (int i = 0; i < 3; i++)
+                    if (x < part.systems.Count)
                     {
-                        SystemMecha system = part.systems[i];
-                        if (system != null)
-                        {
-                            // guardo la info del sistema que es
-                            item.sistemas[i].GetComponent<SystemUIFuncionamiento>().system = system;
-                            // le asigno un color
-                            item.sistemas[i].color = system.Working() ? funcionando : sinFuncionar;
-                        }
-                        else
-                        {
-                            item.sistemas[i].color = sinEquipar;
-                            item.sistemas[i].GetComponent<SystemUIFuncionamiento>().system = null;
-                        }
+                        SystemMecha system = part.systems[x];
+                        partes[i].sistemas[x].GetComponent<SystemUIFuncionamiento>().system = system;
+                        // le asigno un color
+                        partes[i].sistemas[x].color = system.Working() ? funcionando : sinFuncionar;
+                    }
+                    else
+                    {
+                        partes[i].sistemas[x].color = sinEquipar;
+                        partes[i].sistemas[x].GetComponent<SystemUIFuncionamiento>().system = null;
                     }
                 }
             }
             else
             {
                 // color no funcionado
-                item.parte.color = sinFuncionar;
+                partes[i].parte.color = sinFuncionar;
                 // sistemas sin equipar
-                foreach (var system in item.sistemas.ToArray())
+                foreach (var system in partes[i].sistemas.ToArray())
                 {
                     system.color = sinEquipar;
                 }
             }
-            index++;
         }
     }
 

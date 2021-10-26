@@ -87,7 +87,7 @@ public class SystemMecha
                 this.positions.Add(PartPosition.Pierna_Izquierda);
                 // energia y valor
                 this.energyToWork = 0f;
-                this.valueEffect = 10f;
+                this.valueEffect = 20f;
                 break;
         }
     }

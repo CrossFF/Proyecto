@@ -12741,7 +12741,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1152005761}
-  m_LocalRotation: {x: 0.32098073, y: -3.1767352e-15, z: 1.3925269e-15, w: 0.94708574}
+  m_LocalRotation: {x: 0.32098076, y: 0.000000028225354, z: -0.000000009565972, w: 0.94708574}
   m_LocalPosition: {x: 98.55, y: 7.188, z: 99.56}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -21564,8 +21564,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ataque: 50
   defensa: 50
-  calor: 50
-  frio: 50
+  calor: 40
+  frio: 40
   canvasGroup: {fileID: 1961699999}
   tAtaque: {fileID: 936825056}
   tDefensa: {fileID: 928092202}

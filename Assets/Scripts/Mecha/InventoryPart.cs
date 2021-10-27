@@ -29,6 +29,7 @@ public class InventoryPart : MonoBehaviour, IPointerDownHandler, IBeginDragHandl
 
     public void OnEndDrag(PointerEventData eventData)
     {
+        SonidoManager sonidoManager = GameObject.Find("Manager de Sonido").GetComponent<SonidoManager>();
         RaycastHit hit;
         if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit))
         {
@@ -37,7 +38,15 @@ public class InventoryPart : MonoBehaviour, IPointerDownHandler, IBeginDragHandl
                 PartGameObject temp = hit.transform.GetComponent<PartGameObject>();
                 if (temp.Equipable(part))
                 {
+                    // instalo parte
                     temp.SetPart(part);
+                    // sonido de instalacion de parte
+                    sonidoManager.PlayUISound(EventoSonoroUI.ParteInstalada);
+                }
+                else
+                {
+                    // sonido de error
+                    sonidoManager.PlayUISound(EventoSonoroUI.Error);
                 }
             }
         }

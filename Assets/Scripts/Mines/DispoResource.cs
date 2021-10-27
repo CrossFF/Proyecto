@@ -24,14 +24,20 @@ public class DispoResource : MonoBehaviour, IDropHandler
             // si la maquina es instalable
             if (ui.Instalable(machine))
             {
+                // animacion de instalacion
                 animator.SetTrigger("Equipable");
-                ui.InstallMachine(machine, this);
+                // sonido de instalacion
+                ui.sonidoManager.PlayUISound(EventoSonoroUI.MaquinaInstalada);
+                // instalacion de la maquina
+                ui.InstallMachine(machine, this);       
             }
             else
             {
                 //informo que la maquina no es instalable en esta mina
                 // animacion de no instalable
                 animator.SetTrigger("No Equipable");
+                // sonido de error
+                ui.sonidoManager.PlayUISound(EventoSonoroUI.Error);
             }
         }
     }

@@ -30,6 +30,8 @@ public class InventorySystem : MonoBehaviour, IPointerDownHandler, IBeginDragHan
     // cuando termina el drag
     public void OnEndDrag(PointerEventData eventData)
     {
+        // manager de sonidos
+        SonidoManager sonidoManager = GameObject.Find("Manager de Sonido").GetComponent<SonidoManager>();
         // uso un raycast
         RaycastHit hit;
         if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit))
@@ -47,6 +49,13 @@ public class InventorySystem : MonoBehaviour, IPointerDownHandler, IBeginDragHan
                     {
                         // equipo el sistema
                         part.SetSystem(system);
+                        // sonido de equipar parte
+                        sonidoManager.PlayUISound(EventoSonoroUI.ParteInstalada);
+                    }
+                    else
+                    {
+                        // sonido de error
+                        sonidoManager.PlayUISound(EventoSonoroUI.Error);
                     }
                 }
                 else

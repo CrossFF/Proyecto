@@ -8,6 +8,7 @@ public class NewMineUI : MonoBehaviour
     [Header("Referencias")]
     private UIActions _uiActions;
     public MineManager manager;
+    public SonidoManager sonidoManager;
     public CanvasGroup allUI,
     infoMine,
     minaBloqueada,
@@ -18,8 +19,7 @@ public class NewMineUI : MonoBehaviour
     dispoTuneladoras2,
     dispoDronesLimpieza,
     stausText;
-    public Button conectionButton,// boton de crear conecciones
-    derrumbeButton;// boton de eliminar derrumbes
+    public Button derrumbeButton;// boton de eliminar derrumbes
     public GameObject prefabResource; // info basica del recurso
     public Transform parentResource;
     public GameObject prefabInventory; // prefab del objeto en inventario
@@ -98,23 +98,6 @@ public class NewMineUI : MonoBehaviour
         InstanciarInventario();
         //seteo la info de los recursos
         SetInfoResources();
-        // limito acciones
-        // si la mina no esta activa o trabajando no se puede usar el boton de conectar minas
-        if (manager.GetAmount(BlueprintName.Tuneladora) > 0)
-        {
-            if (_mine.node.status == StatusNode.Lista_para_trabajar || _mine.node.status == StatusNode.Activa || _mine.node.status == StatusNode.Sin_recursos)
-            {
-                conectionButton.interactable = true;
-            }
-            else
-            {
-                conectionButton.interactable = false;
-            }
-        }
-        else
-        {
-            conectionButton.interactable = false;
-        }
     }
 
     private void Inactiva()
@@ -266,16 +249,46 @@ public class NewMineUI : MonoBehaviour
 
     public void ConectMines()
     {
-        if (manager.DispoConect())
+        // verifico si hay tuneladoras para usarse
+        if (manager.GetAmount(BlueprintName.Tuneladora) > 0)
         {
-            HideMine();
-            manager.StartConecting(_mine);
+            if (manager.DispoConect())
+            {
+                // sonido de confirmacion
+                StartCoroutine(TiempoDeSonido(EventoSonoroUI.Confirmacion));
+                // despues de la corrutina sigue el proceso normal
+                HideMine();
+                manager.StartConecting(_mine);
+            }
         }
+        else
+        {
+            // sonido de error
+            sonidoManager.PlayUISound(EventoSonoroUI.Error);
+        }
+    }
+
+    // para que no suene un sonido en la nada
+    public IEnumerator TiempoDeSonido(EventoSonoroUI evento)
+    {
+        sonidoManager.PlayUISound(evento);
+        yield return new WaitForSeconds(0.2f);
     }
 
     public void DesbloquearMina()
     {
-        manager.DesbloquearMina(_mine);
+        if (manager.GetAmount(BlueprintName.Dron_Limpiador) > 0)
+        {
+            // sonido de confirmacion
+            StartCoroutine(TiempoDeSonido(EventoSonoroUI.Confirmacion));
+            // desbloqueo la mina
+            manager.DesbloquearMina(_mine);
+        }
+        else
+        {
+            // sonido de error
+            sonidoManager.PlayUISound(EventoSonoroUI.Error);
+        }
     }
 
     public void NuevosRecursos()
@@ -285,11 +298,13 @@ public class NewMineUI : MonoBehaviour
         {
             manager.NuevaMina(_mine);
             // sonido de confirmacion
+            StartCoroutine(TiempoDeSonido(EventoSonoroUI.Confirmacion));
         }
         else
         {
             // no se puede generar nueva mina
             // sonido de error
+            sonidoManager.PlayUISound(EventoSonoroUI.Error);
         }
     }
 

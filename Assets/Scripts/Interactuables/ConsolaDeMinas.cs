@@ -28,6 +28,8 @@ public class ConsolaDeMinas : MonoBehaviour, IInteractable
         //activo el menu de crafteo
         GameObject.Find("Mine Manager").GetComponent<MineManager>().ShowMenu();
         // sonido off
+        //sonido de activacion
+        GameObject.Find("Manager de Sonido").GetComponent<SonidoManager>().PlayUISound(EventoSonoroUI.AbrirConsola);
     }
 
     public void Salir()
@@ -35,6 +37,8 @@ public class ConsolaDeMinas : MonoBehaviour, IInteractable
         // oculto el menu
         GameObject.Find("Mine Manager").GetComponent<MineManager>().HideMenu();
         // sonido on si es necesario
+        //sonido de desactivacion
+        GameObject.Find("Manager de Sonido").GetComponent<SonidoManager>().PlayUISound(EventoSonoroUI.CerrarConsola);
     }
 
     public void Funcionado()

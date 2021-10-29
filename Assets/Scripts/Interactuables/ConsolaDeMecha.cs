@@ -27,6 +27,8 @@ public class ConsolaDeMecha : MonoBehaviour, IInteractable
         // concentro la atencion del jugador en el mecha
         outline.enabled = false;
         collider.enabled = false;
+        //sonido de activacion
+        GameObject.Find("Manager de Sonido").GetComponent<SonidoManager>().PlayUISound(EventoSonoroUI.AbrirConsola);
     }
 
     public void Salir()
@@ -36,5 +38,7 @@ public class ConsolaDeMecha : MonoBehaviour, IInteractable
         GameObject.Find("Mecha Manager").GetComponent<MechaManager>().HideMenu();
         // regreso la atencion del jugador al personaje
         collider.enabled = true;
+        //sonido de desactivacion
+        GameObject.Find("Manager de Sonido").GetComponent<SonidoManager>().PlayUISound(EventoSonoroUI.CerrarConsola);
     }
 }

@@ -16,6 +16,8 @@ public class ConsolaDeSistemas : MonoBehaviour, IInteractable
     public void Interact()
     {
         manager.ShowSystemMenu();
+        //sonido de activacion
+        GameObject.Find("Manager de Sonido").GetComponent<SonidoManager>().PlayUISound(EventoSonoroUI.AbrirConsola);
     }
 
     public void Resaltar()
@@ -28,5 +30,7 @@ public class ConsolaDeSistemas : MonoBehaviour, IInteractable
     {
         // cierro la consola
         manager.HideMenu();
+        //sonido de desactivacion
+        GameObject.Find("Manager de Sonido").GetComponent<SonidoManager>().PlayUISound(EventoSonoroUI.CerrarConsola);
     }
 }

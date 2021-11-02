@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 public class ConsolaDeSistemas : MonoBehaviour, IInteractable
 {
     public Outline outline;
     public MechaManager manager;
+    public CinemachineVirtualCamera cam;
+    public CameraManager cameraManager;
 
     public void Desmarcar()
     {
@@ -16,6 +19,8 @@ public class ConsolaDeSistemas : MonoBehaviour, IInteractable
     public void Interact()
     {
         manager.ShowSystemMenu();
+        // camara
+        cameraManager.ChangePriority(cam);
         //sonido de activacion
         GameObject.Find("Manager de Sonido").GetComponent<SonidoManager>().PlayUISound(EventoSonoroUI.AbrirConsola);
     }

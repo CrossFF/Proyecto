@@ -7488,7 +7488,7 @@ GameObject:
   - component: {fileID: 676231500}
   - component: {fileID: 676231499}
   - component: {fileID: 676231501}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ametralladora
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9562,7 +9562,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 853331378}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sistemas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10056,7 +10056,7 @@ GameObject:
   - component: {fileID: 880167591}
   - component: {fileID: 880167590}
   - component: {fileID: 880167592}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ametralladora
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11403,7 +11403,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 63.801064, y: -0.000061035156}
+  m_AnchoredPosition: {x: 0.000038146973, y: -0.000061035156}
   m_SizeDelta: {x: -63.800995, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1004259342
@@ -12979,7 +12979,7 @@ GameObject:
   - component: {fileID: 1146639213}
   - component: {fileID: 1146639214}
   - component: {fileID: 1146639210}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Consola de Mecha
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13086,7 +13086,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1152005761}
-  m_LocalRotation: {x: 0.32098076, y: 0.000000028225354, z: -0.000000009565972, w: 0.94708574}
+  m_LocalRotation: {x: 0.32098073, y: -3.1767352e-15, z: 1.3925269e-15, w: 0.94708574}
   m_LocalPosition: {x: 98.55, y: 7.188, z: 99.56}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -15166,7 +15166,7 @@ GameObject:
   - component: {fileID: 1335572349}
   - component: {fileID: 1335572348}
   - component: {fileID: 1335572350}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: "Ca\xF1on"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20392,7 +20392,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1845496378}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sistemas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21604,7 +21604,7 @@ GameObject:
   - component: {fileID: 1941543476}
   - component: {fileID: 1941543475}
   - component: {fileID: 1941543477}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: "Ca\xF1on"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23359,7 +23359,7 @@ GameObject:
   - component: {fileID: 2116773434}
   - component: {fileID: 2116773433}
   - component: {fileID: 2116773435}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Espada
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23982,7 +23982,7 @@ GameObject:
   - component: {fileID: 8913062125677709908}
   - component: {fileID: 3890652156848875224}
   - component: {fileID: 172115545066618289}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: "Ca\xF1on"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24709,7 +24709,7 @@ GameObject:
   - component: {fileID: 355194887006341481}
   - component: {fileID: 355194887006341480}
   - component: {fileID: 355194887006341482}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Brazo Derecho
   m_TagString: Mecha
   m_Icon: {fileID: 0}
@@ -28583,7 +28583,7 @@ GameObject:
   - component: {fileID: 1349810376587159086}
   - component: {fileID: 1349810376587159085}
   - component: {fileID: 1349810376587159087}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Consola Sistemas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29036,6 +29036,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   outline: {fileID: 1349810376587159085}
   manager: {fileID: 1043359243}
+  cam: {fileID: 1799809878}
+  cameraManager: {fileID: 590460638}
 --- !u!33 &1350680627192724691
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -30803,7 +30805,7 @@ GameObject:
   - component: {fileID: 1942906585624738949}
   - component: {fileID: 1942906585624738948}
   - component: {fileID: 1942906585624738950}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cabina
   m_TagString: Mecha
   m_Icon: {fileID: 0}
@@ -33124,7 +33126,7 @@ GameObject:
   - component: {fileID: 6981650329637147081}
   - component: {fileID: 707627934443602758}
   - component: {fileID: 2632871857569245439}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Espada
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37864,7 +37866,7 @@ GameObject:
   - component: {fileID: 4203915247740619004}
   - component: {fileID: 4203915247740619003}
   - component: {fileID: 4203915247740619006}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Consola Minas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41304,7 +41306,7 @@ GameObject:
   - component: {fileID: 4947854404824338450}
   - component: {fileID: 4947854404824338449}
   - component: {fileID: 4947854404824338451}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Pierna izquierda
   m_TagString: Mecha
   m_Icon: {fileID: 0}
@@ -41911,7 +41913,7 @@ GameObject:
   - component: {fileID: 5191319934500934397}
   - component: {fileID: 5191319934500934396}
   - component: {fileID: 5191319934500934398}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Pierna derecha
   m_TagString: Mecha
   m_Icon: {fileID: 0}
@@ -43025,7 +43027,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5175365047718865518}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sistemas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44987,7 +44989,7 @@ GameObject:
   - component: {fileID: 6143916038946610491}
   - component: {fileID: 6143916038946610490}
   - component: {fileID: 6143916038946610489}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Mesa de crafteo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45670,7 +45672,7 @@ GameObject:
   - component: {fileID: 6230276965856383267}
   - component: {fileID: 6230276965856383266}
   - component: {fileID: 6230276965856383268}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Brazo Izquierdo
   m_TagString: Mecha
   m_Icon: {fileID: 0}
@@ -46342,7 +46344,7 @@ GameObject:
   - component: {fileID: 7995491927626288715}
   - component: {fileID: 2163195143930466718}
   - component: {fileID: 6518282416340883744}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ametralladora
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53355,7 +53357,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8580031675412600971}
   - component: {fileID: 8960392997839634994}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Mecha
   m_TagString: Untagged
   m_Icon: {fileID: 0}

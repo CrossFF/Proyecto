@@ -58,7 +58,7 @@ public class Mine : MonoBehaviour
         switch (node.status)
         {
             case StatusNode.Lista_para_trabajar:
-                outline.OutlineColor = Color.cyan;
+                outline.OutlineColor = Color.green;
                 spot.enabled = true;
                 spot.color = Color.white;
                 particulas.Stop();
@@ -124,6 +124,8 @@ public class Mine : MonoBehaviour
         {
             // le pido al managger que muestre la info de la mina
             manager.ShowMine(this);
+            // desactivo el outline
+            outline.enabled = false;
         }
         // si estoy conectando minas conecto esa mina
         if (manager.IsConecting())

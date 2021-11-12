@@ -82,5 +82,7 @@ public class BlueprintGameObject : MonoBehaviour
     {
         //
         manager.Craft(this);
+        // reproduzco el sonido de crafteo
+        GameObject.Find("Manager de Sonido").GetComponent<SonidoManager>().PlayUISound(EventoSonoroUI.Crafteo);
     }
 }

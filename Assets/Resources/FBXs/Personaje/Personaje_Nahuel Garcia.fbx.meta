@@ -114,7 +114,7 @@ ModelImporter:
       name: Caminata
       takeName: Caminata
       internalID: 0
-      firstFrame: 0
+      firstFrame: 3.1
       lastFrame: 29
       wrapMode: 0
       orientationOffsetY: 0
@@ -134,7 +134,21 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0.10355029
+        functionName: Paso()
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 354036510443c614bbf7802c6851b450, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.60355026
+        functionName: Paso()
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 354036510443c614bbf7802c6851b450, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}

@@ -198,4 +198,10 @@ public class MechaManager : MonoBehaviour
     {
         return ui.PartIsInteracble();
     }
+
+    // devuelve si el mause esta sobre el menu de partes
+    public bool MouseInPartesUI()
+    {
+        return ui.MouseEnPartes();
+    }
 }

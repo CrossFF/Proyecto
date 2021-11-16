@@ -4427,6 +4427,7 @@ MonoBehaviour:
   parentInventory: {fileID: 1457914562}
   prefabSystemInventory: {fileID: 4235986317950646035, guid: c2e743e34532ce248bc3a07634ea7d51, type: 3}
   parentInventorySystems: {fileID: 1105305361}
+  panelDePartes: {fileID: 1038479378}
 --- !u!1 &370340069
 GameObject:
   m_ObjectHideFlags: 0
@@ -11507,7 +11508,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 63.801064, y: -0.000061035156}
+  m_AnchoredPosition: {x: 0.000038146973, y: -0.000061035156}
   m_SizeDelta: {x: -63.800995, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1004259342
@@ -11846,6 +11847,7 @@ GameObject:
   - component: {fileID: 1038479376}
   - component: {fileID: 1038479375}
   - component: {fileID: 1038479377}
+  - component: {fileID: 1038479378}
   m_Layer: 5
   m_Name: Panel de Partes
   m_TagString: Untagged
@@ -11924,6 +11926,19 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &1038479378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1038479373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a3667f668dde6498f678e9d9d1daff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactuable: 0
 --- !u!1 &1042224334
 GameObject:
   m_ObjectHideFlags: 0
@@ -13190,7 +13205,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1152005761}
-  m_LocalRotation: {x: 0.32098076, y: 0.000000028225354, z: -0.000000009565972, w: 0.94708574}
+  m_LocalRotation: {x: 0.32098073, y: -3.1767352e-15, z: 1.3925269e-15, w: 0.94708574}
   m_LocalPosition: {x: 98.55, y: 7.188, z: 99.56}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:

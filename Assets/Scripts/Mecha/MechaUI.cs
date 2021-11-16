@@ -25,6 +25,9 @@ public class MechaUI : MonoBehaviour
     public Transform parentInventorySystems;
     private List<InventorySystem> _systemsInventory;
 
+    // solucion poco elegante para un bug con las partes
+    public SolucionPocoEleganteParaUnBug panelDePartes;
+
     void Awake()
     {
         _uiActions = new UIActions();
@@ -138,5 +141,10 @@ public class MechaUI : MonoBehaviour
         {
             return false;
         }
+    }
+
+    public bool MouseEnPartes()
+    {
+        return panelDePartes.interactuable;
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using Cinemachine;
 
 public class MechaUI : MonoBehaviour
-{
+{ 
     private UIActions _uiActions;
     public CanvasGroup allUI,
     inventarioParte,

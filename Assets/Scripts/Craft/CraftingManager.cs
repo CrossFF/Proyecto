@@ -19,7 +19,8 @@ public class CraftingManager : MonoBehaviour
     public GameObject prefabMaterial;
     public Transform parentMaterial;
     private List<IngredientGameObject> _nextLevelMaterials;
-    public Button confirmarButton;
+    public Button confirmarButton; // boton de confirmacion de actualizacion de consola
+    public Button actualizarConsolaButton; // boton de actualizar consola
 
     void Awake()
     {
@@ -27,6 +28,12 @@ public class CraftingManager : MonoBehaviour
         _blueprintsGameObjetcs = new List<GameObject>();
         _nextLevelMaterials = new List<IngredientGameObject>();
         HideMenu();
+    }
+
+    void Update()
+    {
+        // verifico si hay posibles actualizaciones de consola
+        actualizarConsolaButton.interactable = _consoleLevel + 1 < prefabsPerLevel.Count ? true : false;
     }
 
     public void HideMenu()
@@ -95,7 +102,7 @@ public class CraftingManager : MonoBehaviour
             }
             _nextLevelMaterials.Clear();
             // index para evitar errores
-            int index = 0; 
+            int index = 0;
             foreach (var ingrediente in prefabsPerLevel[nextLevel].materials)
             {
                 // instancio un material
@@ -111,7 +118,7 @@ public class CraftingManager : MonoBehaviour
                 // agrego el material a la lista
                 _nextLevelMaterials.Add(tempMaterial);
                 index++;
-            }  
+            }
             // blueprints
             // borro lo que tuviera escrio de antes;
             textNewBlueprints.text = "";
@@ -124,10 +131,10 @@ public class CraftingManager : MonoBehaviour
             for (int i = 0; i < prefabsPerLevel[nextLevel].materials.Count; i++)
             {
                 float actual = inventory.GetAmount(prefabsPerLevel[nextLevel].materials[i]);
-                if(actual >= prefabsPerLevel[nextLevel].amounts[i])
+                if (actual >= prefabsPerLevel[nextLevel].amounts[i])
                     num++;
             }
-            confirmarButton.interactable = num == prefabsPerLevel[nextLevel].materials.Count ? true : false;   
+            confirmarButton.interactable = num == prefabsPerLevel[nextLevel].materials.Count ? true : false;
         }
         else
         {
@@ -156,7 +163,7 @@ public class CraftingManager : MonoBehaviour
         int index = 0;
         foreach (var item in prefabsPerLevel[_consoleLevel].materials)
         {
-            inventory.UseResource(item,prefabsPerLevel[_consoleLevel].amounts[index]);
+            inventory.UseResource(item, prefabsPerLevel[_consoleLevel].amounts[index]);
             index++;
         }
         // actualizo los blueprints

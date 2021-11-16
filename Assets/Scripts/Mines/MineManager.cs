@@ -245,4 +245,9 @@ public class MineManager : MonoBehaviour
         ui.HideMine();
         ui.ShowMine(mine);
     }
+
+    public bool SomeMenuActive()
+    {
+        return ui.SomeMenuActive();
+    }
 }

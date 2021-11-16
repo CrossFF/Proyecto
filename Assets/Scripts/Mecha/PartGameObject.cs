@@ -153,7 +153,7 @@ public class PartGameObject : MonoBehaviour
 
     void OnMouseEnter()
     {
-        _outline.enabled = true;
+        _outline.enabled = true; 
     }
 
     void OnMouseExit()

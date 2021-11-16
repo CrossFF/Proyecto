@@ -312,4 +312,35 @@ public class NewMineUI : MonoBehaviour
     {
         return _mine;
     }
+
+    public bool SomeMenuActive()
+    {
+        bool menuActive = false;
+        if(infoMine.alpha == 1)
+        {
+            menuActive = true;
+        }
+        else
+        {
+            if(minaInactiva.alpha == 1)
+            {
+                menuActive = true;
+            }
+            else
+            {
+                if(minaBloqueada.alpha == 1)
+                {
+                    menuActive = true;
+                }
+                else
+                {
+                    if(minaVacia.alpha == 1)
+                    {
+                        menuActive = true;
+                    }
+                }
+            }
+        }
+        return menuActive;
+    }
 }

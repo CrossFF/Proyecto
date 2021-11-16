@@ -102,7 +102,7 @@ public class Mine : MonoBehaviour
     void OnMouseEnter()
     {
         // resalto la mina
-        if (manager.ui.infoMine.alpha == 0)
+        if (!manager.SomeMenuActive())
         {
             outline.enabled = true;
         }
@@ -120,7 +120,7 @@ public class Mine : MonoBehaviour
     void OnMouseDown()
     {
         //si el menu no se enceuntra desplegado y no estoy conectando minas
-        if (manager.ui.infoMine.alpha == 0 && !manager.IsConecting())
+        if ( !manager.SomeMenuActive() && !manager.IsConecting())
         {
             // le pido al managger que muestre la info de la mina
             manager.ShowMine(this);

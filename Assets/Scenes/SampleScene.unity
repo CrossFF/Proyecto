@@ -13190,7 +13190,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1152005761}
-  m_LocalRotation: {x: 0.32098073, y: -3.1767352e-15, z: 1.3925269e-15, w: 0.94708574}
+  m_LocalRotation: {x: 0.32098076, y: 0.000000028225354, z: -0.000000009565972, w: 0.94708574}
   m_LocalPosition: {x: 98.55, y: 7.188, z: 99.56}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -20646,7 +20646,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -37}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -509.2898, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1848478038
@@ -21472,6 +21472,7 @@ MonoBehaviour:
   prefabMaterial: {fileID: 7906691944865965319, guid: a40a133c38e47f344b0db83f8a78fc24, type: 3}
   parentMaterial: {fileID: 845154597}
   confirmarButton: {fileID: 648445814}
+  actualizarConsolaButton: {fileID: 1870204038}
 --- !u!1 &1920801255
 GameObject:
   m_ObjectHideFlags: 0

@@ -10557,7 +10557,7 @@ MonoBehaviour:
   animator: {fileID: 2034796550}
   camPJ: {fileID: 1152005762}
   cameraManager: {fileID: 590460638}
-  debugMode: 1
+  debugMode: 0
 --- !u!143 &920552267
 CharacterController:
   m_ObjectHideFlags: 0
